@@ -1,0 +1,4 @@
+date,ticker,action,role,qty,paper_price,gross_value,commission,nccpl_adj,notional_cgt,net_value,composite_score,conviction,stop,target,horizon,reason,rules_applied
+# PAPER TRADES ONLY — no real orders. action = BUY|ADD|TRIM|SELL. role = core|swing.
+# paper_price reflects the expected next-session execution context (never the opening spike).
+# Append one row per simulated action. Keep this file append-only; never edit past rows.

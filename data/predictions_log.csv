@@ -1,0 +1,6 @@
+prediction_id,issue_date,ticker_or_index,prediction_text,type,driver_lenses,driver_rules,conviction,grade_on_date,status,actual_outcome,grade,error,why
+# type = direction|magnitude|conditional|decision_quality
+# status = open|graded ; grade = HIT|PARTIAL|MISS
+# 'why' (filled at grading): was the miss a data problem, model problem, or noise?
+# Append one row when issuing a prediction; fill the last 4 columns when it matures and is graded.
+# NEVER edit a prediction after issuing it (no look-ahead). Only fill the grading columns later.

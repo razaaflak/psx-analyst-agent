@@ -1,0 +1,24 @@
+{
+  "_comment": "The agent's simulated portfolio. PAPER MONEY ONLY. Agent reads at start of each run and writes the updated state at the end. Set starting_cash to whatever notional amount mirrors your real intent.",
+  "currency": "PKR",
+  "starting_cash": 1000000,
+  "as_of_date": "2026-06-09",
+  "cash": 1000000,
+  "holdings": [],
+  "_holding_schema": {
+    "ticker": "string",
+    "qty": "integer (paper shares)",
+    "avg_cost": "number (PKR/share incl. simulated frictions)",
+    "first_bought": "YYYY-MM-DD",
+    "thesis": "one-line reason held",
+    "role": "core | swing",
+    "stop": "number or null (for swing)",
+    "target": "number or null (for swing)"
+  },
+  "performance": {
+    "cumulative_return_pct": 0.0,
+    "notional_cgt_paid": 0.0,
+    "max_drawdown_pct": 0.0,
+    "last_reconciled": "2026-06-09"
+  }
+}
