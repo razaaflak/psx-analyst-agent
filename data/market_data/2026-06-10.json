@@ -1,0 +1,44 @@
+{
+  "date": "2026-06-10",
+  "fetched_at": "2026-06-10T17:05:00+05:00",
+  "source": "dps.psx.com.pk (DOM extract + network market-watch feed)",
+  "confidence": "high",
+  "index": {
+    "kse100": 169427.44,
+    "change_pts": -903.12,
+    "change_pct": -0.53,
+    "volume": null,
+    "advancers": null,
+    "decliners": null,
+    "note": "Advancers/decliners not surfaced on summary page; all-share index down -0.32%, KMI30 down -0.46%"
+  },
+  "stocks": [
+    { "symbol": "MEBL", "open": 488.00, "high": 498.80, "low": 486.11, "close": 495.89, "ldcp": 490.35, "volume": 1674545, "change_pct": 1.13, "pe_ttm": 9.89, "52w_low": 300.05, "52w_high": 525.00, "source": "dps.psx.com.pk" },
+    { "symbol": "UBL",  "open": 397.00, "high": 401.59, "low": 395.84, "close": 397.08, "ldcp": 400.18, "volume": 623419,  "change_pct": -0.77, "pe_ttm": 7.04, "52w_low": 255.05, "52w_high": 517.00, "source": "dps.psx.com.pk" },
+    { "symbol": "MCB",  "open": 403.69, "high": 406.89, "low": 396.00, "close": 397.20, "ldcp": 403.69, "volume": 327875,  "change_pct": -1.61, "pe_ttm": null, "52w_low": 273.00, "52w_high": 452.00, "source": "dps.psx.com.pk" },
+    { "symbol": "OGDC", "open": 317.01, "high": 320.75, "low": 316.00, "close": 316.68, "ldcp": 319.63, "volume": 1366369, "change_pct": -0.92, "pe_ttm": null, "52w_low": 202.00, "52w_high": 337.10, "source": "dps.psx.com.pk" },
+    { "symbol": "PPL",  "open": 223.51, "high": 226.00, "low": 223.51, "close": 224.06, "ldcp": 225.30, "volume": 998269,  "change_pct": -0.55, "pe_ttm": null, "52w_low": 151.30, "52w_high": 284.60, "source": "dps.psx.com.pk" },
+    { "symbol": "FFC",  "open": 552.99, "high": 557.75, "low": 552.00, "close": 553.58, "ldcp": 554.86, "volume": 476441,  "change_pct": -0.23, "pe_ttm": 10.16, "52w_low": 369.71, "52w_high": 685.00, "source": "dps.psx.com.pk" },
+    { "symbol": "FABL", "open": 88.51,  "high": 88.98,  "low": 88.12,  "close": 88.72,  "ldcp": 88.81,  "volume": 303202,  "change_pct": -0.10, "pe_ttm": null, "52w_low": 56.55, "52w_high": 105.49, "source": "dps.psx.com.pk" },
+    { "symbol": "DGKC", "open": 195.48, "high": 198.39, "low": 193.10, "close": 193.46, "ldcp": 195.91, "volume": 3192528, "change_pct": -1.25, "pe_ttm": null, "52w_low": 140.25, "52w_high": 275.75, "source": "dps.psx.com.pk" },
+    { "symbol": "CHCC", "open": 289.99, "high": 293.50, "low": 285.15, "close": 288.03, "ldcp": 286.81, "volume": 226114,  "change_pct": 0.43,  "pe_ttm": null, "52w_low": 225.00, "52w_high": 390.00, "source": "dps.psx.com.pk" },
+    { "symbol": "MARI", "open": 650.00, "high": 655.45, "low": 649.50, "close": 650.27, "ldcp": 651.80, "volume": 640928,  "change_pct": -0.23, "pe_ttm": null, "52w_low": 544.56, "52w_high": 795.00, "source": "dps.psx.com.pk" },
+    { "symbol": "ENGROH","open": 259.11,"high": 260.90, "low": 257.00, "close": 257.42, "ldcp": 259.89, "volume": 958869,  "change_pct": -0.95, "pe_ttm": null, "52w_low": 160.75, "52w_high": 302.50, "source": "dps.psx.com.pk" },
+    { "symbol": "LUCK", "open": 431.00, "high": 435.00, "low": 427.00, "close": 429.35, "ldcp": 432.15, "volume": 1587252, "change_pct": -0.65, "pe_ttm": null, "52w_low": 315.00, "52w_high": 529.50, "source": "dps.psx.com.pk" },
+    { "symbol": "MTL",  "open": 558.00, "high": 560.00, "low": 555.50, "close": 557.44, "ldcp": 558.69, "volume": 65587,   "change_pct": -0.22, "pe_ttm": null, "52w_low": 465.00, "52w_high": 599.50, "source": "dps.psx.com.pk" }
+  ],
+  "fundamentals": [
+    { "symbol": "MEBL", "pe": 9.89, "eps_2025": 49.54, "eps_2024": 56.62, "div_yield": null, "payouts": "75% IQ-2026 (Apr), 70% FY2025, 70% IIIQ-2025, 70% HYR-2025 — 4 consecutive", "source": "dps.psx.com.pk/company/MEBL", "note": "EPS declining YoY (49.54 vs 56.62); still profitable and paying consistently" },
+    { "symbol": "UBL",  "pe": 7.04, "eps_2025": null, "eps_2024": null, "div_yield": null, "payouts": null, "source": "dps.psx.com.pk/company/UBL", "note": "P/E 7.04 confirmed" },
+    { "symbol": "FFC",  "pe": 10.16, "eps_2025": null, "eps_2024": null, "div_yield": null, "payouts": null, "source": "dps.psx.com.pk/company/FFC", "note": "P/E 10.16; YTD -6.29% but 1Y +46%" }
+  ],
+  "announcements": [
+    { "symbol": "MTL",  "type": "governance", "text": "Certified copy of resolutions passed in EOGM filed — routine governance", "source": "dps.psx.com.pk/announcements/companies" },
+    { "symbol": "MZNPETF", "type": "rebalancing", "text": "Meezan ETF rebalancing — may affect MEBL weight/flows marginally", "source": "dps.psx.com.pk/announcements/companies" }
+  ],
+  "screenshot": "data/market_data/2026-06-10_close.png",
+  "warnings": [
+    "Advancers/decliners count not scraped — PSX summary page did not surface these figures",
+    "P/E for MCB, OGDC, PPL, FABL, DGKC, CHCC, MARI, ENGROH, LUCK, MTL not shown on quote page — using Run #1 values as prior"
+  ]
+}

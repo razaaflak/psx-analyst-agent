@@ -1,0 +1,12 @@
+# Downloaded PDFs and raw binary data — not for version control
+data/announcements/
+data/market_data/*.png
+
+# Playwright artifacts
+.playwright-mcp/
+
+# Node / Python
+node_modules/
+__pycache__/
+*.pyc
+.env

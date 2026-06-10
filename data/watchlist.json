@@ -1,6 +1,6 @@
 {
   "_comment": "Stocks the agent watches. Edit freely. 'sector' and 'shariah' help the F and E lenses. 'role' = core (long-term) or swing (satellite). Re-verify Shariah status periodically — it can change.",
-  "last_updated": "2026-06-09",
+  "last_updated": "2026-06-10",
   "watchlist": [
     { "ticker": "MEBL", "name": "Meezan Bank",        "sector": "Banks (Islamic)", "shariah": "compliant",     "role": "core" },
     { "ticker": "MCB",  "name": "MCB Bank",            "sector": "Banks",           "shariah": "non-compliant", "role": "core" },
@@ -11,6 +11,11 @@
     { "ticker": "FFC",  "name": "Fauji Fertilizer",    "sector": "Fertilizer",      "shariah": "compliant",     "role": "core" },
     { "ticker": "ENGROH","name": "Engro Holdings",     "sector": "Conglomerate",    "shariah": "verify",        "role": "core" },
     { "ticker": "LUCK", "name": "Lucky Cement",        "sector": "Cement",          "shariah": "compliant",     "role": "core" },
-    { "ticker": "MTL",  "name": "Millat Tractors",     "sector": "Auto/Industrials","shariah": "verify",        "role": "core" }
+    { "ticker": "MTL",   "name": "Millat Tractors",       "sector": "Auto/Industrials","shariah": "verify",        "role": "core" },
+    { "ticker": "FABL",  "name": "Faysal Bank",           "sector": "Banks (Islamic)", "shariah": "compliant",     "role": "core" },
+    { "ticker": "DGKC",  "name": "DG Khan Cement",        "sector": "Cement",          "shariah": "compliant",     "role": "core" },
+    { "ticker": "CHCC",  "name": "Cherat Cement",         "sector": "Cement",          "shariah": "compliant",     "role": "core" },
+    { "ticker": "PSO",   "name": "Pakistan State Oil",     "sector": "Energy (OMC)",    "shariah": "verify",        "role": "monitor" },
+    { "ticker": "APL",   "name": "Attock Petroleum",       "sector": "Energy (OMC)",    "shariah": "verify",        "role": "monitor" }
   ]
 }

@@ -4,3 +4,11 @@ prediction_id,issue_date,ticker_or_index,prediction_text,type,driver_lenses,driv
 # 'why' (filled at grading): was the miss a data problem, model problem, or noise?
 # Append one row when issuing a prediction; fill the last 4 columns when it matures and is graded.
 # NEVER edit a prediction after issuing it (no look-ahead). Only fill the grading columns later.
+P-001,2026-06-09,OGDC,"OGDC closes higher than today's close (319.63) over the next 5 sessions (by 2026-06-16)",direction,"T+F+E","",7,2026-06-16,open,,,,
+P-002,2026-06-09,FFC,"FFC trades within PKR 530–600 range over next 5 sessions; does not break below 520 stop",magnitude,"F+T","",7,2026-06-16,open,,,,
+P-003,2026-06-09,KSE100,"If KSE-100 holds above 168000 (prior close) next session, MEBL closes ≥+0.5% on the day",conditional,"T+E","R-004",6,2026-06-10,graded,"KSE-100 at 169427 (held >168000); MEBL +1.13% (495.89 vs 490.35 LDCP)",HIT,0,"Condition fully met; index held support and MEBL outperformed. R-001 NIM thesis consistent. Clean model read — not noise."
+P-004,2026-06-09,MEBL,"Today's BUY on MEBL will be in profit (above paper entry 492) when graded in 10 sessions (2026-06-23)",decision_quality,"F+T+E","R-001",6.5,2026-06-23,open,,,,
+P-005,2026-06-09,FABL,"FABL closes above 90.00 within next 5 sessions — cheapest bank on P/E should attract value buyers",direction,"F","R-001",6,2026-06-16,open,,,,
+P-006,2026-06-10,MEBL,"MEBL outperforms KSE-100 (closes with higher % change than KSE-100) over the next 3 sessions (by 2026-06-13)",direction,"T+F+E","R-001,R-EXP-001",6.5,2026-06-13,open,,,,
+P-007,2026-06-10,FFC,"FFC does not break below 540 support over the next 5 sessions (by 2026-06-17) — dividend yield floor should attract buyers",magnitude,"F","",6,2026-06-17,open,,,,
+P-008,2026-06-10,DGKC,"DGKC closes above 198 (entry cost) at least once in the next 7 sessions (by 2026-06-19) — cement oversold relative to thesis",direction,"T+F","R-002",5,2026-06-19,open,,,,"

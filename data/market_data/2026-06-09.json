@@ -1,0 +1,63 @@
+{
+  "date": "2026-06-09",
+  "fetched_at": "2026-06-09T18:18:00+05:00",
+  "source": "dps.psx.com.pk (network feed + DOM + payouts API)",
+  "source_rung": 1,
+  "confidence": "high",
+  "index": {
+    "kse100": 170330.56,
+    "change_pts": 1376.86,
+    "change_pct": 0.81,
+    "prev_close": 168953.70,
+    "high": 171022.94,
+    "low": 170250.26,
+    "volume": 209361475,
+    "as_of": "Jun 9, 2026 3:50 PM",
+    "ytd_change_pct": -2.14,
+    "one_year_change_pct": 39.59,
+    "52w_high": 191032.73,
+    "52w_low": 115887.49,
+    "market_pe": 9.2
+  },
+  "macro": {
+    "sbp_policy_rate_pct": 11.5,
+    "sbp_last_action": "hike +100bps Apr 27 2026",
+    "pkr_usd": 278.80,
+    "brent_usd": 93.25,
+    "imf_status": "3rd EFF review completed May 8 2026 — on track",
+    "macro_risk_flags": [
+      "Rate hike cycle restarted (11.5%) — credit headwind for leveraged names",
+      "Brent ~$93 + Strait of Hormuz disruption — elevated import bill, E&P positive",
+      "Middle East conflict cited by IMF/SBP as top risk",
+      "KSE-100 YTD -2.14% — market consolidating post-191k peak",
+      "IMF 4th review next milestone — program compliance required"
+    ]
+  },
+  "stocks": [
+    { "symbol": "MEBL",   "ldcp": 485.33, "open": 489.00, "high": 495.00, "low": 486.16, "close": 490.35, "change": 5.02,  "change_pct": 1.03,  "volume": 849815,   "52w_low": 300.05, "52w_high": 525.00, "pe_ttm": 9.78,  "div_yield_pct": 5.8,  "annual_dps": 28.5, "source": "dps.psx.com.pk" },
+    { "symbol": "MCB",    "ldcp": 405.01, "open": 405.01, "high": 409.01, "low": 402.02, "close": 403.69, "change": -1.32, "change_pct": -0.33, "volume": 224617,   "52w_low": 273.00, "52w_high": 452.00, "pe_ttm": 8.99,  "div_yield_pct": 8.9,  "annual_dps": 36.0, "source": "dps.psx.com.pk" },
+    { "symbol": "UBL",    "ldcp": 394.76, "open": 399.99, "high": 401.10, "low": 398.50, "close": 400.18, "change": 5.42,  "change_pct": 1.37,  "volume": 881933,   "52w_low": 255.05, "52w_high": 517.00, "pe_ttm": 7.09,  "div_yield_pct": 16.0, "annual_dps": 64.0, "source": "dps.psx.com.pk" },
+    { "symbol": "OGDC",   "ldcp": 318.07, "open": 321.00, "high": 322.45, "low": 319.40, "close": 319.63, "change": 1.56,  "change_pct": 0.49,  "volume": 2778242,  "52w_low": 202.00, "52w_high": 337.10, "pe_ttm": 8.18,  "div_yield_pct": 5.0,  "annual_dps": 16.0, "source": "dps.psx.com.pk" },
+    { "symbol": "PPL",    "ldcp": 224.82, "open": 228.01, "high": 228.95, "low": 224.90, "close": 225.30, "change": 0.48,  "change_pct": 0.21,  "volume": 2489049,  "52w_low": 151.30, "52w_high": 284.60, "pe_ttm": 7.65,  "div_yield_pct": 3.8,  "annual_dps": 8.5,  "source": "dps.psx.com.pk" },
+    { "symbol": "MARI",   "ldcp": 647.66, "open": 654.00, "high": 657.00, "low": 650.80, "close": 651.80, "change": 4.14,  "change_pct": 0.64,  "volume": 374384,   "52w_low": 544.56, "52w_high": 795.00, "pe_ttm": 11.57, "div_yield_pct": 4.6,  "annual_dps": 30.0, "source": "dps.psx.com.pk" },
+    { "symbol": "FFC",    "ldcp": 554.20, "open": 559.00, "high": 562.90, "low": 554.00, "close": 554.86, "change": 0.66,  "change_pct": 0.12,  "volume": 880385,   "52w_low": 369.71, "52w_high": 685.00, "pe_ttm": 10.18, "div_yield_pct": 6.9,  "annual_dps": 38.5, "source": "dps.psx.com.pk" },
+    { "symbol": "ENGROH", "ldcp": 259.00, "open": 262.00, "high": 264.00, "low": 259.02, "close": 259.89, "change": 0.89,  "change_pct": 0.34,  "volume": 1130383,  "52w_low": 160.75, "52w_high": 302.50, "pe_ttm": null,  "div_yield_pct": 0.0,  "annual_dps": 0.0,  "source": "dps.psx.com.pk", "note": "P/E 1999 — holding co distortion; use subsidiary view" },
+    { "symbol": "LUCK",   "ldcp": 426.49, "open": 432.99, "high": 438.00, "low": 431.00, "close": 432.15, "change": 5.66,  "change_pct": 1.33,  "volume": 3790348,  "52w_low": 315.00, "52w_high": 529.50, "pe_ttm": 39.00, "div_yield_pct": 4.6,  "annual_dps": 20.0, "source": "dps.psx.com.pk" },
+    { "symbol": "MTL",    "ldcp": 552.63, "open": 555.05, "high": 563.00, "low": 555.01, "close": 558.69, "change": 6.06,  "change_pct": 1.10,  "volume": 169118,   "52w_low": 465.00, "52w_high": 599.50, "pe_ttm": 15.41, "div_yield_pct": 6.3,  "annual_dps": 35.0, "source": "dps.psx.com.pk" },
+    { "symbol": "FABL",   "ldcp": 88.23,  "open": null,   "high": null,   "low": null,   "close": 88.81,  "change": 0.58,  "change_pct": 0.66,  "volume": 533687,   "52w_low": 56.55,  "52w_high": 105.49, "pe_ttm": 6.21,  "div_yield_pct": 7.3,  "annual_dps": 6.5,  "source": "dps.psx.com.pk" },
+    { "symbol": "DGKC",   "ldcp": 193.65, "open": null,   "high": null,   "low": null,   "close": 195.91, "change": 2.26,  "change_pct": 1.17,  "volume": 2959351,  "52w_low": 140.25, "52w_high": 275.75, "pe_ttm": 7.46,  "div_yield_pct": 1.0,  "annual_dps": 2.0,  "source": "dps.psx.com.pk" },
+    { "symbol": "CHCC",   "ldcp": 281.29, "open": null,   "high": null,   "low": null,   "close": 286.81, "change": 5.52,  "change_pct": 1.96,  "volume": 106588,   "52w_low": 225.00, "52w_high": 390.00, "pe_ttm": 7.57,  "div_yield_pct": 2.4,  "annual_dps": 7.0,  "source": "dps.psx.com.pk" }
+  ],
+  "announcements": [
+    { "symbol": "CHCC", "time": "2:36 PM", "title": "Certified copy of resolutions passed at EGM", "pdf_url": "https://dps.psx.com.pk/download/document/278357.pdf", "watchlist": true },
+    { "symbol": "MTL",  "time": "10:09 AM", "title": "Certified copy of resolutions passed in EOGM", "pdf_url": "https://dps.psx.com.pk/download/document/278333.pdf", "watchlist": true }
+  ],
+  "screenshot": "data/market_data/2026-06-09_close.png",
+  "warnings": [
+    "P/B and ROE not available from dps.psx.com.pk — would need scstrade.com or annual report data",
+    "UBL div yield 16% triggers R-003 — investigate dividend safety before BUY",
+    "ENGROH P/E distorted (holding co) — excluded from F scoring",
+    "FABL/DGKC/CHCC OHLC detail not captured (added mid-session) — close/LDCP confirmed",
+    "PDF files not downloaded to disk — URLs recorded as audit trail"
+  ]
+}

@@ -2,3 +2,11 @@ date,ticker,action,role,qty,paper_price,gross_value,commission,nccpl_adj,notiona
 # PAPER TRADES ONLY — no real orders. action = BUY|ADD|TRIM|SELL. role = core|swing.
 # paper_price reflects the expected next-session execution context (never the opening spike).
 # Append one row per simulated action. Keep this file append-only; never edit past rows.
+2026-06-09,OGDC,BUY,core,372,322.00,119784,180,599,0,120563,+5.70,7,300.00,337.00,3-6m,"Cheap E&P P/E 8.2; Brent $93 tailwind; Baragazi discovery 21mn bbl; state-backed low debt",""
+2026-06-09,FFC,BUY,core,197,557.00,109729,165,548,0,110442,+5.60,7,520.00,650.00,6-12m,"Best F score — P/E 10.2 cheap; 6.9% yield; 6 consecutive quarterly payouts; kharif demand ahead",""
+2026-06-09,MEBL,BUY,core,202,492.00,99384,149,497,0,100030,+5.45,6.5,460.00,525.00,3-6m,"Quality Islamic bank; P/E 9.8; 5.8% yield; R-001 fires on SBP 11.5% hike → NIM expansion","R-001"
+2026-06-09,PPL,BUY,core,329,226.00,74354,112,371,0,74837,+4.30,5.5,211.00,265.00,3-6m,"E&P cheap P/E 7.7; Brent tailwind; 26% Baragazi stake; liquid",""
+2026-06-09,FABL,BUY,core,841,89.20,75017,113,375,0,75505,+4.45,6,83.00,100.00,3-6m,"Cheapest bank P/E 6.2; 7.3% yield; Shariah-compliant; R-001 fires; consistent quarterly payer","R-001"
+2026-06-09,DGKC,BUY,core,304,197.00,59888,90,299,0,60277,+3.75,5,183.00,245.00,6-12m,"Cheap cement P/E 7.5; lower-half 52w range; high liquidity; value play vs LUCK","R-002"
+2026-06-09,CHCC,BUY,core,174,288.00,50112,75,251,0,50438,+3.75,5,268.00,360.00,6-12m,"Cement P/E 7.6; lower-mid 52w range; best % gain today; EGM today routine","R-002"
+2026-06-09,UBL,BUY,core,199,402.00,79998,120,400,0,80518,+5.20,7,375.00,470.00,3-6m,"Cheapest bank P/E 7.1; yield 8% payout 62% clean; R-001 NIM; EPS growing annualised ~78; non-compliant noted","R-001 (face value corrected post cross-check: PKR5 not PKR10)"

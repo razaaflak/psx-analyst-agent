@@ -1,10 +1,91 @@
 {
-  "_comment": "The agent's simulated portfolio. PAPER MONEY ONLY. Agent reads at start of each run and writes the updated state at the end. Set starting_cash to whatever notional amount mirrors your real intent.",
+  "_comment": "The agent's simulated portfolio. PAPER MONEY ONLY. Agent reads at start of each run and writes the updated state at the end.",
   "currency": "PKR",
   "starting_cash": 1000000,
-  "as_of_date": "2026-06-09",
-  "cash": 1000000,
-  "holdings": [],
+  "as_of_date": "2026-06-10",
+  "cash": 328214,
+  "holdings": [
+    {
+      "ticker": "OGDC",
+      "qty": 372,
+      "avg_cost": 324.09,
+      "first_bought": "2026-06-09",
+      "thesis": "Cheap E&P (P/E 8.2); Brent $93 tailwind; Baragazi 21mn bbl discovery; state-backed low debt",
+      "role": "core",
+      "stop": 300.00,
+      "target": 337.00
+    },
+    {
+      "ticker": "FFC",
+      "qty": 197,
+      "avg_cost": 560.62,
+      "first_bought": "2026-06-09",
+      "thesis": "Best F score watchlist — P/E 10.2; 6.9% yield; 6 consecutive quarterly payouts; kharif demand",
+      "role": "core",
+      "stop": 520.00,
+      "target": 650.00
+    },
+    {
+      "ticker": "MEBL",
+      "qty": 202,
+      "avg_cost": 496.20,
+      "first_bought": "2026-06-09",
+      "thesis": "Quality Islamic bank; P/E 9.8; 5.8% yield; R-001 NIM expansion on SBP 11.5% rate",
+      "role": "core",
+      "stop": 460.00,
+      "target": 525.00
+    },
+    {
+      "ticker": "PPL",
+      "qty": 329,
+      "avg_cost": 227.48,
+      "first_bought": "2026-06-09",
+      "thesis": "E&P cheap P/E 7.7; Brent tailwind; 26% Baragazi stake; liquid",
+      "role": "core",
+      "stop": 211.00,
+      "target": 265.00
+    },
+    {
+      "ticker": "FABL",
+      "qty": 841,
+      "avg_cost": 89.78,
+      "first_bought": "2026-06-09",
+      "thesis": "Cheapest bank P/E 6.2; 7.3% yield; Shariah-compliant; R-001 NIM expansion",
+      "role": "core",
+      "stop": 83.00,
+      "target": 100.00
+    },
+    {
+      "ticker": "DGKC",
+      "qty": 304,
+      "avg_cost": 197.99,
+      "first_bought": "2026-06-09",
+      "thesis": "Cheap cement P/E 7.5; lower-half 52w range; liquid; value vs LUCK at P/E 39",
+      "role": "core",
+      "stop": 183.00,
+      "target": 245.00
+    },
+    {
+      "ticker": "CHCC",
+      "qty": 174,
+      "avg_cost": 289.88,
+      "first_bought": "2026-06-09",
+      "thesis": "Cement P/E 7.6; lower-mid 52w range; EGM today routine",
+      "role": "core",
+      "stop": 268.00,
+      "target": 360.00
+    },
+    {
+      "ticker": "UBL",
+      "qty": 199,
+      "avg_cost": 404.61,
+      "first_bought": "2026-06-09",
+      "thesis": "Cheapest bank P/E 7.1; yield 8% payout 62% sustainable; R-001 NIM expansion; EPS growing ~PKR78 annualised; non-compliant noted",
+      "role": "core",
+      "stop": 375.00,
+      "target": 470.00
+    }
+  ],
   "_holding_schema": {
     "ticker": "string",
     "qty": "integer (paper shares)",
@@ -16,9 +97,10 @@
     "target": "number or null (for swing)"
   },
   "performance": {
-    "cumulative_return_pct": 0.0,
+    "cumulative_return_pct": -1.40,
     "notional_cgt_paid": 0.0,
-    "max_drawdown_pct": 0.0,
-    "last_reconciled": "2026-06-09"
+    "max_drawdown_pct": -1.40,
+    "last_reconciled": "2026-06-10",
+    "note": "MTM loss PKR ~9,420 on PKR 671,586 invested. Cash 328,214. All stops intact."
   }
 }
