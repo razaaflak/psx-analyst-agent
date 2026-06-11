@@ -8,8 +8,8 @@ This file is the **learned overlay** on top of the base method in `SKILL.md`. Th
 ---
 
 ## Tier legend & status board
-- Last full review: **2026-06-10 (Run #2)**
-- Active rules: 4 Core (seed), 0 Provisional, 2 Experimental
+- Last full review: **2026-06-11 (Run #3)**
+- Active rules: 4 Core (seed), 0 Provisional, 4 Experimental
 - Current lens weights (core): F 0.40 / T 0.35 / E 0.25 — only change via Core-tier evidence, ±0.05 steps.
 
 ---
@@ -65,13 +65,29 @@ This file is the **learned overlay** on top of the base method in `SKILL.md`. Th
 - Causal story: UBL split each Rs10 share into two Rs5 shares in June 2025. "160% of Rs5 = Rs8" not "160% of Rs10 = Rs16". Assuming PKR 10 doubles the apparent DPS and yield, triggering false R-003 alerts.
 - Evidence: 1 observation (2026-06-09 UBL false alarm caught by cross-check). Apply immediately as data hygiene rule.
 
+### R-EXP-003 [Tier: Experimental]
+- Created: 2026-06-11 | Last reviewed: 2026-06-11
+- Hypothesis: Sustained Brent > $90/bbl supports PSX E&P names (OGDC, PPL, MARI) via higher revenue realization.
+- Trigger (if): Brent (or Arab Light) > $90 sustained in the macro_news/commodities feed
+- Action (then): tilt E +1 for E&P holdings; do not chase if already extended in 52w range (OGDC at 85% on 06-11).
+- Causal story: E&P revenue ≈ realized oil/gas price × volume; higher oil → higher topline & cash flow, partly offset by circular-debt drag on actual receipts.
+- Evidence: 1 observation (2026-06-11: Brent $94.17, Arab Light $94.18 per Ahmad's brief; OGDC −0.15%/PPL −0.62% on the day — note: oil supportive but E&P did NOT rally, possibly circular-debt overhang or profit-taking near range highs). Watch: oil tailwind may be necessary-not-sufficient. No decision weight until ≥8 obs.
+
+### R-EXP-004 [Tier: Experimental — meta/measurement]
+- Created: 2026-06-11 | Last reviewed: 2026-06-11
+- Hypothesis: Predictions that incorporate the macro_news/commodities layer have a higher hit-rate than those that do not.
+- Trigger (if): a prediction's drivers include a news/commodity read (tag driver_lenses with 'E-news')
+- Action (then): none yet — this is a MEASUREMENT rule. Tag the prediction; do not change weights.
+- Causal story: if true, macro context improves timing/risk calls; if false, news adds noise and should be dropped.
+- Evidence: 0 graded. Per SKILL.md Part G §5 (measure-or-retire): after ~20–30 graded, compare with-news vs without-news hit-rate. If news-tagged ≤ baseline, RETIRE the news layer. This rule enforces that honesty.
+
 ### R-EXP-001 [Tier: Experimental]
 - Created: 2026-06-09 | Last reviewed: 2026-06-09
 - Hypothesis: In SBP rate-hike cycles, Islamic banks (MEBL, FABL) outperform conventional peers due to faster profit-rate repricing and structural market-share growth.
 - Trigger (if): SBP rate rising AND comparing Islamic vs conventional bank performance
 - Action (then): tilt F +0.5 additional for Islamic banks vs conventional in same rate environment
 - Causal story: Islamic financing reprices with benchmark rate quickly; growing market-share adds volume on top of margin expansion. Conventional banks face NIM expansion too but no market-share tailwind.
-- Evidence: 1 observation (2026-06-10: MEBL +1.13% vs MCB −1.61%, UBL −0.77%, FABL −0.10% on a day KSE-100 fell −0.53% — Islamic banks held up materially better). Consistent with hypothesis. Do not apply materially until ≥8 obs.
+- Evidence: 2 observations. (1) 2026-06-10: MEBL +1.13% vs MCB −1.61%, UBL −0.77%, FABL −0.10% on a day KSE-100 fell −0.53% — Islamic banks held up materially better. (2) 2026-06-11: Islamic avg (MEBL +1.01%, FABL +1.32% → +1.17%) vs conventional avg (MCB +0.40%, UBL +0.48% → +0.44%) on a +0.16% index day — Islamic outperformed by ~0.73pp. Both obs support hypothesis. P-011 now tests it directly. Do not apply materially until ≥8 obs.
 
 ---
 
@@ -89,3 +105,8 @@ This file is the **learned overlay** on top of the base method in `SKILL.md`. Th
 | 2026-06-09 | UBL decision flipped HOLD→BUY | Post cross-check: payout ratio 62.3% not 124.7%; face value PKR 5; added to portfolio at paper price 402 |
 | 2026-06-10 | P-003 graded HIT | KSE-100 held >168k; MEBL +1.13%. R-001 and index-support read both correct. No rule changes. |
 | 2026-06-10 | R-EXP-001 obs count → 1 | MEBL +1.13% vs conventional banks −0.77% to −1.61% on down-market day. One supporting data point. |
+| 2026-06-11 | R-EXP-001 obs count → 2 | Islamic avg +1.17% vs conventional avg +0.44% on +0.16% index day. 2nd supporting obs. P-011 issued to test directly. Still Experimental, no decision weight. |
+| 2026-06-11 | No grading this run | No predictions matured (earliest P-006 grades 06-13). No rule promote/demote. 3 new predictions issued (P-009..P-011). |
+| 2026-06-11 | Added macro/news layer | RSS news + commodities feed wired into E lens (SKILL Part G guardrails; data_collection §3b). Modifier-only, no churn, measure-or-retire. |
+| 2026-06-11 | Added R-EXP-003 | Brent>$90 → E&P tilt. 1 obs: oil $94 but OGDC/PPL flat-down — oil tailwind may be necessary-not-sufficient. |
+| 2026-06-11 | Added R-EXP-004 (meta) | Measurement rule: news-tagged predictions must beat baseline hit-rate after 20–30 graded or the news layer is retired. |

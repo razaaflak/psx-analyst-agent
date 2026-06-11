@@ -1,0 +1,75 @@
+{
+  "date": "2026-06-11",
+  "fetched_at": "2026-06-11T16:55:00+05:00",
+  "source": "dps.psx.com.pk (network /market-watch feed + /timeseries/int/KSE100 + /company/{SYM} P/E + /announcements/companies)",
+  "confidence": "high",
+  "index": {
+    "kse100": 169703.60,
+    "change_pts": 276.16,
+    "change_pct": 0.16,
+    "volume": 771934243,
+    "value_pkr": 27050895502.61,
+    "advancers": null,
+    "decliners": null,
+    "note": "KSE100 +0.16%. ALLSHR +0.15%, KSE30 +0.26%, KMI30 +0.17% — broad mildly positive. Adv/dec counts not surfaced on summary page (only leaderboard widgets). Index close from intraday max-ts point = 169,703.60."
+  },
+  "stocks": [
+    { "symbol": "LUCK",  "open": 427.00, "high": 434.90, "low": 422.00, "close": 433.09, "ldcp": 429.35, "volume": 3275763, "change_pct": 0.87,  "pe_ttm": null,  "52w_low": 315.00, "52w_high": 529.50, "source": "dps.psx.com.pk" },
+    { "symbol": "PPL",   "open": 224.88, "high": 224.88, "low": 221.80, "close": 222.67, "ldcp": 224.06, "volume": 2987442, "change_pct": -0.62, "pe_ttm": 7.56,  "52w_low": 151.30, "52w_high": 284.60, "source": "dps.psx.com.pk" },
+    { "symbol": "DGKC",  "open": 192.00, "high": 194.90, "low": 191.20, "close": 194.10, "ldcp": 193.46, "volume": 2512358, "change_pct": 0.33,  "pe_ttm": 7.39,  "52w_low": 140.25, "52w_high": 275.75, "source": "dps.psx.com.pk" },
+    { "symbol": "OGDC",  "open": 315.65, "high": 318.00, "low": 314.01, "close": 316.20, "ldcp": 316.68, "volume": 2336208, "change_pct": -0.15, "pe_ttm": 8.10,  "52w_low": 202.00, "52w_high": 337.10, "source": "dps.psx.com.pk" },
+    { "symbol": "MEBL",  "open": 494.90, "high": 507.95, "low": 491.00, "close": 500.89, "ldcp": 495.89, "volume": 1840728, "change_pct": 1.01,  "pe_ttm": 9.99,  "52w_low": 300.05, "52w_high": 525.00, "source": "dps.psx.com.pk" },
+    { "symbol": "ENGROH","open": 256.25, "high": 262.39, "low": 256.00, "close": 259.19, "ldcp": 257.42, "volume": 1478663, "change_pct": 0.69,  "pe_ttm": null,  "52w_low": 160.75, "52w_high": 302.50, "source": "dps.psx.com.pk" },
+    { "symbol": "FABL",  "open": 88.72,  "high": 90.25,  "low": 88.59,  "close": 89.89,  "ldcp": 88.72,  "volume": 1384130, "change_pct": 1.32,  "pe_ttm": 6.28,  "52w_low": 56.55,  "52w_high": 105.49, "source": "dps.psx.com.pk" },
+    { "symbol": "UBL",   "open": 396.00, "high": 401.01, "low": 393.50, "close": 399.00, "ldcp": 397.08, "volume": 1109853, "change_pct": 0.48,  "pe_ttm": 7.07,  "52w_low": 255.05, "52w_high": 517.00, "source": "dps.psx.com.pk" },
+    { "symbol": "PSO",   "open": 345.01, "high": 350.40, "low": 345.01, "close": 349.05, "ldcp": 347.14, "volume": 991784,  "change_pct": 0.55,  "pe_ttm": null,  "52w_low": null,   "52w_high": null,   "source": "dps.psx.com.pk" },
+    { "symbol": "MARI",  "open": 648.00, "high": 665.00, "low": 645.20, "close": 657.42, "ldcp": 650.27, "volume": 934459,  "change_pct": 1.10,  "pe_ttm": 11.67, "52w_low": 544.56, "52w_high": 795.00, "source": "dps.psx.com.pk" },
+    { "symbol": "FFC",   "open": 551.02, "high": 553.58, "low": 550.11, "close": 551.47, "ldcp": 553.58, "volume": 780428,  "change_pct": -0.38, "pe_ttm": 10.12, "52w_low": 369.71, "52w_high": 685.00, "source": "dps.psx.com.pk" },
+    { "symbol": "MCB",   "open": 397.50, "high": 400.01, "low": 397.50, "close": 398.79, "ldcp": 397.20, "volume": 349001,  "change_pct": 0.40,  "pe_ttm": null,  "52w_low": 273.00, "52w_high": 452.00, "source": "dps.psx.com.pk" },
+    { "symbol": "CHCC",  "open": 285.05, "high": 291.99, "low": 285.00, "close": 285.66, "ldcp": 288.03, "volume": 206191,  "change_pct": -0.82, "pe_ttm": 7.54,  "52w_low": 225.00, "52w_high": 390.00, "source": "dps.psx.com.pk" },
+    { "symbol": "MTL",   "open": 555.00, "high": 558.30, "low": 553.10, "close": 555.92, "ldcp": 557.44, "volume": 48599,   "change_pct": -0.27, "pe_ttm": null,  "52w_low": 465.00, "52w_high": 599.50, "source": "dps.psx.com.pk" },
+    { "symbol": "APL",   "open": 530.43, "high": 530.43, "low": 525.52, "close": 529.49, "ldcp": 530.43, "volume": 20061,   "change_pct": -0.18, "pe_ttm": null,  "52w_low": null,   "52w_high": null,   "source": "dps.psx.com.pk" }
+  ],
+  "fundamentals": [
+    { "symbol": "OGDC", "pe": 8.10,  "div_yield": null, "source": "dps.psx.com.pk/company/OGDC", "note": "P/E (TTM) fresh today" },
+    { "symbol": "PPL",  "pe": 7.56,  "div_yield": null, "source": "dps.psx.com.pk/company/PPL",  "note": "P/E (TTM) fresh today" },
+    { "symbol": "FABL", "pe": 6.28,  "div_yield": null, "source": "dps.psx.com.pk/company/FABL", "note": "P/E (TTM) fresh; cheapest bank" },
+    { "symbol": "DGKC", "pe": 7.39,  "div_yield": null, "source": "dps.psx.com.pk/company/DGKC", "note": "P/E (TTM) fresh today" },
+    { "symbol": "CHCC", "pe": 7.54,  "div_yield": null, "source": "dps.psx.com.pk/company/CHCC", "note": "P/E (TTM) fresh today" },
+    { "symbol": "MARI", "pe": 11.67, "div_yield": null, "source": "dps.psx.com.pk/company/MARI", "note": "P/E (TTM) fresh; richest E&P" },
+    { "symbol": "MEBL", "pe": 9.99,  "div_yield": null, "source": "dps.psx.com.pk/company/MEBL", "note": "P/E (TTM) fresh today" },
+    { "symbol": "UBL",  "pe": 7.07,  "div_yield": null, "source": "dps.psx.com.pk/company/UBL",  "note": "P/E (TTM) fresh today" },
+    { "symbol": "FFC",  "pe": 10.12, "div_yield": null, "source": "dps.psx.com.pk/company/FFC",  "note": "P/E (TTM) fresh today" }
+  ],
+  "announcements": [
+    { "symbol": "MARI", "type": "clarification", "text": "Clarification regarding media reports on Spinwam gas bidding process (3:21 PM)", "source": "dps.psx.com.pk/announcements/companies" },
+    { "symbol": "APL",  "type": "board_meeting", "text": "Board Meeting Other Than Financial Results (10:47 AM) — routine, monitor name", "source": "dps.psx.com.pk/announcements/companies" }
+  ],
+  "commodities": {
+    "brent": 94.17, "wti": 91.86, "arab_light": 94.18, "gold": 4087, "silver": 63.52,
+    "coal": 123, "usd_pkr": 278.36, "fipi_net_usd_mn": -4,
+    "leverage": { "futures_bn": 34.48, "mts_bn": 17.43, "mfs_bn": 17.09 },
+    "as_of": "2026-06-10",
+    "source": "Ahmad WhatsApp business brief (recap of 2026-06-10 session; KSE-100 quoted 169,427 = 06-10 close, confirms date). Interbank PKR.",
+    "note": "First commodities/flows capture. Pre-open context for 06-11 session — no look-ahead (predates today's close)."
+  },
+  "macro_news": [
+    { "date": "2026-06-10", "source": "brecorder", "headline": "US launches new strikes after Trump threatens to attack Iran 'very hard'", "bucket": "geopolitics", "ticker_or_sector": "E&P / broad", "read": "risk", "note": "TOP NEW RISK — was absent from my 06-11 journal. Two-edged: oil-spike tailwind for OGDC/PPL/MARI but broad risk-off. Widen stops, hold cash." },
+    { "date": "2026-06-10", "source": "brief", "headline": "Brent $94.17 / WTI $91.86 / Arab Light $94.18", "bucket": "oil", "ticker_or_sector": "OGDC,PPL,MARI", "read": "+", "note": "Above thesis-assumed $93. Supports E&P (R-EXP-003). NB: E&P still flat-down 06-11 despite oil — circular-debt overhang suspected." },
+    { "date": "2026-06-10", "source": "tribune", "headline": "Pakistan records highest-ever monthly remittances at $4.3b (SBP)", "bucket": "pkr", "ticker_or_sector": "broad", "read": "+", "note": "PKR support, eases external pressure — mild risk-on." },
+    { "date": "2026-06-10", "source": "mettis", "headline": "Pakistan short-term FX liabilities near $25bn", "bucket": "pkr", "ticker_or_sector": "broad", "read": "-", "note": "External fragility / tail risk overhang vs remittance positive." },
+    { "date": "2026-06-10", "source": "mettis", "headline": "SBP raises ~Rs2tr through MTBs auction; central govt debt Rs81.9tr (end-Apr)", "bucket": "rate", "ticker_or_sector": "Banks / cyclicals", "read": "+/-", "note": "Rates stay high → banks NIM+ (R-001), high-debt cyclicals− (R-002). Confirms cement caution (DGKC/CHCC)." },
+    { "date": "2026-06-10", "source": "thenews", "headline": "NEC to approve Rs4.5tr uplift outlay + macro framework; Rs27bn for 20 uplift projects", "bucket": "budget", "ticker_or_sector": "cement/construction", "read": "risk", "note": "CONFIRMS my budget event-risk flag with a real source (R-004). Sector re-rate risk; reason book holds cash." },
+    { "date": "2026-06-10", "source": "thenews", "headline": "PPL signs MoU with Folio3 to explore AI use in upstream operations", "bucket": "ticker", "ticker_or_sector": "PPL", "read": "+", "note": "Company-specific, minor positive sentiment for a holding." },
+    { "date": "2026-06-10", "source": "mettis", "headline": "Petrol braces for hike, diesel set for massive drop", "bucket": "sector", "ticker_or_sector": "PSO,APL (OMC)", "read": "risk", "note": "Diesel drop = OMC inventory-loss risk; monitor names only, not held." },
+    { "date": "2026-06-10", "source": "brecorder", "headline": "Up to 25pc sales tax on import of EVs likely", "bucket": "sector", "ticker_or_sector": "Auto", "read": "0", "note": "MTL is tractors not EV — negligible direct read." }
+  ],
+  "screenshot": "data/market_data/2026-06-11_close.png",
+  "warnings": [
+    "macro_news/commodities dated 2026-06-10 (Ahmad WhatsApp brief = recap of prior session); used as pre-open context for 06-11, not look-ahead. Next run: pull live via RSS (brecorder/mettis) per data_collection §3b.",
+    "Advancers/decliners counts not surfaced on summary page (only leaderboard widgets) — breadth inferred from index sub-indices, all positive",
+    "Dividend yields not on PSX quote pages; carried from holding theses (not re-verified today)",
+    "PSO/APL 52w range not pulled (monitor-tier names, not actioned)",
+    "MCB announcement matches were MCBIM-FUNDS (asset-mgmt subsidiary daily fund distributions), NOT MCB Bank corporate — excluded as irrelevant"
+  ]
+}

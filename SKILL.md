@@ -183,3 +183,16 @@ Rules applied: R-00x, R-00y
 - **Circular debt** → overhang on power & E&P cash flows.
 
 When any of these is imminent, lower conviction, widen swing stops, and consider holding more paper cash.
+
+---
+
+## Part G — Macro/news layer discipline (added Run #3, 2026-06-11)
+
+The E lens now ingests a daily **macro_news** + **commodities** feed (RSS: Business Recorder, Mettis; plus commodity/flow levels — see `pipeline/data_collection.md` §3b). This adds *risk awareness* and *learning surface*, but is the easiest input to over-trust. Hard guardrails:
+
+1. **Modifier only, weight unchanged.** News flows into the **E** sub-score (still 0.25 of composite). It tunes *timing, sizing, conviction, stops, cash* — it does **not** flip a decision by itself and **never** overrides solid F/T.
+2. **No new churn.** A news item may **widen a stop, raise cash, or shrink conviction**. It may **NOT** trigger a fresh paper entry on its own. New buys still require an F/T thesis.
+3. **Experimental by default.** Any news/commodity-derived rule starts **Experimental (0 decision weight)** and must earn **≥8 obs at ≥60%** before it modifies anything — same graduation gate as every rule. A scary headline is a hypothesis, not a signal.
+4. **Date hygiene / no look-ahead.** Tag every item with its true pub-date. A brief that quotes *yesterday's* index/commodity close is a recap of the prior session — never grade a prediction against news dated after the fact.
+5. **Measure-or-retire (mandatory).** Tag which predictions used the news layer. After ~20–30 graded, query hit-rate **with-news vs without-news** (calibration, like Q5). **If news-tagged predictions do not beat baseline, retire the layer** — honestly, no sunk-cost bias. The news layer must prove it improves outcomes or it goes.
+6. **Commodity transmission** (drives E directly): Brent/WTI ↑ → E&P (OGDC/PPL/MARI) +; USD/PKR depreciation → importers −, exporters +; FIPI net selling → broad flow −; rising leverage (futures/MTS/MFS) → froth/risk gauge.

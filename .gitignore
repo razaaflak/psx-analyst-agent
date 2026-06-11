@@ -5,6 +5,13 @@ data/market_data/*.png
 # Playwright artifacts
 .playwright-mcp/
 
+# Derived SQLite DB — rebuildable from the canonical CSVs/JSON via scripts/build_db.py.
+# Not committed (binary, not diffable). The CSVs + market_data/*.json are the source of truth.
+data/psx.db
+data/psx.db-journal
+data/psx.db-wal
+data/psx.db-shm
+
 # Node / Python
 node_modules/
 __pycache__/

@@ -60,6 +60,32 @@ For each symbol, `browser_navigate` → `/company/{SYMBOL}`, `browser_wait_for`,
 ### 3. Announcements & news
 `browser_navigate` → `/announcements/companies`, extract the day's announcements (results, dividends, board meetings, regulatory) and tag any that match a watchlist symbol. These feed the **F** and **E** lenses.
 
+### 3b. Macro & business news (RSS — feeds the E lens) — ADDED Run #3
+The PSX portal carries only *company* filings, not macro/govt/geopolitical news. Pull that from **free RSS feeds** of the same Pakistani financial outlets a practitioner reads. **Use `WebFetch` (or plain HTTP), NOT Playwright** — RSS is a stable dated schema; no DOM scraping, no browser needed.
+
+**Feeds (free, confirmed live 2026-06-11):**
+| Source | URL | Strength |
+|---|---|---|
+| Business Recorder | `https://www.brecorder.com/feeds/latest-news` | economy/policy/markets, today-dated |
+| Mettis Global | `https://mettisglobal.news/feed` | forex, rates, markets, commodities |
+| Dawn (business) | `https://www.dawn.com/feeds/business` | broader, noisier — optional 3rd |
+
+**Procedure each run:**
+1. `WebFetch` each feed; read item titles + pub-dates.
+2. **Keyword-filter** to what touches the book. Buckets → lens mapping (SKILL.md Part F):
+   - **tickers** (OGDC/PPL/MARI/MEBL/FABL/UBL/MCB/FFC/DGKC/CHCC/LUCK/MTL/ENGROH/PSO/APL) → direct E read
+   - **oil / Brent / WTI / Arab Light** → E&P (OGDC/PPL/MARI) tilt
+   - **SBP / policy rate / MPC / KIBOR / MTB / T-bill** → banks (R-001) + high-debt (R-002)
+   - **budget / NEC / FBR / finance bill / tax** → event-risk (R-004), sector re-rate
+   - **PKR / rupee / remittances / IMF / reserves / FX liabilities** → broad risk + importers/exporters
+   - **geopolitics (Iran / Israel / Middle East / war / strikes)** → oil spike + risk-off; widen stops
+   - **sector terms (cement / fertilizer / E&P / bank / OMC / auto)** → sector tilt
+3. Tag each kept item: `{ date, source, headline, bucket, ticker_or_sector, read: "+/−/risk", note }`.
+4. **Commodities & flows block** — capture daily levels (from Mettis commodity feed, or Ahmad's WhatsApp brief if shared): Brent, WTI, Arab Light, gold, silver, coal, **USD/PKR**, **FIPI net**, leverage (futures/MTS/MFS). These drive the E lens directly.
+5. **Date-check:** confirm each item's pub-date == today (or note lag). A KSE-100/commodity value in a brief that matches *yesterday's* close means the brief is a morning recap of the prior session — use it, but tag the date correctly (no look-ahead).
+
+**Discipline:** news is an **E-lens modifier only** (SKILL.md Part G). It can widen a stop / raise cash / shrink conviction — it can **never** trigger a fresh entry by itself, and never overrides F/T. News-derived rules start **Experimental** (0 weight) and must earn ≥8 obs like any rule.
+
 ### 4. Validate before trusting
 - **Sanity checks:** index move within a believable range; prices not zero/null; volumes plausible; today's date matches. If a number looks wrong, mark it `unverified` and cross-check the backup source.
 - **No data / market closed / site down:** record the failure, try the backup source once, and if still failing, **skip the run gracefully** and tell Ahmad — never fabricate.
@@ -84,6 +110,16 @@ Write `data/market_data/YYYY-MM-DD.json` with this schema, then hand it to the p
   ],
   "announcements": [
     { "symbol": "FFC", "type": "dividend", "text": "", "source": "dps.psx.com.pk" }
+  ],
+  "commodities": {
+    "brent": null, "wti": null, "arab_light": null, "gold": null, "silver": null,
+    "coal": null, "usd_pkr": null, "fipi_net_usd_mn": null,
+    "leverage": { "futures_bn": null, "mts_bn": null, "mfs_bn": null },
+    "as_of": "YYYY-MM-DD", "source": ""
+  },
+  "macro_news": [
+    { "date": "2026-06-10", "source": "brecorder", "headline": "", "bucket": "oil|rate|budget|pkr|geopolitics|sector|ticker",
+      "ticker_or_sector": "", "read": "+|-|risk", "note": "" }
   ],
   "screenshot": "data/market_data/2026-06-10_close.png",
   "warnings": []
