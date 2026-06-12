@@ -2,7 +2,7 @@
   "_comment": "The agent's simulated portfolio. PAPER MONEY ONLY. Agent reads at start of each run and writes the updated state at the end.",
   "currency": "PKR",
   "starting_cash": 1000000,
-  "as_of_date": "2026-06-11",
+  "as_of_date": "2026-06-12",
   "cash": 328214,
   "holdings": [
     {
@@ -97,10 +97,10 @@
     "target": "number or null (for swing)"
   },
   "performance": {
-    "cumulative_return_pct": -0.74,
+    "cumulative_return_pct": 0.49,
     "notional_cgt_paid": 0.0,
     "max_drawdown_pct": -1.40,
-    "last_reconciled": "2026-06-11",
-    "note": "Run #3: MTM unrealized -8,313 on cost 672,727; mtm_value 664,414. Cash 328,214. Total equity 992,628 (cum -0.74%, up from -1.40%). Day P&L +1,107. No trades (budget event-risk discipline). All stops intact."
+    "last_reconciled": "2026-06-12",
+    "note": "Run #4 (2026-06-12): broad +1.59% KSE rally lifted book positive. MTM unrealized +3,983 on cost 672,727; mtm_value 676,710. Cash 328,214 (32.7%, above 5-15% band — held deliberately for budget event-risk R-004). Total equity 1,004,924 (cum +0.49%, up from -0.74%). Day P&L +12,296. No trades (R-004 budget event-risk + several names RSI-overbought post-rally → no chasing). All stops intact; nearest OGDC +6.0% above stop."
   }
 }

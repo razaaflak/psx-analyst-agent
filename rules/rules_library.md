@@ -8,7 +8,7 @@ This file is the **learned overlay** on top of the base method in `SKILL.md`. Th
 ---
 
 ## Tier legend & status board
-- Last full review: **2026-06-11 (Run #3)**
+- Last full review: **2026-06-12 (Run #4)**
 - Active rules: 4 Core (seed), 0 Provisional, 4 Experimental
 - Current lens weights (core): F 0.40 / T 0.35 / E 0.25 — only change via Core-tier evidence, ±0.05 steps.
 
@@ -71,7 +71,7 @@ This file is the **learned overlay** on top of the base method in `SKILL.md`. Th
 - Trigger (if): Brent (or Arab Light) > $90 sustained in the macro_news/commodities feed
 - Action (then): tilt E +1 for E&P holdings; do not chase if already extended in 52w range (OGDC at 85% on 06-11).
 - Causal story: E&P revenue ≈ realized oil/gas price × volume; higher oil → higher topline & cash flow, partly offset by circular-debt drag on actual receipts.
-- Evidence: 1 observation (2026-06-11: Brent $94.17, Arab Light $94.18 per Ahmad's brief; OGDC −0.15%/PPL −0.62% on the day — note: oil supportive but E&P did NOT rally, possibly circular-debt overhang or profit-taking near range highs). Watch: oil tailwind may be necessary-not-sufficient. No decision weight until ≥8 obs.
+- Evidence: 2 observations. (1) 2026-06-11: Brent $94.17, Arab Light $94.18 per Ahmad's brief; OGDC −0.15%/PPL −0.62% — oil supportive but E&P did NOT rally. (2) 2026-06-12: **regime flipped** — oil *slumping* (Mideast peace), and E&P **lagged** the tape (OGDC +0.57%, PPL +1.42%, MARI +0.67%; basket avg +0.89% vs KSE-100 +1.59%). Both obs point the same way: the oil→E&P link is **necessary-not-sufficient**, and under falling oil E&P underperforms. P-014 now tests the inverse directly (grade 06-16). No decision weight until ≥8 obs.
 
 ### R-EXP-004 [Tier: Experimental — meta/measurement]
 - Created: 2026-06-11 | Last reviewed: 2026-06-11
@@ -87,7 +87,7 @@ This file is the **learned overlay** on top of the base method in `SKILL.md`. Th
 - Trigger (if): SBP rate rising AND comparing Islamic vs conventional bank performance
 - Action (then): tilt F +0.5 additional for Islamic banks vs conventional in same rate environment
 - Causal story: Islamic financing reprices with benchmark rate quickly; growing market-share adds volume on top of margin expansion. Conventional banks face NIM expansion too but no market-share tailwind.
-- Evidence: 2 observations. (1) 2026-06-10: MEBL +1.13% vs MCB −1.61%, UBL −0.77%, FABL −0.10% on a day KSE-100 fell −0.53% — Islamic banks held up materially better. (2) 2026-06-11: Islamic avg (MEBL +1.01%, FABL +1.32% → +1.17%) vs conventional avg (MCB +0.40%, UBL +0.48% → +0.44%) on a +0.16% index day — Islamic outperformed by ~0.73pp. Both obs support hypothesis. P-011 now tests it directly. Do not apply materially until ≥8 obs.
+- Evidence: 3 observations. (1) 2026-06-10: MEBL +1.13% vs MCB −1.61%, UBL −0.77%, FABL −0.10% on a day KSE-100 fell −0.53% — Islamic banks held up materially better. (2) 2026-06-11: Islamic avg (MEBL +1.01%, FABL +1.32% → +1.17%) vs conventional avg (MCB +0.40%, UBL +0.48% → +0.44%) on +0.16% index day — +0.73pp. (3) 2026-06-12: Islamic avg (MEBL +1.86%, FABL +1.31% → +1.59%) vs conventional avg (MCB +0.29%, UBL +1.50% → +0.90%) on a +1.59% index day — Islamic +0.69pp. All 3 obs support hypothesis. P-011 grades it directly 06-16. Do not apply materially until ≥8 obs.
 
 ---
 
@@ -110,3 +110,8 @@ This file is the **learned overlay** on top of the base method in `SKILL.md`. Th
 | 2026-06-11 | Added macro/news layer | RSS news + commodities feed wired into E lens (SKILL Part G guardrails; data_collection §3b). Modifier-only, no churn, measure-or-retire. |
 | 2026-06-11 | Added R-EXP-003 | Brent>$90 → E&P tilt. 1 obs: oil $94 but OGDC/PPL flat-down — oil tailwind may be necessary-not-sufficient. |
 | 2026-06-11 | Added R-EXP-004 (meta) | Measurement rule: news-tagged predictions must beat baseline hit-rate after 20–30 graded or the news layer is retired. |
+| 2026-06-12 | No grading this run | 0 predictions matured (earliest P-006 grades 06-13). No promote/demote. 3 new predictions issued (P-012..P-014). |
+| 2026-06-12 | R-EXP-001 obs → 3 | Islamic avg +1.59% vs conventional +0.90% on +1.59% index day (+0.69pp). 3rd supporting obs. Still Experimental. |
+| 2026-06-12 | R-EXP-003 obs → 2 (non-confirming regime) | Oil regime flipped to *slump*; E&P lagged index (avg +0.89% vs +1.59%). Oil→E&P looks necessary-not-sufficient. P-014 tests inverse. |
+| 2026-06-12 | R-EXP-002 live trigger noted | MTL filed book-closure for a share sub-division (split) — re-verify face value before any future MTL DPS/yield calc. |
+| 2026-06-12 | No trades (R-004 budget event-risk) | Budget FY26-27 imminent + several names RSI-overbought post +1.59% rally → HOLD all, hold cash. Book flipped to cum +0.49%. |
