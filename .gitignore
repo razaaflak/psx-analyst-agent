@@ -17,3 +17,6 @@ node_modules/
 __pycache__/
 *.pyc
 .env
+
+# python local env
+.venv/

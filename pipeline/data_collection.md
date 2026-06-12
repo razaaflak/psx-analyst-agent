@@ -60,31 +60,43 @@ For each symbol, `browser_navigate` → `/company/{SYMBOL}`, `browser_wait_for`,
 ### 3. Announcements & news
 `browser_navigate` → `/announcements/companies`, extract the day's announcements (results, dividends, board meetings, regulatory) and tag any that match a watchlist symbol. These feed the **F** and **E** lenses.
 
-### 3b. Macro & business news (RSS — feeds the E lens) — ADDED Run #3
-The PSX portal carries only *company* filings, not macro/govt/geopolitical news. Pull that from **free RSS feeds** of the same Pakistani financial outlets a practitioner reads. **Use `WebFetch` (or plain HTTP), NOT Playwright** — RSS is a stable dated schema; no DOM scraping, no browser needed.
+### 3b. Macro, policy & corporate-action news — ADDED Run #3, expanded Run #3b (2026-06-11)
+The PSX portal market-watch carries only price/volume. The signal that moves the **F** and **E** lenses lives elsewhere: macro/govt news, SBP policy, and the **financial-announcements** (dividends / EPS / ex-div / book-closure) table. Pull these in **two tiers** — RSS where it exists (cheap, dated, via `WebFetch`), HTML where it doesn't (via Playwright, same as price scraping).
 
-**Feeds (free, confirmed live 2026-06-11):**
-| Source | URL | Strength |
-|---|---|---|
-| Business Recorder | `https://www.brecorder.com/feeds/latest-news` | economy/policy/markets, today-dated |
-| Mettis Global | `https://mettisglobal.news/feed` | forex, rates, markets, commodities |
-| Dawn (business) | `https://www.dawn.com/feeds/business` | broader, noisier — optional 3rd |
+**ALL sources below were tested live 2026-06-11. Status is real, not assumed — verify a feed returns XML before trusting it (the original Mettis entry was a search-guess with no public feed; removed).**
+
+#### Tier 1 — RSS via `WebFetch` (no browser)
+| Source | URL | Status | Strength |
+|---|---|---|---|
+| Business Recorder (latest) | `https://www.brecorder.com/feeds/latest-news` | ✅ RSS 2.0 | economy/policy/markets/commodities, today-dated |
+| Dawn (business) | `https://www.dawn.com/feeds/business` | ✅ RSS 2.0 | **PSX-specific** — names regulatory rows, budget, NEC, results; today-dated |
+
+#### Tier 2 — HTML via Playwright (`browser_navigate` + `browser_evaluate`)
+| Source | URL | Status | Why it has the most weight |
+|---|---|---|---|
+| **PSX Financial Announcements** | `https://psx.com.pk/psx/announcement/financial-announcements` | ✅ HTML table | **Highest F-lens value:** dividends, EPS/LPS, bonus/rights, **AGM & ex-div / book-closure dates**. Lets us anticipate ex-div drops and earnings. (e.g. confirmed OGDC 32.5% interim, PPL 20% final.) |
+| SBP Press Releases | `https://www.sbp.org.pk/press/index.asp` | ⚠️ intermittent (522 timeout on test) | **Direct R-001/R-002 driver** — policy-rate / MPC / liquidity. Best-effort, retry-tolerant; skip if down, never block the run. |
+| BR PSX-tagged / trends | `https://www.brecorder.com/trends/pakistan-stock-exchange` , `…/markets/stocks` , `…/trends/rss` | ⚠️ 403 to plain WebFetch | Works only with a real browser UA → Playwright fallback. Lower priority (Dawn+BR-latest already cover macro). |
+
+**Dropped / skipped (tested, no value):** Mettis `…/feed|/rss|/feed.xml` → 404, no RSS. SCSTrade announcements → JS-loaded, empty on fetch, adds nothing the PSX portal lacks.
 
 **Procedure each run:**
-1. `WebFetch` each feed; read item titles + pub-dates.
-2. **Keyword-filter** to what touches the book. Buckets → lens mapping (SKILL.md Part F):
-   - **tickers** (OGDC/PPL/MARI/MEBL/FABL/UBL/MCB/FFC/DGKC/CHCC/LUCK/MTL/ENGROH/PSO/APL) → direct E read
+1. **Tier 1:** `WebFetch` each RSS feed; read titles + pub-dates.
+2. **Tier 2:** with the Playwright session already open for prices, `browser_navigate` to PSX financial-announcements (always) and SBP press (best-effort); `browser_evaluate` the table/list. Tag any watchlist match. Extract **ex-div / book-closure dates** into the F lens.
+3. **Keyword-filter** to what touches the book. Buckets → lens mapping (SKILL.md Part F):
+   - **tickers** (OGDC/PPL/MARI/MEBL/FABL/UBL/MCB/FFC/DGKC/CHCC/LUCK/MTL/ENGROH/PSO/APL) → direct read
+   - **dividend / EPS / result / bonus / right / book closure / AGM** → **F lens** (ex-div timing, earnings surprise)
    - **oil / Brent / WTI / Arab Light** → E&P (OGDC/PPL/MARI) tilt
    - **SBP / policy rate / MPC / KIBOR / MTB / T-bill** → banks (R-001) + high-debt (R-002)
    - **budget / NEC / FBR / finance bill / tax** → event-risk (R-004), sector re-rate
    - **PKR / rupee / remittances / IMF / reserves / FX liabilities** → broad risk + importers/exporters
    - **geopolitics (Iran / Israel / Middle East / war / strikes)** → oil spike + risk-off; widen stops
    - **sector terms (cement / fertilizer / E&P / bank / OMC / auto)** → sector tilt
-3. Tag each kept item: `{ date, source, headline, bucket, ticker_or_sector, read: "+/−/risk", note }`.
-4. **Commodities & flows block** — capture daily levels (from Mettis commodity feed, or Ahmad's WhatsApp brief if shared): Brent, WTI, Arab Light, gold, silver, coal, **USD/PKR**, **FIPI net**, leverage (futures/MTS/MFS). These drive the E lens directly.
-5. **Date-check:** confirm each item's pub-date == today (or note lag). A KSE-100/commodity value in a brief that matches *yesterday's* close means the brief is a morning recap of the prior session — use it, but tag the date correctly (no look-ahead).
+4. Tag each kept item: `{ date, source, headline, bucket, ticker_or_sector, read: "+/−/risk", note }` into `macro_news`. Put ex-div/results facts into the F lens, not just E.
+5. **Commodities & flows block** — capture daily levels from Ahmad's WhatsApp brief if shared (RSS does not carry the levels block): Brent, WTI, Arab Light, gold, silver, coal, **USD/PKR**, **FIPI net**, leverage (futures/MTS/MFS).
+6. **Date-check (no look-ahead):** confirm each item's pub-date. A headline quoting *yesterday's* index/commodity close (e.g. "equities lose 903 pts" = the prior session) is a recap — tag it to the correct prior date, never grade a prediction against post-dated news.
 
-**Discipline:** news is an **E-lens modifier only** (SKILL.md Part G). It can widen a stop / raise cash / shrink conviction — it can **never** trigger a fresh entry by itself, and never overrides F/T. News-derived rules start **Experimental** (0 weight) and must earn ≥8 obs like any rule.
+**Discipline:** news is an **E-lens modifier only** (SKILL.md Part G) — it can widen a stop / raise cash / shrink conviction, never trigger a fresh entry alone, never override F/T. **Exception:** hard corporate-action *facts* from PSX financial-announcements (a declared dividend, an ex-div date, a reported EPS) are F-lens inputs, not sentiment — treat them as data, like price. News-derived *interpretive* rules still start **Experimental** (0 weight, ≥8 obs to graduate).
 
 ### 4. Validate before trusting
 - **Sanity checks:** index move within a believable range; prices not zero/null; volumes plausible; today's date matches. If a number looks wrong, mark it `unverified` and cross-check the backup source.

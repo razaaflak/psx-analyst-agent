@@ -1,0 +1,79 @@
+{
+  "date": "2026-06-12",
+  "fetched_at": "2026-06-12T17:10:00+05:00",
+  "source": "dps.psx.com.pk (network feed: /market-watch HTML table + /timeseries/eod/{sym} JSON)",
+  "confidence": "high",
+  "rung": "1-2 (PSX portal network feed + DOM table); MA/RSI computed from /timeseries/eod daily bars",
+  "index": {
+    "kse100": 172399.90,
+    "change_pts": 2696.30,
+    "change_pct": 1.59,
+    "volume": 890797178,
+    "advancers": 282,
+    "decliners": 167,
+    "unchanged": 39,
+    "note": "Index value is today's (Jun 12) close from portal marquee. EOD settled feed still showed prior session 169,703.6 (Jun 11) at fetch time — matches Dawn 'closes at 169,703' recap of prior day. No look-ahead issue: today's holdings closes taken from live /market-watch."
+  },
+  "stocks": [
+    { "symbol": "OGDC",   "ldcp": 316.20, "open": 319.95, "high": 321.22, "low": 317.01, "close": 317.99, "volume": 3228564, "change_pct": 0.57, "source": "dps.psx.com.pk" },
+    { "symbol": "PPL",    "ldcp": 222.67, "open": 226.99, "high": 228.25, "low": 224.00, "close": 225.84, "volume": 3398384, "change_pct": 1.42, "source": "dps.psx.com.pk" },
+    { "symbol": "MARI",   "ldcp": 657.42, "open": 665.25, "high": 667.95, "low": 659.25, "close": 661.82, "volume": 1084036, "change_pct": 0.67, "source": "dps.psx.com.pk" },
+    { "symbol": "MEBL",   "ldcp": 500.89, "open": 504.90, "high": 512.00, "low": 503.50, "close": 510.21, "volume": 1966348, "change_pct": 1.86, "source": "dps.psx.com.pk" },
+    { "symbol": "FABL",   "ldcp": 89.89,  "open": 90.50,  "high": 91.47,  "low": 90.01,  "close": 91.07,  "volume": 1515785, "change_pct": 1.31, "source": "dps.psx.com.pk" },
+    { "symbol": "UBL",    "ldcp": 399.00, "open": 404.80, "high": 409.00, "low": 400.00, "close": 404.97, "volume": 1857049, "change_pct": 1.50, "source": "dps.psx.com.pk" },
+    { "symbol": "MCB",    "ldcp": 398.79, "open": 400.66, "high": 401.45, "low": 398.50, "close": 399.95, "volume": 373407,  "change_pct": 0.29, "source": "dps.psx.com.pk" },
+    { "symbol": "FFC",    "ldcp": 551.47, "open": 557.99, "high": 559.00, "low": 552.51, "close": 556.45, "volume": 1130158, "change_pct": 0.90, "source": "dps.psx.com.pk" },
+    { "symbol": "ENGROH", "ldcp": 259.19, "open": 264.50, "high": 267.60, "low": 261.90, "close": 266.03, "volume": 2743159, "change_pct": 2.64, "source": "dps.psx.com.pk" },
+    { "symbol": "LUCK",   "ldcp": 433.09, "open": 438.88, "high": 454.01, "low": 436.52, "close": 449.11, "volume": 5436081, "change_pct": 3.70, "source": "dps.psx.com.pk" },
+    { "symbol": "DGKC",   "ldcp": 194.10, "open": 198.90, "high": 208.90, "low": 197.80, "close": 206.32, "volume": 14121963,"change_pct": 6.30, "source": "dps.psx.com.pk" },
+    { "symbol": "CHCC",   "ldcp": 285.66, "open": 288.01, "high": 304.99, "low": 286.00, "close": 296.17, "volume": 726023,  "change_pct": 3.68, "source": "dps.psx.com.pk" },
+    { "symbol": "MTL",    "ldcp": 555.92, "open": 558.00, "high": 569.00, "low": 558.00, "close": 566.09, "volume": 209941,  "change_pct": 1.83, "source": "dps.psx.com.pk" },
+    { "symbol": "PSO",    "ldcp": 349.05, "open": 353.00, "high": 354.90, "low": 350.41, "close": 351.01, "volume": 2009871, "change_pct": 0.56, "source": "dps.psx.com.pk" },
+    { "symbol": "APL",    "ldcp": 529.49, "open": 530.25, "high": 538.99, "low": 530.25, "close": 533.69, "volume": 76286,   "change_pct": 0.79, "source": "dps.psx.com.pk" }
+  ],
+  "technicals": {
+    "_note": "MA50/MA200/RSI14/52w computed from /timeseries/eod daily closes (through Jun 11 settled). 'last' below is the EOD-feed settled close, ~1 bar behind today's market-watch close; immaterial for 50/200-DMA trend context. Compare today's close above against these MAs.",
+    "KSE100": { "ma50": 166076.96, "ma200": 166467.73, "rsi14": 64.9, "hi52": 189166.82, "lo52": 116167.47, "pos52pct": 73, "goldenCross": false },
+    "OGDC":   { "ma50": 311.54, "ma200": 286.16, "rsi14": 49.4, "hi52": 333.90, "lo52": 203.86, "pos52pct": 86, "goldenCross": true },
+    "PPL":    { "ma50": 224.01, "ma200": 216.43, "rsi14": 50.4, "hi52": 281.52, "lo52": 153.33, "pos52pct": 54, "goldenCross": true },
+    "MARI":   { "ma50": 649.58, "ma200": 681.12, "rsi14": 66.8, "hi52": 788.37, "lo52": 545.88, "pos52pct": 46, "goldenCross": false },
+    "MEBL":   { "ma50": 486.39, "ma200": 454.66, "rsi14": 72.8, "hi52": 519.04, "lo52": 304.76, "pos52pct": 92, "goldenCross": true },
+    "FABL":   { "ma50": 88.56,  "ma200": 88.52,  "rsi14": 63.1, "hi52": 104.05, "lo52": 59.01,  "pos52pct": 69, "goldenCross": true },
+    "UBL":    { "ma50": 385.86, "ma200": 402.54, "rsi14": 61.8, "hi52": 503.14, "lo52": 257.95, "pos52pct": 58, "goldenCross": false },
+    "MCB":    { "ma50": 401.00, "ma200": 381.91, "rsi14": 46.4, "hi52": 447.08, "lo52": 273.61, "pos52pct": 72, "goldenCross": true },
+    "FFC":    { "ma50": 526.24, "ma200": 528.33, "rsi14": 74.9, "hi52": 673.16, "lo52": 371.81, "pos52pct": 60, "goldenCross": false },
+    "ENGROH": { "ma50": 271.43, "ma200": 250.72, "rsi14": 56.1, "hi52": 298.02, "lo52": 162.88, "pos52pct": 71, "goldenCross": true },
+    "LUCK":   { "ma50": 420.55, "ma200": 445.17, "rsi14": 62.2, "hi52": 512.70, "lo52": 316.66, "pos52pct": 59, "goldenCross": false },
+    "DGKC":   { "ma50": 182.49, "ma200": 213.04, "rsi14": 66.1, "hi52": 271.39, "lo52": 143.15, "pos52pct": 40, "goldenCross": false },
+    "CHCC":   { "ma50": 276.77, "ma200": 313.44, "rsi14": 68.6, "hi52": 372.21, "lo52": 231.50, "pos52pct": 38, "goldenCross": false },
+    "MTL":    { "ma50": 536.06, "ma200": 531.26, "rsi14": 51.9, "hi52": 596.09, "lo52": 488.51, "pos52pct": 63, "goldenCross": true },
+    "PSO":    { "ma50": 358.05, "ma200": 420.39, "rsi14": 50.4, "hi52": 503.21, "lo52": 328.69, "pos52pct": 12, "goldenCross": false },
+    "APL":    { "ma50": 554.50, "ma200": 552.14, "rsi14": 30.9, "hi52": 635.04, "lo52": 438.23, "pos52pct": 46, "goldenCross": true }
+  },
+  "fundamentals": [],
+  "announcements": [
+    { "symbol": "MEBL", "type": "disclosure", "text": "Director/CEO/exec interest disclosure u/c 5.6.1(d) (routine)", "source": "dps.psx.com.pk" },
+    { "symbol": "MTL",  "type": "corporate_action", "text": "Notice of book closure for sub-division of shares (stock split forthcoming — verify new face value before any future DPS calc per R-EXP-002)", "source": "dps.psx.com.pk" }
+  ],
+  "commodities": {
+    "brent": null, "wti": null, "arab_light": null, "gold": null, "silver": null,
+    "coal": null, "usd_pkr": 278.32, "fipi_net_usd_mn": null,
+    "leverage": { "futures_bn": null, "mts_bn": null, "mfs_bn": null },
+    "as_of": "2026-06-12",
+    "source": "USD/PKR from Business Recorder RSS (rupee +0.01% to 278.32). Oil levels not in feed (Ahmad brief not shared this run) — RSS qualitative read: 'oil slump' on Mideast peace hopes → Brent lower vs prior $94 print."
+  },
+  "macro_news": [
+    { "date": "2026-06-12", "source": "dawn", "headline": "PSX outpaces peers; KSE-100 +18.4pc YTD, mkt cap $59.23bn; today index +1.59% to 172,400", "bucket": "ticker", "ticker_or_sector": "KSE100", "read": "+", "note": "Broad risk-on; strong breadth 282/167" },
+    { "date": "2026-06-12", "source": "brecorder", "headline": "Oil slump on Mideast peace hopes; Indian shares best day in 2 months", "bucket": "oil", "ticker_or_sector": "E&P (OGDC/PPL/MARI)", "read": "-", "note": "Falling oil = E&P revenue headwind but eases import bill/inflation → net + for broad market & OMC margins. Contradicts R-EXP-003 ($90 oil tailwind) — oil now slipping." },
+    { "date": "2026-06-12", "source": "brecorder", "headline": "PKR +0.01% to 278.32/USD", "bucket": "pkr", "ticker_or_sector": "broad", "read": "+", "note": "Currency stable — no FX stress" },
+    { "date": "2026-06-12", "source": "dawn/brecorder", "headline": "FY2026-27 budget presentation imminent/delayed; tax measures Rs660-700bn; Bilawal/PPP friction", "bucket": "budget", "ticker_or_sector": "broad", "read": "risk", "note": "R-004 LIVE event-risk: budget within prediction horizon. Tax/sector re-rate possible overnight. Raise event-risk flag, hold cash, no new swing entries." },
+    { "date": "2026-06-12", "source": "dawn", "headline": "Economy +3.7% FY26 (fastest in 4yrs); LSM +6.6%; auto +31%; IT exports $2bn +47%", "bucket": "sector", "ticker_or_sector": "broad/auto/cement", "read": "+", "note": "Macro growth tailwind; auto (MTL) + manufacturing supportive; cement demand proxy positive" },
+    { "date": "2026-06-12", "source": "dawn", "headline": "President approves PIA privatisation bill (Arif Habib consortium 75%)", "bucket": "sector", "ticker_or_sector": "broad", "read": "+", "note": "Privatisation momentum = positive market sentiment; not a holding" }
+  ],
+  "screenshot": "data/market_data/2026-06-12_close.png",
+  "warnings": [
+    "Oil levels not numerically captured (no Ahmad WhatsApp brief this run); RSS qualitative 'oil slump' used for E-lens direction only.",
+    "Fundamentals (P/E,P/B,yield) not re-scraped this run — carried from prior runs' theses; price moves change yields slightly (noted in cards).",
+    "EOD MA/RSI feed lags today's close by ~1 settled bar; immaterial for 50/200-DMA."
+  ]
+}

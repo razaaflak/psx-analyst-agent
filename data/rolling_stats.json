@@ -1,27 +1,30 @@
 {
   "_comment": "DERIVED rolling summary. Source of truth = predictions_log.csv + trade_ledger.csv + portfolio.json. Agent READS this at run start (Step 0) instead of loading whole history; REWRITES it at run end (Step 8) from the updated CSVs. If this disagrees with the CSVs, the CSVs win — delete and regenerate.",
-  "as_of_date": "2026-06-11",
+  "as_of_date": "2026-06-12",
   "generated_from": ["predictions_log.csv", "portfolio.json"],
 
   "predictions": {
-    "total_issued": 11,
+    "total_issued": 14,
     "graded": 1,
-    "open": 10,
+    "open": 13,
     "hit": 1,
     "partial": 0,
     "miss": 0,
     "overall_hit_rate_pct": 100.0,
     "sample_too_small": true,
-    "note": "1 graded prediction only — hit-rate not yet statistically meaningful. Per readiness gates, need sample >= 40-50 before trusting it. Run #3 issued P-009..P-011; none matured today."
+    "note": "1 graded prediction only — hit-rate not statistically meaningful. Per readiness gates, need sample >= 40-50 before trusting it. Run #4 issued P-012..P-014; none matured today (earliest P-006 grades 2026-06-13)."
   },
 
   "open_predictions_by_grade_date": [
     { "prediction_id": "P-006", "grade_on_date": "2026-06-13", "ticker_or_index": "MEBL" },
+    { "prediction_id": "P-012", "grade_on_date": "2026-06-15", "ticker_or_index": "DGKC" },
     { "prediction_id": "P-001", "grade_on_date": "2026-06-16", "ticker_or_index": "OGDC" },
     { "prediction_id": "P-002", "grade_on_date": "2026-06-16", "ticker_or_index": "FFC" },
     { "prediction_id": "P-005", "grade_on_date": "2026-06-16", "ticker_or_index": "FABL" },
     { "prediction_id": "P-010", "grade_on_date": "2026-06-16", "ticker_or_index": "FABL" },
     { "prediction_id": "P-011", "grade_on_date": "2026-06-16", "ticker_or_index": "BANKS" },
+    { "prediction_id": "P-013", "grade_on_date": "2026-06-16", "ticker_or_index": "MEBL" },
+    { "prediction_id": "P-014", "grade_on_date": "2026-06-16", "ticker_or_index": "EANDP" },
     { "prediction_id": "P-007", "grade_on_date": "2026-06-17", "ticker_or_index": "FFC" },
     { "prediction_id": "P-009", "grade_on_date": "2026-06-18", "ticker_or_index": "MEBL" },
     { "prediction_id": "P-008", "grade_on_date": "2026-06-19", "ticker_or_index": "DGKC" },
@@ -29,10 +32,12 @@
   ],
 
   "rule_performance": {
-    "R-001": { "tier": "Core", "predictions_citing": 5, "graded": 0, "hit": 0, "hit_rate_pct": null, "note": "P-004,P-005,P-006,P-009,P-010 all open" },
-    "R-002": { "tier": "Core", "predictions_citing": 1, "graded": 0, "hit": 0, "hit_rate_pct": null, "note": "P-008 open" },
+    "R-001": { "tier": "Core", "predictions_citing": 6, "graded": 0, "hit": 0, "hit_rate_pct": null, "note": "P-004,P-005,P-006,P-009,P-010,P-013 all open" },
+    "R-002": { "tier": "Core", "predictions_citing": 2, "graded": 0, "hit": 0, "hit_rate_pct": null, "note": "P-008,P-012 open" },
     "R-004": { "tier": "Core", "predictions_citing": 1, "graded": 1, "hit": 1, "hit_rate_pct": 100.0, "note": "P-003 HIT" },
-    "R-EXP-001": { "tier": "Experimental", "predictions_citing": 3, "graded": 0, "hit": 0, "hit_rate_pct": null, "note": "P-006,P-010,P-011 open; 2 supporting market observations (06-10, 06-11), 0 graded predictions yet" }
+    "R-EXP-001": { "tier": "Experimental", "predictions_citing": 3, "graded": 0, "hit": 0, "hit_rate_pct": null, "note": "P-006,P-010,P-011 open; 3 supporting market observations (06-10,06-11,06-12), 0 graded predictions yet" },
+    "R-EXP-003": { "tier": "Experimental", "predictions_citing": 1, "graded": 0, "hit": 0, "hit_rate_pct": null, "note": "P-014 open (inverse test under falling oil); 2 obs, both point necessary-not-sufficient" },
+    "R-EXP-004": { "tier": "Experimental", "predictions_citing": 1, "graded": 0, "hit": 0, "hit_rate_pct": null, "note": "P-014 news-tagged; measure-or-retire after 20-30 graded" }
   },
 
   "rules_active_count": { "core": 4, "provisional": 0, "experimental": 4, "retired": 0 },
@@ -42,14 +47,14 @@
     "starting_cash": 1000000,
     "cash": 328214,
     "invested_cost": 672727,
-    "mtm_value": 664414,
-    "total_equity": 992628,
-    "cash_deployed_pct": 66.9,
+    "mtm_value": 676710,
+    "total_equity": 1004924,
+    "cash_deployed_pct": 67.3,
     "holdings_count": 8,
-    "cumulative_return_pct": -0.74,
+    "cumulative_return_pct": 0.49,
     "max_drawdown_pct": -1.40,
     "notional_cgt_paid": 0.0,
-    "day_pl_pkr": 1107,
-    "last_reconciled": "2026-06-11"
+    "day_pl_pkr": 12296,
+    "last_reconciled": "2026-06-12"
   }
 }

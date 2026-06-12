@@ -22,7 +22,7 @@ Assess each and note the contribution:
 - **Support / resistance:** where is price relative to the nearest support and resistance? Near strong support in an uptrend = favorable entry (+). Near resistance = caution (−). Use the stock's own levels and the KSE-100 levels (e.g., index support/resistance clusters).
 - **Momentum (RSI 14):** >70 overbought (−), <30 oversold (potential bounce, +), 40–60 neutral.
 - **Volume:** moves confirmed by above-average volume are more trustworthy. A breakout on weak volume is suspect (−).
-- **Candlesticks:** reversal/continuation patterns *at* a meaningful level (hammer, bullish/bearish engulfing, doji at support/resistance). A pattern in mid-range is low-information — discount it.
+- **Candlesticks:** reversal/continuation patterns *at* a meaningful level (hammer, bullish/bearish engulfing, doji at support/resistance). A pattern in mid-range is low-information — discount it. *(Read these from the real OHLC store `data/ohlc/{SYMBOL}.json` — true open/high/low per day. Before the store, only close was available and candlestick reads were not possible; treat any candle signal as an **Experimental** input until it earns ≥8 obs at ≥60%, per Part D.)*
 - **KSE-100 backdrop:** is the broad index trending up, down, or ranging? A great stock fights gravity in a falling market. Apply the index trend as a tilt to every T score.
 
 ### A2. Fundamental score (F)
@@ -92,7 +92,7 @@ Always show the three sub-scores, the weights used, the composite, the mapped de
 - **Sector cap:** no single sector > **~30%** of the book.
 - **Cash buffer:** keep **5–15%** paper cash; never go 100% invested.
 - **Swing bucket:** total swing exposure ≤ **15–20%** of the book.
-- **Per-swing risk:** risk ≤ **1–2%** of total portfolio per trade. Stop-loss typically **5–8%** below entry; minimum reward:risk of **2:1**.
+- **Per-swing risk:** risk ≤ **1–2%** of total portfolio per trade. Stop-loss typically **5–8%** below entry; minimum reward:risk of **2:1**. *(Where the OHLC store gives a real **ATR**, prefer a volatility-aware stop — e.g. ~1.5–2× ATR below entry — over a flat %, so the stop respects the name's actual range rather than an arbitrary band.)*
 - **No leverage/margin** in the paper book.
 - **Costs:** when simulating, apply realistic frictions — brokerage commission, plus the ~0.5% NCCPL acquisition-cost adjustment, and remember realized paper gains carry a notional **15% CGT** (so frequent trading visibly drags paper returns; this teaches the cost of over-trading).
 - **Averaging down** is forbidden on a broken thesis. Adding to a *winning, still-valid* thesis is allowed within caps.
