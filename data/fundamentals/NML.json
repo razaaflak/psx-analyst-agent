@@ -1,0 +1,57 @@
+{
+  "symbol": "NML",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-30",
+      "period": "31/03/2026",
+      "period_type": "IIIQ",
+      "consolidated": true,
+      "eps": 18.47,
+      "pat": 7309.057,
+      "pbt": 6601.64
+    },
+    {
+      "announced": "2026-04-30",
+      "period": "31/03/2026",
+      "period_type": "IIIQ",
+      "consolidated": false,
+      "eps": 11.07,
+      "pat": 3892.233,
+      "pbt": 2908.146
+    },
+    {
+      "announced": "2026-03-02",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "consolidated": true,
+      "eps": 15.05,
+      "pat": 5765.529,
+      "pbt": 4499.397
+    },
+    {
+      "announced": "2026-03-02",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "consolidated": false,
+      "eps": 9.52,
+      "pat": 3346.817,
+      "pbt": 2255.298
+    }
+  ],
+  "payouts": [
+    {
+      "announced": "2025-09-30",
+      "period": "30/06/2025",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 20.0,
+      "interim_label": "F",
+      "ex_or_bc": "21/10/2025  - 28/10/2025"
+    }
+  ]
+}

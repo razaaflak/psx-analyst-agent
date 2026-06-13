@@ -1,0 +1,47 @@
+{
+  "symbol": "MLCF",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-22",
+      "period": "31/03/2026",
+      "period_type": "IIIQ",
+      "consolidated": true,
+      "eps": 7.44,
+      "pat": 7795.29,
+      "pbt": 11843.843
+    },
+    {
+      "announced": "2026-04-22",
+      "period": "31/03/2026",
+      "period_type": "IIIQ",
+      "consolidated": false,
+      "eps": 5.81,
+      "pat": 6083.302,
+      "pbt": 9615.58
+    },
+    {
+      "announced": "2026-02-25",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "consolidated": true,
+      "eps": 5.58,
+      "pat": 5846.296,
+      "pbt": 8897.04
+    },
+    {
+      "announced": "2026-02-25",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "consolidated": false,
+      "eps": 4.89,
+      "pat": 5122.575,
+      "pbt": 8172.279
+    }
+  ],
+  "payouts": []
+}

@@ -1,0 +1,38 @@
+{
+  "symbol": "FFL",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-28",
+      "period": "31/03/2026",
+      "period_type": "IQ",
+      "consolidated": true,
+      "eps": 0.12,
+      "pat": 301.589,
+      "pbt": 451.867
+    },
+    {
+      "announced": "2026-04-28",
+      "period": "31/03/2026",
+      "period_type": "IQ",
+      "consolidated": false,
+      "eps": 0.13,
+      "pat": 320.725,
+      "pbt": 470.948
+    },
+    {
+      "announced": "2026-01-27",
+      "period": "31/12/2025",
+      "period_type": "YR",
+      "consolidated": null,
+      "eps": 0.46,
+      "pat": 1154.059,
+      "pbt": 1699.033
+    }
+  ],
+  "payouts": []
+}

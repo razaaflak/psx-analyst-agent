@@ -1,0 +1,57 @@
+{
+  "symbol": "MARI",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-22",
+      "period": "31/03/2026",
+      "period_type": "IIIQ",
+      "consolidated": true,
+      "eps": 41.41,
+      "pat": 49706.475,
+      "pbt": 64245.777
+    },
+    {
+      "announced": "2026-04-22",
+      "period": "31/03/2026",
+      "period_type": "IIIQ",
+      "consolidated": false,
+      "eps": 41.32,
+      "pbt": 64130.747
+    },
+    {
+      "announced": "2026-01-26",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "consolidated": null,
+      "eps": 23.69,
+      "pat": 28440.42,
+      "pbt": 42699.778,
+      "payout_note": "83%(i) (D)"
+    }
+  ],
+  "payouts": [
+    {
+      "announced": "2026-01-26",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "type": "dividend",
+      "pct": 83.0,
+      "interim_label": "i",
+      "ex_or_bc": "03/02/2026  - 05/02/2026"
+    },
+    {
+      "announced": "2025-08-11",
+      "period": "30/06/2025",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 217.0,
+      "interim_label": "F",
+      "ex_or_bc": "22/09/2025  - 26/09/2025"
+    }
+  ]
+}

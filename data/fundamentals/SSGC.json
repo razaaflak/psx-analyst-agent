@@ -1,0 +1,75 @@
+{
+  "symbol": "SSGC",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-29",
+      "period": "31/03/2026",
+      "period_type": "IIIQ",
+      "consolidated": true,
+      "eps": 1.73,
+      "pat": 1526.041,
+      "pbt": 2398.485
+    },
+    {
+      "announced": "2026-04-29",
+      "period": "31/03/2026",
+      "period_type": "IIIQ",
+      "consolidated": false,
+      "eps": 0.2,
+      "pat": 174843.0,
+      "pbt": 174.843
+    },
+    {
+      "announced": "2026-03-02",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "consolidated": false,
+      "eps": 0.33,
+      "pat": 289.754,
+      "pbt": 289.754
+    },
+    {
+      "announced": "2026-03-02",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "consolidated": true,
+      "eps": 1.0,
+      "pat": 1300.201,
+      "pbt": 1957.405
+    },
+    {
+      "announced": "2025-12-22",
+      "period": "30/09/2025",
+      "period_type": "IQ",
+      "consolidated": true,
+      "eps": 0.89,
+      "pat": 785.117,
+      "pbt": 941.951
+    },
+    {
+      "announced": "2025-12-22",
+      "period": "30/09/2025",
+      "period_type": "IQ",
+      "consolidated": false,
+      "eps": 0.31,
+      "pat": 270.979,
+      "pbt": 270.979
+    }
+  ],
+  "payouts": [
+    {
+      "announced": "2025-11-05",
+      "period": "30/06/2025",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 5.0,
+      "interim_label": "F",
+      "ex_or_bc": "20/11/2025  - 27/11/2025"
+    }
+  ]
+}

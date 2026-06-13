@@ -1,6 +1,6 @@
 {
   "_comment": "Stocks the agent watches. Edit freely. 'sector' and 'shariah' help the F and E lenses. 'role' = core (long-term) or swing (satellite). Re-verify Shariah status periodically — it can change.",
-  "last_updated": "2026-06-10",
+  "last_updated": "2026-06-13",
   "watchlist": [
     { "ticker": "MEBL", "name": "Meezan Bank",        "sector": "Banks (Islamic)", "shariah": "compliant",     "role": "core" },
     { "ticker": "MCB",  "name": "MCB Bank",            "sector": "Banks",           "shariah": "non-compliant", "role": "core" },
@@ -9,13 +9,13 @@
     { "ticker": "PPL",  "name": "Pakistan Petroleum",  "sector": "Energy (E&P)",    "shariah": "compliant",     "role": "core" },
     { "ticker": "MARI", "name": "Mari Petroleum",      "sector": "Energy (E&P)",    "shariah": "compliant",     "role": "core" },
     { "ticker": "FFC",  "name": "Fauji Fertilizer",    "sector": "Fertilizer",      "shariah": "compliant",     "role": "core" },
-    { "ticker": "ENGROH","name": "Engro Holdings",     "sector": "Conglomerate",    "shariah": "verify",        "role": "core" },
+    { "ticker": "ENGROH","name": "Engro Holdings",     "sector": "Conglomerate",    "shariah": "compliant",     "role": "core", "shariah_note": "KMI All-Share (Jun-2025 list, data thru Dec-2024); re-check at next filing post-merger — verified 2026-06-13" },
     { "ticker": "LUCK", "name": "Lucky Cement",        "sector": "Cement",          "shariah": "compliant",     "role": "core" },
-    { "ticker": "MTL",   "name": "Millat Tractors",       "sector": "Auto/Industrials","shariah": "verify",        "role": "core" },
+    { "ticker": "MTL",   "name": "Millat Tractors",       "sector": "Auto/Industrials","shariah": "compliant",     "role": "core", "shariah_note": "KMI All-Share (removed from KMI-30 on liquidity, NOT a screen fail); 2:1 split Rs10→Rs5 passed EOGM 2026-06-05 — face value now Rs5 (R-EXP-002). Verified 2026-06-13" },
     { "ticker": "FABL",  "name": "Faysal Bank",           "sector": "Banks (Islamic)", "shariah": "compliant",     "role": "core" },
     { "ticker": "DGKC",  "name": "DG Khan Cement",        "sector": "Cement",          "shariah": "compliant",     "role": "core" },
     { "ticker": "CHCC",  "name": "Cherat Cement",         "sector": "Cement",          "shariah": "compliant",     "role": "core" },
-    { "ticker": "PSO",   "name": "Pakistan State Oil",     "sector": "Energy (OMC)",    "shariah": "verify",        "role": "monitor" },
-    { "ticker": "APL",   "name": "Attock Petroleum",       "sector": "Energy (OMC)",    "shariah": "verify",        "role": "monitor" }
+    { "ticker": "PSO",   "name": "Pakistan State Oil",     "sector": "Energy (OMC)",    "shariah": "compliant",     "role": "monitor", "shariah_note": "BORDERLINE — Al-Meezan-included (excludes non-interest payables from debt test); SECP tightened debt ratio 37→33% Feb-2026, re-verify next recomposition. Verified 2026-06-13" },
+    { "ticker": "APL",   "name": "Attock Petroleum",       "sector": "Energy (OMC)",    "shariah": "compliant",     "role": "monitor", "shariah_note": "KMI All-Share constituent, not in Dec-2025 removed list. Verified 2026-06-13" }
   ]
 }

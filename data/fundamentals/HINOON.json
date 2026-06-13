@@ -1,0 +1,67 @@
+{
+  "symbol": "HINOON",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-29",
+      "period": "31/03/2026",
+      "period_type": "IQ",
+      "consolidated": true,
+      "eps": 19.78,
+      "pat": 1048.084,
+      "pbt": 1948.664
+    },
+    {
+      "announced": "2026-04-29",
+      "period": "31/03/2026",
+      "period_type": "IQ",
+      "consolidated": false,
+      "eps": 18.04,
+      "pat": 955.684,
+      "pbt": 1818.276
+    },
+    {
+      "announced": "2026-04-07",
+      "period": "31/12/2025",
+      "period_type": "YR",
+      "consolidated": true,
+      "eps": 77.92,
+      "pat": 4128.317,
+      "pbt": 6590.714
+    },
+    {
+      "announced": "2026-04-07",
+      "period": "31/12/2025",
+      "period_type": "YR",
+      "consolidated": false,
+      "eps": 77.75,
+      "pat": 4119.312,
+      "pbt": 6584.046,
+      "payout_note": "500%(F) (D)"
+    }
+  ],
+  "payouts": [
+    {
+      "announced": "2026-04-07",
+      "period": "31/12/2025",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 500.0,
+      "interim_label": "F",
+      "ex_or_bc": "23/04/2026  - 30/04/2026"
+    },
+    {
+      "announced": "2025-03-26",
+      "period": "31/12/2024",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 400.0,
+      "interim_label": "F",
+      "ex_or_bc": "22/04/2025  - 29/04/2025"
+    }
+  ]
+}

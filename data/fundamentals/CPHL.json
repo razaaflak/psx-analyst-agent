@@ -1,0 +1,39 @@
+{
+  "symbol": "CPHL",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-30",
+      "period": "31/03/2026",
+      "period_type": "IIIQ",
+      "consolidated": null,
+      "eps": 3.87,
+      "pat": 883.44,
+      "pbt": 1352.416
+    },
+    {
+      "announced": "2026-02-13",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "consolidated": null,
+      "eps": 2.66,
+      "pat": 608.025,
+      "pbt": 1025.971
+    }
+  ],
+  "payouts": [
+    {
+      "announced": "2025-10-02",
+      "period": "30/06/2025",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 35.0,
+      "interim_label": "F",
+      "ex_or_bc": "21/10/2025  - 27/10/2025"
+    }
+  ]
+}

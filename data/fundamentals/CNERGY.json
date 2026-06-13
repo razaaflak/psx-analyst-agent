@@ -1,0 +1,47 @@
+{
+  "symbol": "CNERGY",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-29",
+      "period": "31/03/2026",
+      "period_type": "IIIQ",
+      "consolidated": true,
+      "eps": 3.11,
+      "pat": 17103.337,
+      "pbt": 22830.182
+    },
+    {
+      "announced": "2026-04-29",
+      "period": "31/03/2026",
+      "period_type": "IIIQ",
+      "consolidated": false,
+      "eps": 3.22,
+      "pat": 17707.986,
+      "pbt": 23510.777
+    },
+    {
+      "announced": "2026-02-25",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "consolidated": true,
+      "eps": 0.5,
+      "pat": 2750.579,
+      "pbt": 4156.793
+    },
+    {
+      "announced": "2026-02-25",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "consolidated": false,
+      "eps": 0.54,
+      "pat": 2967.156,
+      "pbt": 4425.777
+    }
+  ],
+  "payouts": []
+}

@@ -1,0 +1,49 @@
+{
+  "symbol": "HCAR",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-05-19",
+      "period": "31/06/2026",
+      "period_type": "YR",
+      "consolidated": null,
+      "eps": 22.4,
+      "pat": 3233.703,
+      "pbt": 5088.232,
+      "payout_note": "90%(F) (D)"
+    },
+    {
+      "announced": "2026-01-27",
+      "period": "31/12/2025",
+      "period_type": "IIIQ",
+      "consolidated": null,
+      "eps": 15.59,
+      "pat": 2226.082,
+      "pbt": 3785.734
+    }
+  ],
+  "payouts": [
+    {
+      "announced": "2026-05-19",
+      "period": "31/06/2026",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 90.0,
+      "interim_label": "F",
+      "ex_or_bc": "16/06/2026  - 29/06/2026"
+    },
+    {
+      "announced": "2025-05-23",
+      "period": "31/03/2025",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 80.0,
+      "interim_label": "F",
+      "ex_or_bc": "12/06/2025  - 24/06/2025"
+    }
+  ]
+}

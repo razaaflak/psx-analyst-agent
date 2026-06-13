@@ -1,0 +1,49 @@
+{
+  "symbol": "ATLH",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-30",
+      "period": "31/03/2026",
+      "period_type": "YR",
+      "consolidated": null,
+      "eps": 170.21,
+      "pat": 21120.458,
+      "pbt": 34405.15,
+      "payout_note": "560%(F) (D)"
+    },
+    {
+      "announced": "2026-01-29",
+      "period": "31/12/2025",
+      "period_type": "IIIQ",
+      "consolidated": null,
+      "eps": 122.93,
+      "pat": 15253.852,
+      "pbt": 24725.99
+    }
+  ],
+  "payouts": [
+    {
+      "announced": "2026-04-30",
+      "period": "31/03/2026",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 560.0,
+      "interim_label": "F",
+      "ex_or_bc": "16/06/2026  - 29/06/2026"
+    },
+    {
+      "announced": "2025-10-30",
+      "period": "30/09/2025",
+      "period_type": "HYR",
+      "type": "dividend",
+      "pct": 460.0,
+      "interim_label": "i",
+      "ex_or_bc": "13/11/2025  - 14/11/2025"
+    }
+  ]
+}

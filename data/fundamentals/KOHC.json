@@ -1,0 +1,47 @@
+{
+  "symbol": "KOHC",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-23",
+      "period": "31/03/2026",
+      "period_type": "IIIQ",
+      "consolidated": true,
+      "eps": 8.06,
+      "pat": 7411.532,
+      "pbt": 11382.744
+    },
+    {
+      "announced": "2026-04-23",
+      "period": "31/03/2026",
+      "period_type": "IIIQ",
+      "consolidated": false,
+      "eps": 8.06,
+      "pat": 7410.014,
+      "pbt": 11381.226
+    },
+    {
+      "announced": "2026-02-25",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "consolidated": true,
+      "eps": 6.03,
+      "pat": 5540.826,
+      "pbt": 4882.496
+    },
+    {
+      "announced": "2026-02-25",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "consolidated": false,
+      "eps": 6.03,
+      "pat": 5539.714,
+      "pbt": 8481.354
+    }
+  ],
+  "payouts": []
+}

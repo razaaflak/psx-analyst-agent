@@ -1,0 +1,29 @@
+{
+  "symbol": "TRG",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-29",
+      "period": "31/03/2026",
+      "period_type": "IIIQ",
+      "consolidated": null,
+      "eps": -8.65,
+      "pat": -4718.046,
+      "pbt": -5489.333
+    },
+    {
+      "announced": "2026-03-04",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "consolidated": null,
+      "eps": 7.79,
+      "pat": 4246.443,
+      "pbt": 5043.844
+    }
+  ],
+  "payouts": []
+}

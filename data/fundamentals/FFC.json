@@ -1,0 +1,103 @@
+{
+  "symbol": "FFC",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-29",
+      "period": "31/03/2026",
+      "period_type": "IQ",
+      "consolidated": true,
+      "eps": 13.62,
+      "pat": 19964.711,
+      "pbt": 30307.812
+    },
+    {
+      "announced": "2026-04-29",
+      "period": "31/03/2026",
+      "period_type": "IQ",
+      "consolidated": false,
+      "eps": 12.14,
+      "pat": 17476.826,
+      "pbt": 27755.724,
+      "payout_note": "85%(i) (D)"
+    },
+    {
+      "announced": "2026-01-29",
+      "period": "31/12/2025",
+      "period_type": "YR",
+      "consolidated": true,
+      "eps": 58.44,
+      "pbt": 136181.769
+    },
+    {
+      "announced": "2026-01-29",
+      "period": "31/12/2025",
+      "period_type": "YR",
+      "consolidated": false,
+      "eps": 51.69,
+      "pat": 73564.267,
+      "pbt": 120855.68,
+      "payout_note": "85%(F) (D)"
+    }
+  ],
+  "payouts": [
+    {
+      "announced": "2026-04-29",
+      "period": "31/03/2026",
+      "period_type": "IQ",
+      "type": "dividend",
+      "pct": 85.0,
+      "interim_label": "i",
+      "ex_or_bc": "12/05/2026  - 14/05/2026"
+    },
+    {
+      "announced": "2026-01-29",
+      "period": "31/12/2025",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 85.0,
+      "interim_label": "F",
+      "ex_or_bc": "09/03/2026  - 16/03/2026"
+    },
+    {
+      "announced": "2025-10-23",
+      "period": "30/09/2025",
+      "period_type": "IIIQ",
+      "type": "dividend",
+      "pct": 95.0,
+      "interim_label": "iii",
+      "ex_or_bc": "05/11/2025  - 07/11/2025"
+    },
+    {
+      "announced": "2025-07-29",
+      "period": "30/06/2025",
+      "period_type": "HYR",
+      "type": "dividend",
+      "pct": 120.0,
+      "interim_label": "ii",
+      "ex_or_bc": "11/08/2025  - 13/08/2025"
+    },
+    {
+      "announced": "2025-04-28",
+      "period": "31/03/2025",
+      "period_type": "IQ",
+      "type": "dividend",
+      "pct": 70.0,
+      "interim_label": "i",
+      "ex_or_bc": "11/05/2025  - 13/05/2025"
+    },
+    {
+      "announced": "2025-01-29",
+      "period": "31/12/2024",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 210.0,
+      "interim_label": "F",
+      "ex_or_bc": "23/03/2025  - 25/03/2025"
+    }
+  ]
+}

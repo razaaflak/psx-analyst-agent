@@ -1,0 +1,29 @@
+{
+  "symbol": "PAEL",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-29",
+      "period": "31/03/2026",
+      "period_type": "IQ",
+      "consolidated": null,
+      "eps": 0.94,
+      "pat": 870.235,
+      "pbt": 1522.471
+    },
+    {
+      "announced": "2026-03-16",
+      "period": "31/12/2025",
+      "period_type": "YR",
+      "consolidated": null,
+      "eps": 4.24,
+      "pat": 3846.675,
+      "pbt": 6036.452
+    }
+  ],
+  "payouts": []
+}

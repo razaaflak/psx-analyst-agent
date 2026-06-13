@@ -1,0 +1,47 @@
+{
+  "symbol": "PTC",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-21",
+      "period": "31/03/2026",
+      "period_type": "IQ",
+      "consolidated": true,
+      "eps": 0.6,
+      "pat": 3066.038,
+      "pbt": 5190.012
+    },
+    {
+      "announced": "2026-04-21",
+      "period": "31/03/2026",
+      "period_type": "IQ",
+      "consolidated": false,
+      "eps": 0.18,
+      "pat": 902.854,
+      "pbt": 1555.742
+    },
+    {
+      "announced": "2026-02-24",
+      "period": "31/12/2025",
+      "period_type": "YR",
+      "consolidated": true,
+      "eps": -1.91,
+      "pat": -9746.117,
+      "pbt": -14812.251
+    },
+    {
+      "announced": "2026-02-24",
+      "period": "31/12/2025",
+      "period_type": "YR",
+      "consolidated": false,
+      "eps": 0.27,
+      "pat": 1382.254,
+      "pbt": 6201.834
+    }
+  ],
+  "payouts": []
+}

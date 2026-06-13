@@ -1,0 +1,39 @@
+{
+  "symbol": "FCCL",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-24",
+      "period": "31/03/2026",
+      "period_type": "IIIQ",
+      "consolidated": null,
+      "eps": 4.39,
+      "pat": 10775.701,
+      "pbt": 17514.467
+    },
+    {
+      "announced": "2026-02-25",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "consolidated": null,
+      "eps": 2.98,
+      "pat": 7316.529,
+      "pbt": 11513.796
+    }
+  ],
+  "payouts": [
+    {
+      "announced": "2025-08-11",
+      "period": "30/06/2025",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 12.5,
+      "interim_label": "F",
+      "ex_or_bc": "24/09/2025  - 30/09/2025"
+    }
+  ]
+}

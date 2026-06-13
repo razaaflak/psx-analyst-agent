@@ -8,9 +8,10 @@ This file is the **learned overlay** on top of the base method in `SKILL.md`. Th
 ---
 
 ## Tier legend & status board
-- Last full review: **2026-06-12 (Run #4)**
-- Active rules: 4 Core (seed), 0 Provisional, 4 Experimental
-- Current lens weights (core): F 0.40 / T 0.35 / E 0.25 — only change via Core-tier evidence, ±0.05 steps.
+- Last full review: **2026-06-13 (Weekly review + backtest run)**
+- Active rules: 4 Core (seed), 0 Provisional, 5 Experimental
+- Current lens weights (core): F 0.40 / T 0.35 / E 0.25 — UNCHANGED (no Core-tier out-of-sample evidence yet; only 2 graded predictions P-003/P-006, both HIT — far below promotion sample).
+- Graded so far: 2 (P-003 HIT, P-006 HIT) → 2/2 = 100% but n far too small to mean anything. No promotions.
 
 ---
 
@@ -63,7 +64,7 @@ This file is the **learned overlay** on top of the base method in `SKILL.md`. Th
 - Trigger (if): any payout expressed as a percentage (e.g. "160% dividend")
 - Action (then): verify face value (PKR 5 or PKR 10 or other) from annual report before converting to PKR/share; do not assume PKR 10
 - Causal story: UBL split each Rs10 share into two Rs5 shares in June 2025. "160% of Rs5 = Rs8" not "160% of Rs10 = Rs16". Assuming PKR 10 doubles the apparent DPS and yield, triggering false R-003 alerts.
-- Evidence: 1 observation (2026-06-09 UBL false alarm caught by cross-check). Apply immediately as data hygiene rule.
+- Evidence: 2 observations. (1) 2026-06-09 UBL false alarm caught by cross-check. (2) 2026-06-13: MTL 2:1 split (Rs10→Rs5 face value) PASSED at EOGM 2026-06-05 — confirmed via filings. MTL face value is now Rs5; any future MTL % -payout→DPS conversion MUST use Rs5, not Rs10. Apply immediately as data hygiene rule.
 
 ### R-EXP-003 [Tier: Experimental]
 - Created: 2026-06-11 | Last reviewed: 2026-06-11
@@ -80,6 +81,14 @@ This file is the **learned overlay** on top of the base method in `SKILL.md`. Th
 - Action (then): none yet — this is a MEASUREMENT rule. Tag the prediction; do not change weights.
 - Causal story: if true, macro context improves timing/risk calls; if false, news adds noise and should be dropped.
 - Evidence: 0 graded. Per SKILL.md Part G §5 (measure-or-retire): after ~20–30 graded, compare with-news vs without-news hit-rate. If news-tagged ≤ baseline, RETIRE the news layer. This rule enforces that honesty.
+
+### R-EXP-005 [Tier: Experimental]
+- Created: 2026-06-13 | Last reviewed: 2026-06-13
+- Hypothesis: RSI14 < 30 in a **bear-regime market** (KSE100 close < KSE100 MA50) → positive return over the next 10 bars. The regime filter is essential — the same signal in a bull regime collapses.
+- Trigger (if): individual stock RSI14 < 30 AND KSE100 is below its own MA50 at signal time
+- Action (then): tilt T +1 for an oversold name; increase position sizing conviction slightly vs unconditional RSI signals. Still require F+E alignment before acting.
+- Causal story: oversold in a bear market = capitulation selling exhaustion. Market already in downtrend → sellers have been active longer → bounce when they run out is more reliable. Oversold in a bull market = a minor dip that can keep dipping.
+- Evidence: 0 live observations. **Backtest-validated pre-tier**: 74.1% holdout hit-rate (n=54 holdout signals, n=178 total), 5yr/101-symbol backfill, 70/30 chronological split. Bear-regime filter (KSE100<MA50) vs unconditional: +26pp holdout improvement (47.8%→74.1%). See `reports/backtests/condition_search_2026-06-13.json`. Live forward observations required before Provisional.
 
 ### R-EXP-001 [Tier: Experimental]
 - Created: 2026-06-09 | Last reviewed: 2026-06-09
@@ -115,3 +124,12 @@ This file is the **learned overlay** on top of the base method in `SKILL.md`. Th
 | 2026-06-12 | R-EXP-003 obs → 2 (non-confirming regime) | Oil regime flipped to *slump*; E&P lagged index (avg +0.89% vs +1.59%). Oil→E&P looks necessary-not-sufficient. P-014 tests inverse. |
 | 2026-06-12 | R-EXP-002 live trigger noted | MTL filed book-closure for a share sub-division (split) — re-verify face value before any future MTL DPS/yield calc. |
 | 2026-06-12 | No trades (R-004 budget event-risk) | Budget FY26-27 imminent + several names RSI-overbought post +1.59% rally → HOLD all, hold cash. Book flipped to cum +0.49%. |
+| 2026-06-13 | **P-006 graded HIT** | MEBL cum +4.05% vs KSE-100 +1.22% over 06-10/11/12 (+2.84pp). R-001 + R-EXP-001 both consistent. 2nd graded prediction, 2nd HIT. No promotion (n=2, need ≥20 for Core out-of-sample). |
+| 2026-06-13 | R-EXP-001 — no new formal obs | P-006 (MEBL-vs-index) leans on R-EXP-001 but is NOT the direct Islamic-vs-conventional test; P-011 is (grades 06-16). Obs count stays 3 to keep it honest (direct observations only). |
+| 2026-06-13 | R-EXP-003 — regime note (no new graded obs) | Brent fell further to ~$88-89 (2mo low, Mideast de-escalation). Falling-oil regime persists → E&P headwind. P-014 (inverse test) grades 06-16. Still 0 decision weight. |
+| 2026-06-13 | R-EXP-002 — LIVE | MTL 2:1 split (Rs10→Rs5) PASSED at EOGM 2026-06-05. MTL face value now Rs5 — any future MTL DPS/yield calc must use Rs5. Hygiene rule applied. |
+| 2026-06-13 | R-004 — flagged LIVE for week ahead | **SBP MPC Mon 2026-06-15** (final FY26 meeting; 49/49 hold-vs-hike split; May CPI 11.7% 23-mo high → real hike risk) + Finance Bill passage by 06-30. Binary event inside horizon of P-010/011/012/013/014 (grade 06-15/16). Reduce conviction ~30%, hold cash, no new swing entries pre-MPC. |
+| 2026-06-13 | BUDGET overlay (no rule change) | FY27 budget verified: super-tax cut EXCLUDES banks/oil-gas/fertiliser → no relief for E&P (OGDC/PPL) or FFC/ENGROH; cement gets construction-WHT cut + infra demand (DGKC/CHCC budget winners); IT/exporters (SYS/NML, not held) winners. Recorded as E-lens modifier (Part G), NOT a new rule — single event, no track record. See [[project_fy27_budget]]. |
+| 2026-06-13 | Lens weights unchanged | F 0.40/T 0.35/E 0.25 held. No Core-tier evidence to justify a ±0.05 step. |
+| 2026-06-13 | **First 5yr backtest run** — 101 symbols, 70/30 split | Results: `golden_cross` weak/mixed (n=40, holdout 58.3% but only 12 holdout signals — too small); `rsi_oversold_bounce` FAILS holdout (52.8% → 47.8%); `volume_breakout_followthrough` FAILS (48.6% flat); `near_52w_high_momentum` FAILS (45.7% → 44.4%); `rsi_overbought_chase` FAILS (44.0% → 44.6%). `islamic_vs_conventional_banks` n<30, insufficient. **No rule awarded backtest-validated tier.** All T-lens rules remain Experimental. Baseline: all rules coin-flip level unconditionally. Full results: `reports/backtests/backtest_2026-06-13.json`. |
+| 2026-06-13 | **Condition-search on rsi_oversold_bounce** | 5 variants tested. Key finding: `rsi_oversold_bear_regime` (RSI<30 AND KSE100<MA50) = **74.1% holdout hit-rate (n=54)**. Causal story: oversold bounces during confirmed market downtrends (bear regime) are capitulation bounces — more reliable because the selling is exhaustion-driven, not part of a grinding uptrend correction. Bull-regime variant collapses to 25% holdout — confirms the edge is regime-specific. Liquidity filter alone doesn't help (45.7% holdout). **Action: add `rsi_oversold_bear_regime` as new Experimental rule R-EXP-005.** Monitor via live predictions before promoting. Full results: `reports/backtests/condition_search_2026-06-13.json`. |

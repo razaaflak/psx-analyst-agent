@@ -1,0 +1,57 @@
+{
+  "symbol": "PSO",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-29",
+      "period": "31/03/2026",
+      "period_type": "IIIQ",
+      "consolidated": true,
+      "eps": 83.93,
+      "pat": 40165.093,
+      "pbt": 95903.901
+    },
+    {
+      "announced": "2026-04-29",
+      "period": "31/03/2026",
+      "period_type": "IIIQ",
+      "consolidated": false,
+      "eps": 81.19,
+      "pat": 38118.189,
+      "pbt": 85905.895
+    },
+    {
+      "announced": "2026-02-17",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "consolidated": true,
+      "eps": 12.66,
+      "pat": 16196.706,
+      "pbt": 28122.63
+    },
+    {
+      "announced": "2026-02-17",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "consolidated": false,
+      "eps": 25.82,
+      "pat": 12123.632,
+      "pbt": 23069.188
+    }
+  ],
+  "payouts": [
+    {
+      "announced": "2025-08-19",
+      "period": "30/06/2025",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 100.0,
+      "interim_label": "F",
+      "ex_or_bc": "17/10/2025  - 24/10/2025"
+    }
+  ]
+}

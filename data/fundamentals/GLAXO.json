@@ -1,0 +1,58 @@
+{
+  "symbol": "GLAXO",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-28",
+      "period": "31/03/2026",
+      "period_type": "IQ",
+      "consolidated": null,
+      "eps": 8.2,
+      "pat": 2610.704,
+      "pbt": 4288.004
+    },
+    {
+      "announced": "2026-03-26",
+      "period": "31/12/2025",
+      "period_type": "YR",
+      "consolidated": null,
+      "eps": 31.48,
+      "pat": 10025.315,
+      "pbt": 16683.099,
+      "payout_note": "120%(F) (D)"
+    }
+  ],
+  "payouts": [
+    {
+      "announced": "2026-03-26",
+      "period": "31/12/2025",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 120.0,
+      "interim_label": "F",
+      "ex_or_bc": "23/04/2026  - 30/04/2026"
+    },
+    {
+      "announced": "2025-08-26",
+      "period": "30/06/2025",
+      "period_type": "HYR",
+      "type": "dividend",
+      "pct": 50.0,
+      "interim_label": "i",
+      "ex_or_bc": "09/09/2025  - 11/09/2025"
+    },
+    {
+      "announced": "2025-03-24",
+      "period": "31/12/2024",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 100.0,
+      "interim_label": "F",
+      "ex_or_bc": "22/04/2025  - 28/04/2025"
+    }
+  ]
+}

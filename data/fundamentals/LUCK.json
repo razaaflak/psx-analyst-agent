@@ -1,0 +1,57 @@
+{
+  "symbol": "LUCK",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-30",
+      "period": "31/03/2026",
+      "period_type": "IIIQ",
+      "consolidated": true,
+      "eps": 43.47,
+      "pat": 68470.971,
+      "pbt": 83492.585
+    },
+    {
+      "announced": "2026-04-30",
+      "period": "31/03/2026",
+      "period_type": "IIIQ",
+      "consolidated": false,
+      "eps": 25.07,
+      "pat": 36731.781,
+      "pbt": 47745.785
+    },
+    {
+      "announced": "2026-01-28",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "consolidated": true,
+      "eps": 30.45,
+      "pat": 48031.066,
+      "pbt": 59491.758
+    },
+    {
+      "announced": "2026-01-28",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "consolidated": false,
+      "eps": 15.86,
+      "pat": 23242.119,
+      "pbt": 31324.53
+    }
+  ],
+  "payouts": [
+    {
+      "announced": "2025-08-11",
+      "period": "30/06/2025",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 200.0,
+      "interim_label": "F",
+      "ex_or_bc": "19/09/2025  - 26/09/2025"
+    }
+  ]
+}

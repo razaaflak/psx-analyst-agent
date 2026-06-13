@@ -1,0 +1,29 @@
+{
+  "symbol": "FHAM",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-29",
+      "period": "31/03/2026",
+      "period_type": "IIIQ",
+      "consolidated": null,
+      "eps": 5.31,
+      "pat": 589.042,
+      "pbt": 917.433
+    },
+    {
+      "announced": "2026-02-16",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "consolidated": null,
+      "eps": 3.44,
+      "pat": 380.775,
+      "pbt": 599.785
+    }
+  ],
+  "payouts": []
+}

@@ -16,7 +16,9 @@ Schema:  [{"date":"2026-06-12","open":198.9,"high":208.9,"low":197.8,"close":206
 
 Usage:
   python scripts/collect_ohlc.py --backfill --months 12   # last N calendar months
+  python scripts/collect_ohlc.py --backfill --years 5     # last N years (= years*12 months)
   python scripts/collect_ohlc.py --update                 # current month only (idempotent)
+  python scripts/collect_ohlc.py --backfill --years 5 --universe   # KSE-100 universe from data/universe.json
 """
 
 import argparse
@@ -45,6 +47,7 @@ except Exception:
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DATA_OHLC_DIR = REPO_ROOT / "data" / "ohlc"
 WATCHLIST_PATH = REPO_ROOT / "data" / "watchlist.json"
+UNIVERSE_PATH = REPO_ROOT / "data" / "universe.json"
 
 HISTORICAL_URL = "https://dps.psx.com.pk/historical"
 
@@ -78,6 +81,31 @@ def load_symbols() -> list[str]:
 
     if "KSE100" not in symbols:
         symbols.append("KSE100")
+    return symbols
+
+
+def load_universe_symbols() -> list[str]:
+    """Load symbols from data/universe.json (KSE-100 constituents) + KSE100 index.
+
+    Watchlist tickers are merged in too, so the watchlist never silently
+    loses coverage if a name drops out of the index.
+    """
+    if not UNIVERSE_PATH.exists():
+        print(f"[symbols] ERROR: {UNIVERSE_PATH} not found — run the universe fetch first "
+              f"or omit --universe to use the watchlist.")
+        sys.exit(1)
+    with open(UNIVERSE_PATH, "r", encoding="utf-8") as f:
+        uni = json.load(f)
+    symbols = []
+    for item in uni.get("symbols", []):
+        t = item.get("ticker", "").strip().upper()
+        if t and t not in symbols:
+            symbols.append(t)
+    print(f"[symbols] loaded {len(symbols)} tickers from universe.json")
+    # merge watchlist (in case a watched name isn't an index member)
+    for t in load_symbols():
+        if t not in symbols:
+            symbols.append(t)
     return symbols
 
 # ---------------------------------------------------------------------------
@@ -228,7 +256,7 @@ def merge_bars(existing: dict[str, dict], new_bars: list[dict]) -> dict[str, dic
 # Main runners
 # ---------------------------------------------------------------------------
 
-def run_backfill(symbols: list[str], n_months: int) -> None:
+def run_backfill(symbols: list[str], n_months: int, skip_existing: bool = True) -> None:
     month_list = months_to_fetch(n_months)
     print(f"\n[backfill] {len(symbols)} symbols × {len(month_list)} months "
           f"({month_list[0][1]}-{month_list[0][0]:02d} → {month_list[-1][1]}-{month_list[-1][0]:02d})\n")
@@ -241,6 +269,22 @@ def run_backfill(symbols: list[str], n_months: int) -> None:
 
     for sym in symbols:
         path = DATA_OHLC_DIR / f"{sym}.json"
+
+        # Skip symbols that already have a full backfill (≥ n_months * 15 bars as heuristic)
+        if skip_existing and path.exists():
+            existing_check = load_existing(path)
+            min_expected = n_months * 15  # conservative: 15 trading days/month avg
+            if len(existing_check) >= min_expected:
+                print(f"  {sym}: skip (already {len(existing_check)} bars)")
+                bars_sorted = sorted(existing_check.values(), key=lambda b: b["date"])
+                summary.append({
+                    "symbol": sym, "bar_count": len(bars_sorted),
+                    "first_date": bars_sorted[0]["date"] if bars_sorted else "N/A",
+                    "last_date": bars_sorted[-1]["date"] if bars_sorted else "N/A",
+                    "status": "skipped",
+                })
+                continue
+
         existing = load_existing(path)
         total_new = 0
 
@@ -354,12 +398,35 @@ def main() -> None:
         "--months", type=int, default=12,
         help="Number of calendar months to backfill (default: 12)"
     )
+    parser.add_argument(
+        "--years", type=int, default=None,
+        help="Backfill N years (overrides --months; = N*12 months)"
+    )
+    parser.add_argument(
+        "--universe", action="store_true",
+        help="Use data/universe.json (KSE-100 constituents) instead of watchlist.json"
+    )
+    parser.add_argument(
+        "--symbols", type=str, default=None,
+        help="Comma-separated ticker list, e.g. HBL,NBP,UBL (overrides --universe/watchlist)"
+    )
+    parser.add_argument(
+        "--force", action="store_true",
+        help="Re-fetch all symbols even if they already have data (disables skip-if-exists)"
+    )
     args = parser.parse_args()
 
-    symbols = load_symbols()
+    if args.symbols:
+        symbols = [s.strip().upper() for s in args.symbols.split(",") if s.strip()]
+        print(f"[symbols] from --symbols arg: {len(symbols)} tickers")
+    elif args.universe:
+        symbols = load_universe_symbols()
+    else:
+        symbols = load_symbols()
+    n_months = args.years * 12 if args.years else args.months
 
     if args.backfill:
-        run_backfill(symbols, args.months)
+        run_backfill(symbols, n_months, skip_existing=not args.force)
     elif args.update:
         run_update(symbols)
 

@@ -1,0 +1,39 @@
+{
+  "symbol": "GHNI",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-17",
+      "period": "31/03/2026",
+      "period_type": "IIIQ",
+      "consolidated": null,
+      "eps": 123.68,
+      "pat": 5265.504,
+      "pbt": 8458.896
+    },
+    {
+      "announced": "2026-02-18",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "consolidated": null,
+      "eps": 64.32,
+      "pat": 2744.974,
+      "pbt": 4737.622
+    }
+  ],
+  "payouts": [
+    {
+      "announced": "2025-09-29",
+      "period": "30/06/2025",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 100.0,
+      "interim_label": "F",
+      "ex_or_bc": "17/10/2025  - 25/10/2025"
+    }
+  ]
+}

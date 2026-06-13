@@ -1,0 +1,47 @@
+{
+  "symbol": "ENGROH",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-27",
+      "period": "31/03/2026",
+      "period_type": "IQ",
+      "consolidated": true,
+      "eps": 8.5,
+      "pat": 15927.653,
+      "pbt": 19677.05
+    },
+    {
+      "announced": "2026-04-27",
+      "period": "31/03/2026",
+      "period_type": "IQ",
+      "consolidated": false,
+      "eps": -0.09,
+      "pat": -110.405,
+      "pbt": -109.939
+    },
+    {
+      "announced": "2026-03-02",
+      "period": "31/12/2025",
+      "period_type": "YR",
+      "consolidated": true,
+      "eps": 46.2,
+      "pat": 107030.65,
+      "pbt": 130988.271
+    },
+    {
+      "announced": "2026-03-02",
+      "period": "31/12/2025",
+      "period_type": "YR",
+      "consolidated": null,
+      "eps": 0.21,
+      "pat": 253.154,
+      "pbt": 254.478
+    }
+  ],
+  "payouts": []
+}

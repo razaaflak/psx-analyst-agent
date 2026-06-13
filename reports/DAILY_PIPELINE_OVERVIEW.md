@@ -52,34 +52,14 @@ If this stage fails, the entire pipeline stops safely (never fabricates data).
 
 ```mermaid
 graph LR
-  subgraph DataSources
-    A[PSX Data Portal]
-    B[PSX Announcements]
-    C[Business News]
-    D[SBP Policy]
-  end
-
-  subgraph CollectionTools
-    E[Playwright Browser]
-    F[Extract Tables]
-    G[Parse JSON Feeds]
-  end
-
-  subgraph TodaysData
-    H[KSE100 Index]
-    I[Stock OHLC and Volume]
-    J[Fundamentals]
-    K[News and Events]
-  end
-
-  A --> E
-  B --> E
-  C --> F
-  D --> G
-  E --> H
-  F --> I
-  G --> J
-  F --> K
+  A[PSX Data Portal] --> E[Playwright Browser]
+  B[PSX Announcements] --> E
+  C[Business News] --> F[Extract Tables]
+  D[SBP Policy] --> G[Parse JSON Feeds]
+  E --> H[KSE100 Index]
+  F --> I[Stock OHLC and Volume]
+  G --> J[Fundamentals]
+  F --> K[News and Events]
 ```
 
 **What's collected (per stock on the watchlist + current holdings):**
@@ -551,9 +531,9 @@ graph LR
   A[Issue Prediction] --> B[Wait 1 to 10 Days]
   B --> C[Prediction Matures]
   C --> D[Compare Actual vs Forecast]
-  D --> E{HIT or MISS?}
-  E -->|HIT| F[Increase Rule Evidence]
-  E -->|MISS| G[Investigate Why]
+  D --> E{Hit or Miss}
+  E -->|Hit| F[Increase Rule Evidence]
+  E -->|Miss| G[Investigate Why]
   F --> H[Promote Rule If Ready]
   G --> I[Adjust Rule If Needed]
   H --> J[Rules Library Improves]
@@ -598,48 +578,22 @@ July: Ongoing testing
 
 ```mermaid
 graph TB
-  subgraph InputData
-    A[KSE100 Index]
-    B[Stock Quotes]
-    C[Corporate Announcements]
-    D[Macro News]
-  end
+  A[KSE100 Index] --> E[Scrape]
+  B[Stock Quotes] --> E
+  C[Corporate Announcements] --> E
+  D[Macro News] --> E
 
-  subgraph Processing
-    E[Scrape]
-    F[Grade]
-    G[Learn]
-    H[Analyze and Decide]
-  end
+  E --> F[Grade]
+  F --> G[Learn]
+  G --> H[Analyze and Decide]
 
-  subgraph StorageFiles
-    I[portfolio json]
-    J[predictions log csv]
-    K[trade ledger csv]
-    L[rolling stats json]
-    M[rules library md]
-  end
-
-  subgraph Outputs
-    N[Daily Brief]
-    O[Trading Decisions]
-    P[Predictions]
-    Q[Journal Entry]
-    R[Performance Report]
-  end
-
-  A --> E
-  B --> E
-  C --> E
-  D --> E
-
-  E --> F
-  F --> G
-  G --> H
-
-  J --> F
-  M --> G
-  L --> H
+  I[portfolio json] --> N[Daily Brief]
+  J[predictions log csv] --> F
+  J --> N
+  K[trade ledger csv] --> N
+  L[rolling stats json] --> H
+  L --> N
+  M[rules library md] --> G
 
   E --> I
   E --> J
@@ -649,15 +603,10 @@ graph TB
   F --> L
   G --> M
 
-  I --> N
-  J --> N
-  K --> N
-  L --> N
-
-  H --> O
-  H --> P
-  H --> Q
-  L --> R
+  H --> O[Trading Decisions]
+  H --> P[Predictions]
+  H --> Q[Journal Entry]
+  L --> R[Performance Report]
 ```
 
 ---

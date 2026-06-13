@@ -1,0 +1,30 @@
+{
+  "symbol": "SSOM",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-03-05",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "consolidated": null,
+      "eps": 67.64,
+      "pat": 382.73,
+      "pbt": 545.174
+    }
+  ],
+  "payouts": [
+    {
+      "announced": "2025-10-06",
+      "period": "30/06/2025",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 50.0,
+      "interim_label": "F",
+      "ex_or_bc": "22/10/2025  - 28/10/2025"
+    }
+  ]
+}

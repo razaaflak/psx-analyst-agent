@@ -1,0 +1,47 @@
+{
+  "symbol": "MEHT",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-30",
+      "period": "31/03/2026",
+      "period_type": "IIIQ",
+      "consolidated": true,
+      "eps": 20.58,
+      "pat": 617.351,
+      "pbt": 1107.736
+    },
+    {
+      "announced": "2026-04-30",
+      "period": "31/03/2026",
+      "period_type": "IIIQ",
+      "consolidated": false,
+      "eps": 20.58,
+      "pat": 617.351,
+      "pbt": 1107.736
+    },
+    {
+      "announced": "2026-03-03",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "consolidated": true,
+      "eps": 17.18,
+      "pat": 515.421,
+      "pbt": 520.407
+    },
+    {
+      "announced": "2026-03-03",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "consolidated": false,
+      "eps": 14.16,
+      "pat": 424.937,
+      "pbt": 429.923
+    }
+  ],
+  "payouts": []
+}

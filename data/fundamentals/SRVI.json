@@ -1,0 +1,67 @@
+{
+  "symbol": "SRVI",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-29",
+      "period": "31/03/2026",
+      "period_type": "IQ",
+      "consolidated": true,
+      "eps": 64.17,
+      "pat": 5048.864,
+      "pbt": 5955.396
+    },
+    {
+      "announced": "2026-04-29",
+      "period": "31/03/2026",
+      "period_type": "IQ",
+      "consolidated": false,
+      "eps": 11.33,
+      "pat": 532.306,
+      "pbt": 623.334
+    },
+    {
+      "announced": "2026-03-18",
+      "period": "31/12/2025",
+      "period_type": "YR",
+      "consolidated": true,
+      "eps": 186.35,
+      "pat": 15601.292,
+      "pbt": 14019.47
+    },
+    {
+      "announced": "2026-03-18",
+      "period": "31/12/2025",
+      "period_type": "YR",
+      "consolidated": false,
+      "eps": 15.12,
+      "pat": 710.729,
+      "pbt": 1229.051,
+      "payout_note": "175%(F) (D)"
+    }
+  ],
+  "payouts": [
+    {
+      "announced": "2026-03-18",
+      "period": "31/12/2025",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 175.0,
+      "interim_label": "F",
+      "ex_or_bc": "23/04/2026  - 29/04/2026"
+    },
+    {
+      "announced": "2025-03-26",
+      "period": "31/12/2024",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 150.0,
+      "interim_label": "F",
+      "ex_or_bc": "22/04/2025  - 28/04/2025"
+    }
+  ]
+}

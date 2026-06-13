@@ -1,0 +1,20 @@
+{
+  "symbol": "HGFA",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [],
+  "payouts": [
+    {
+      "announced": "2025-06-30",
+      "period": "-",
+      "period_type": "",
+      "type": "dividend",
+      "pct": 10.5,
+      "interim_label": "i",
+      "ex_or_bc": "08/07/2025  - 08/07/2025"
+    }
+  ]
+}

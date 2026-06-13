@@ -1,0 +1,29 @@
+{
+  "symbol": "YOUW",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-30",
+      "period": "31/03/2026",
+      "period_type": "IIIQ",
+      "consolidated": null,
+      "eps": -0.19,
+      "pat": -26.349,
+      "pbt": -26.349
+    },
+    {
+      "announced": "2026-03-09",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "consolidated": null,
+      "eps": -0.16,
+      "pat": -21.866,
+      "pbt": -21.866
+    }
+  ],
+  "payouts": []
+}

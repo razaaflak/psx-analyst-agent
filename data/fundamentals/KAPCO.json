@@ -1,0 +1,58 @@
+{
+  "symbol": "KAPCO",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-28",
+      "period": "31/03/2026",
+      "period_type": "IIIQ",
+      "consolidated": null,
+      "eps": 1.72,
+      "pat": 1514.451,
+      "pbt": 2322.326
+    },
+    {
+      "announced": "2026-03-02",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "consolidated": null,
+      "eps": 0.94,
+      "pat": 826.818,
+      "pbt": 1610.501,
+      "payout_note": "15%(i) (D)"
+    }
+  ],
+  "payouts": [
+    {
+      "announced": "2026-03-02",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "type": "dividend",
+      "pct": 15.0,
+      "interim_label": "i",
+      "ex_or_bc": "14/03/2026  - 16/03/2026"
+    },
+    {
+      "announced": "2025-10-20",
+      "period": "30/06/2025",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 25.0,
+      "interim_label": "F",
+      "ex_or_bc": "18/10/2025  - 24/10/2025"
+    },
+    {
+      "announced": "2025-02-25",
+      "period": "31/12/2024",
+      "period_type": "HYR",
+      "type": "dividend",
+      "pct": 45.0,
+      "interim_label": "i",
+      "ex_or_bc": "12/03/2025  - 14/03/2025"
+    }
+  ]
+}

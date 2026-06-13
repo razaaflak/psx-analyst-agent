@@ -1,0 +1,57 @@
+{
+  "symbol": "KTML",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-23",
+      "period": "31/03/2026",
+      "period_type": "IIIQ",
+      "consolidated": true,
+      "eps": 6.4,
+      "pat": 12372.318,
+      "pbt": 18550.758
+    },
+    {
+      "announced": "2026-04-23",
+      "period": "31/03/2026",
+      "period_type": "IIIQ",
+      "consolidated": false,
+      "eps": 1.68,
+      "pat": 2263.624,
+      "pbt": 3709.532
+    },
+    {
+      "announced": "2026-02-26",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "consolidated": true,
+      "eps": 10.65,
+      "pat": 18751.969,
+      "pbt": 27003.438
+    },
+    {
+      "announced": "2026-02-26",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "consolidated": false,
+      "eps": 1.03,
+      "pat": 1393.136,
+      "pbt": 2283.35
+    }
+  ],
+  "payouts": [
+    {
+      "announced": "2025-08-08",
+      "period": "30/06/2025",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 20.0,
+      "interim_label": "F",
+      "ex_or_bc": "10/10/2025  - 16/10/2025"
+    }
+  ]
+}

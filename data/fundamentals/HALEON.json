@@ -1,0 +1,30 @@
+{
+  "symbol": "HALEON",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-30",
+      "period": "31/03/2026",
+      "period_type": "IQ",
+      "consolidated": null,
+      "eps": 13.03,
+      "pat": 1524.759,
+      "pbt": 2398.575
+    },
+    {
+      "announced": "2026-03-03",
+      "period": "31/12/2025",
+      "period_type": "YR",
+      "consolidated": null,
+      "eps": 54.45,
+      "pat": 6373.151,
+      "pbt": 10626.48,
+      "payout_note": "150%(F) (D)"
+    }
+  ],
+  "payouts": []
+}

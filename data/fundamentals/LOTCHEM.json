@@ -1,0 +1,39 @@
+{
+  "symbol": "LOTCHEM",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-20",
+      "period": "31/03/2026",
+      "period_type": "IQ",
+      "consolidated": null,
+      "eps": 0.97,
+      "pat": 1474.37,
+      "pbt": 2411.216
+    },
+    {
+      "announced": "2026-03-03",
+      "period": "31/12/2025",
+      "period_type": "YR",
+      "consolidated": null,
+      "eps": 0.74,
+      "pat": 1118.932,
+      "pbt": 1837.922
+    }
+  ],
+  "payouts": [
+    {
+      "announced": "2026-01-21",
+      "period": "-",
+      "period_type": "",
+      "type": "dividend",
+      "pct": 50.0,
+      "interim_label": "i",
+      "ex_or_bc": "04/02/2026  - 06/02/2026"
+    }
+  ]
+}

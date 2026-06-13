@@ -1,0 +1,66 @@
+{
+  "symbol": "AHCL",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-29",
+      "period": "31/03/2026",
+      "period_type": "IIIQ",
+      "consolidated": true,
+      "eps": 2.2,
+      "pat": 9765.13,
+      "pbt": 12012.528
+    },
+    {
+      "announced": "2026-04-29",
+      "period": "31/03/2026",
+      "period_type": "IIIQ",
+      "consolidated": false,
+      "eps": 4.06,
+      "pat": 17124.983,
+      "pbt": 20466.197
+    },
+    {
+      "announced": "2026-02-24",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "consolidated": true,
+      "eps": 1.51,
+      "pat": 6702.615,
+      "pbt": 8550.878
+    },
+    {
+      "announced": "2026-02-24",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "consolidated": false,
+      "eps": 6.05,
+      "pat": 25499.047,
+      "pbt": 30021.806
+    }
+  ],
+  "payouts": [
+    {
+      "announced": "2025-09-23",
+      "period": "30/06/2025",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 100.0,
+      "interim_label": "F",
+      "ex_or_bc": "17/10/2025  - 24/10/2025"
+    },
+    {
+      "announced": "2024-11-05",
+      "period": "30/09/2024",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 70.0,
+      "interim_label": "F",
+      "ex_or_bc": "13/11/2024  - 15/11/2024"
+    }
+  ]
+}

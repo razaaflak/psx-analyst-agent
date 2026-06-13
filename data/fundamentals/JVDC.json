@@ -1,0 +1,57 @@
+{
+  "symbol": "JVDC",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-29",
+      "period": "31/03/2026",
+      "period_type": "IIIQ",
+      "consolidated": true,
+      "eps": 11.06,
+      "pat": 4212.547,
+      "pbt": 5896.927
+    },
+    {
+      "announced": "2026-04-29",
+      "period": "31/03/2026",
+      "period_type": "IIIQ",
+      "consolidated": false,
+      "eps": 11.06,
+      "pat": 4212.199,
+      "pbt": 5888.183
+    },
+    {
+      "announced": "2026-03-02",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "consolidated": true,
+      "eps": 5.95,
+      "pat": 2122.297,
+      "pbt": 3132.297
+    },
+    {
+      "announced": "2026-03-02",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "consolidated": false,
+      "eps": 5.99,
+      "pat": 2282.07,
+      "pbt": 3149.818
+    }
+  ],
+  "payouts": [
+    {
+      "announced": "2025-09-09",
+      "period": "30/06/2025",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 50.0,
+      "interim_label": "F",
+      "ex_or_bc": "10/10/2025  - 18/10/2025"
+    }
+  ]
+}

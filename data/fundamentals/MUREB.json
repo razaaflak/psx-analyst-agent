@@ -1,0 +1,67 @@
+{
+  "symbol": "MUREB",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-02-23",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "consolidated": null,
+      "eps": 74.17,
+      "pat": 2051.875,
+      "pbt": 3203.773,
+      "payout_note": "120%(F) (D)"
+    }
+  ],
+  "payouts": [
+    {
+      "announced": "2026-02-23",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "type": "dividend",
+      "pct": 120.0,
+      "interim_label": "F",
+      "ex_or_bc": "03/03/2026  - 04/03/2026"
+    },
+    {
+      "announced": "2025-10-27",
+      "period": "30/09/2025",
+      "period_type": "IQ",
+      "type": "dividend",
+      "pct": 50.0,
+      "interim_label": "i",
+      "ex_or_bc": "05/11/2025  - 06/11/2025"
+    },
+    {
+      "announced": "2025-09-19",
+      "period": "30/06/2025",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 145.0,
+      "interim_label": "F",
+      "ex_or_bc": "17/10/2025  - 24/10/2025"
+    },
+    {
+      "announced": "2025-04-25",
+      "period": "31/03/2025",
+      "period_type": "IIIQ",
+      "type": "dividend",
+      "pct": 100.0,
+      "interim_label": "iii",
+      "ex_or_bc": "06/05/2025  - 07/05/2025"
+    },
+    {
+      "announced": "2025-02-21",
+      "period": "31/12/2024",
+      "period_type": "HYR",
+      "type": "dividend",
+      "pct": 120.0,
+      "interim_label": "ii",
+      "ex_or_bc": "27/02/2025  - 28/02/2025"
+    }
+  ]
+}

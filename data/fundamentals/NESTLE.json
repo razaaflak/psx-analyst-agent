@@ -1,0 +1,67 @@
+{
+  "symbol": "NESTLE",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-24",
+      "period": "31/03/2026",
+      "period_type": "IQ",
+      "consolidated": null,
+      "eps": 123.74,
+      "pat": 5611.585,
+      "pbt": 9521.097
+    },
+    {
+      "announced": "2026-02-19",
+      "period": "31/12/2025",
+      "period_type": "YR",
+      "consolidated": null,
+      "eps": 380.24,
+      "pat": 17243.921,
+      "pbt": 29681.128,
+      "payout_note": "2560%(F) (D)"
+    }
+  ],
+  "payouts": [
+    {
+      "announced": "2026-02-19",
+      "period": "31/12/2025",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 2560.0,
+      "interim_label": "F",
+      "ex_or_bc": "10/04/2026  - 17/04/2026"
+    },
+    {
+      "announced": "2025-10-16",
+      "period": "30/09/2025",
+      "period_type": "IIIQ",
+      "type": "dividend",
+      "pct": 780.0,
+      "interim_label": "ii",
+      "ex_or_bc": "27/10/2025  - 29/10/2025"
+    },
+    {
+      "announced": "2025-07-24",
+      "period": "30/06/2025",
+      "period_type": "HYR",
+      "type": "dividend",
+      "pct": 2230.0,
+      "interim_label": "i",
+      "ex_or_bc": "06/08/2025  - 08/08/2025"
+    },
+    {
+      "announced": "2025-02-13",
+      "period": "31/12/2024",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 300.0,
+      "interim_label": "F",
+      "ex_or_bc": "15/04/2025  - 22/04/2025"
+    }
+  ]
+}

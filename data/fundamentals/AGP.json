@@ -1,0 +1,67 @@
+{
+  "symbol": "AGP",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-30",
+      "period": "31/03/2026",
+      "period_type": "IQ",
+      "consolidated": true,
+      "eps": 3.06,
+      "pat": 968.407,
+      "pbt": 1462.992
+    },
+    {
+      "announced": "2026-04-30",
+      "period": "31/03/2026",
+      "period_type": "IQ",
+      "consolidated": false,
+      "eps": 1.99,
+      "pat": 556.924,
+      "pbt": 922.31
+    },
+    {
+      "announced": "2026-03-24",
+      "period": "31/12/2025",
+      "period_type": "YR",
+      "consolidated": false,
+      "eps": 8.43,
+      "pat": 2360.314,
+      "pbt": 3796.79,
+      "payout_note": "60%(F) (D)"
+    }
+  ],
+  "payouts": [
+    {
+      "announced": "2026-03-24",
+      "period": "31/12/2025",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 60.0,
+      "interim_label": "F",
+      "ex_or_bc": "14/04/2026  - 20/04/2026"
+    },
+    {
+      "announced": "2025-08-27",
+      "period": "30/06/2025",
+      "period_type": "HYR",
+      "type": "dividend",
+      "pct": 20.0,
+      "interim_label": "i",
+      "ex_or_bc": "04/09/2025  - 05/09/2025"
+    },
+    {
+      "announced": "2025-02-28",
+      "period": "31/12/2024",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 40.0,
+      "interim_label": "F",
+      "ex_or_bc": "03/04/2025  - 10/04/2025"
+    }
+  ]
+}

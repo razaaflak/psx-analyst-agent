@@ -1,0 +1,29 @@
+{
+  "symbol": "POWER",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-21",
+      "period": "31/03/2026",
+      "period_type": "IIIQ",
+      "consolidated": null,
+      "eps": 1.91,
+      "pat": 2532.452,
+      "pbt": 3783.43
+    },
+    {
+      "announced": "2026-02-12",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "consolidated": null,
+      "eps": 1.25,
+      "pat": 1661.407,
+      "pbt": 2541.649
+    }
+  ],
+  "payouts": []
+}

@@ -1,0 +1,49 @@
+{
+  "symbol": "COLG",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-30",
+      "period": "31/03/2026",
+      "period_type": "IIIQ",
+      "consolidated": null,
+      "eps": 55.53,
+      "pat": 13482.27,
+      "pbt": 21859.956
+    },
+    {
+      "announced": "2026-02-02",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "consolidated": null,
+      "eps": 17.07,
+      "pat": 8707.216,
+      "pbt": 14070.348,
+      "payout_note": "290%(i) (D)"
+    }
+  ],
+  "payouts": [
+    {
+      "announced": "2026-02-02",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "type": "dividend",
+      "pct": 290.0,
+      "interim_label": "i",
+      "ex_or_bc": "03/03/2026  - 10/03/2026"
+    },
+    {
+      "announced": "2025-01-27",
+      "period": "31/12/2024",
+      "period_type": "HYR",
+      "type": "dividend",
+      "pct": 320.0,
+      "interim_label": "i",
+      "ex_or_bc": "07/02/2025  - 09/02/2025"
+    }
+  ]
+}

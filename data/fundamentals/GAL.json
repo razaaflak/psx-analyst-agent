@@ -1,0 +1,20 @@
+{
+  "symbol": "GAL",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [],
+  "payouts": [
+    {
+      "announced": "2025-09-29",
+      "period": "30/06/2025",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 100.0,
+      "interim_label": "F",
+      "ex_or_bc": "17/10/2025  - 25/10/2025"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "symbol": "RMPL",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-17",
+      "period": "31/03/2026",
+      "period_type": "IQ",
+      "consolidated": null,
+      "eps": 220.09,
+      "pat": 2032.881,
+      "pbt": 3322.147,
+      "payout_note": "940% (D)"
+    },
+    {
+      "announced": "2026-03-17",
+      "period": "31/12/2025",
+      "period_type": "YR",
+      "consolidated": null,
+      "eps": 707.51,
+      "pat": 6534.843,
+      "pbt": 10691.178,
+      "payout_note": "1500%(F) (D)"
+    }
+  ],
+  "payouts": [
+    {
+      "announced": "2026-04-17",
+      "period": "31/03/2026",
+      "period_type": "IQ",
+      "type": "dividend",
+      "pct": 940.0,
+      "interim_label": "D",
+      "ex_or_bc": "28/04/2026  - 29/04/2026"
+    },
+    {
+      "announced": "2026-03-17",
+      "period": "31/12/2025",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 1500.0,
+      "interim_label": "F",
+      "ex_or_bc": "18/04/2026  - 24/04/2026"
+    },
+    {
+      "announced": "2025-10-30",
+      "period": "30/09/2025",
+      "period_type": "IIIQ",
+      "type": "dividend",
+      "pct": 1300.0,
+      "interim_label": "iii",
+      "ex_or_bc": "11/11/2025  - 12/11/2025"
+    },
+    {
+      "announced": "2025-08-28",
+      "period": "30/06/2025",
+      "period_type": "HYR",
+      "type": "dividend",
+      "pct": 1000.0,
+      "interim_label": "ii",
+      "ex_or_bc": "09/09/2025  - 10/09/2025"
+    },
+    {
+      "announced": "2025-04-17",
+      "period": "31/03/2025",
+      "period_type": "IQ",
+      "type": "dividend",
+      "pct": 1000.0,
+      "interim_label": "i",
+      "ex_or_bc": "30/04/2025  - 02/05/2025"
+    },
+    {
+      "announced": "2025-02-21",
+      "period": "31/12/2024",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 1000.0,
+      "interim_label": "F",
+      "ex_or_bc": "18/04/2025  - 24/04/2025"
+    }
+  ]
+}

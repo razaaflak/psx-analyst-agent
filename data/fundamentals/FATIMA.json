@@ -1,0 +1,76 @@
+{
+  "symbol": "FATIMA",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-24",
+      "period": "31/03/2026",
+      "period_type": "IQ",
+      "consolidated": true,
+      "eps": 1.54,
+      "pat": 3236.455,
+      "pbt": 6047.038
+    },
+    {
+      "announced": "2026-04-24",
+      "period": "31/03/2026",
+      "period_type": "IQ",
+      "consolidated": false,
+      "eps": 1.99,
+      "pat": 4189.33,
+      "pbt": 6910.006
+    },
+    {
+      "announced": "2026-03-09",
+      "period": "31/12/2025",
+      "period_type": "YR",
+      "consolidated": true,
+      "eps": 20.03,
+      "pat": 42059.025,
+      "pbt": 68343.271
+    },
+    {
+      "announced": "2026-03-09",
+      "period": "31/12/2025",
+      "period_type": "YR",
+      "consolidated": false,
+      "eps": 14.51,
+      "pat": 30468.054,
+      "pbt": 50438.556,
+      "payout_note": "25%(F) (D)"
+    }
+  ],
+  "payouts": [
+    {
+      "announced": "2026-03-09",
+      "period": "31/12/2025",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 25.0,
+      "interim_label": "F",
+      "ex_or_bc": "10/04/2026  - 17/04/2026"
+    },
+    {
+      "announced": "2025-08-27",
+      "period": "30/06/2025",
+      "period_type": "HYR",
+      "type": "dividend",
+      "pct": 35.0,
+      "interim_label": "i",
+      "ex_or_bc": "09/09/2025  - 10/09/2025"
+    },
+    {
+      "announced": "2025-03-14",
+      "period": "31/12/2024",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 42.5,
+      "interim_label": "F",
+      "ex_or_bc": "11/04/2025  - 18/04/2025"
+    }
+  ]
+}

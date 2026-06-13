@@ -1,0 +1,48 @@
+{
+  "symbol": "SNGP",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-29",
+      "period": "31/03/2026",
+      "period_type": "IIIQ",
+      "consolidated": null,
+      "eps": 15.92,
+      "pat": 10096.517,
+      "pbt": 18194.886
+    },
+    {
+      "announced": "2026-03-05",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "consolidated": null,
+      "eps": 11.3,
+      "pat": 7167.893,
+      "pbt": 15813.496
+    }
+  ],
+  "payouts": [
+    {
+      "announced": "2025-11-03",
+      "period": "30/06/2025",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 30.0,
+      "interim_label": "F",
+      "ex_or_bc": "21/11/2025  - 27/11/2025"
+    },
+    {
+      "announced": "2025-04-28",
+      "period": "30/06/2024",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 75.0,
+      "interim_label": "F",
+      "ex_or_bc": "15/05/2025  - 22/05/2025"
+    }
+  ]
+}

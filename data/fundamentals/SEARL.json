@@ -1,0 +1,57 @@
+{
+  "symbol": "SEARL",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-29",
+      "period": "31/03/2026",
+      "period_type": "IIIQ",
+      "consolidated": true,
+      "eps": 3.89,
+      "pat": 2308.351,
+      "pbt": 4582.497
+    },
+    {
+      "announced": "2026-04-29",
+      "period": "31/03/2026",
+      "period_type": "IIIQ",
+      "consolidated": false,
+      "eps": 3.93,
+      "pat": 2309.16,
+      "pbt": 4401.937
+    },
+    {
+      "announced": "2026-03-02",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "consolidated": true,
+      "eps": 3.05,
+      "pat": 1806.376,
+      "pbt": 3543.473
+    },
+    {
+      "announced": "2026-03-02",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "consolidated": false,
+      "eps": 3.03,
+      "pat": 1784.806,
+      "pbt": 3402.373
+    }
+  ],
+  "payouts": [
+    {
+      "announced": "2025-10-06",
+      "period": "30/06/2025",
+      "period_type": "YR",
+      "type": "bonus",
+      "pct": 15.0,
+      "interim_label": "B",
+      "ex_or_bc": "13/10/2025  - 13/10/2025"
+    }
+  ]
+}

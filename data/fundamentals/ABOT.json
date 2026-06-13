@@ -1,0 +1,49 @@
+{
+  "symbol": "ABOT",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-28",
+      "period": "31/03/2026",
+      "period_type": "IQ",
+      "consolidated": null,
+      "eps": 19.82,
+      "pat": 1940.308,
+      "pbt": 3290.556
+    },
+    {
+      "announced": "2026-03-16",
+      "period": "31/12/2025",
+      "period_type": "YR",
+      "consolidated": null,
+      "eps": 81.37,
+      "pat": 7966.5,
+      "pbt": 13499.557,
+      "payout_note": "400%(F) (D)"
+    }
+  ],
+  "payouts": [
+    {
+      "announced": "2026-03-16",
+      "period": "31/12/2025",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 400.0,
+      "interim_label": "F",
+      "ex_or_bc": "23/04/2026  - 30/04/2026"
+    },
+    {
+      "announced": "2025-02-20",
+      "period": "31/12/2024",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 100.0,
+      "interim_label": "F",
+      "ex_or_bc": "16/04/2025  - 23/04/2025"
+    }
+  ]
+}

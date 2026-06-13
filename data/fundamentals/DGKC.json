@@ -1,0 +1,57 @@
+{
+  "symbol": "DGKC",
+  "fetched": "2026-06-13",
+  "sources": [
+    "https://psx.com.pk/psx/announcement/financial-announcements",
+    "https://dps.psx.com.pk/company/payouts"
+  ],
+  "quarterly_results": [
+    {
+      "announced": "2026-04-29",
+      "period": "31/03/2026",
+      "period_type": "IIIQ",
+      "consolidated": true,
+      "eps": 19.76,
+      "pat": 8932.787,
+      "pbt": 13785.067
+    },
+    {
+      "announced": "2026-04-29",
+      "period": "31/03/2026",
+      "period_type": "IIIQ",
+      "consolidated": false,
+      "eps": 19.07,
+      "pat": 8355.31,
+      "pbt": 12826.196
+    },
+    {
+      "announced": "2026-02-23",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "consolidated": true,
+      "eps": 13.59,
+      "pat": 6054.618,
+      "pbt": 9149.199
+    },
+    {
+      "announced": "2026-02-23",
+      "period": "31/12/2025",
+      "period_type": "HYR",
+      "consolidated": false,
+      "eps": 13.36,
+      "pat": 5854.342,
+      "pbt": 8742.157
+    }
+  ],
+  "payouts": [
+    {
+      "announced": "2025-08-28",
+      "period": "30/06/2025",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 20.0,
+      "interim_label": "F",
+      "ex_or_bc": "15/10/2025  - 28/10/2025"
+    }
+  ]
+}
