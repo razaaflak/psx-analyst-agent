@@ -321,6 +321,29 @@ def run_backfill(symbols: list[str], n_months: int, skip_existing: bool = True) 
     _print_summary(summary, errors)
 
 
+def check_corporate_actions(symbols: list[str]) -> None:
+    """After an update, scan the just-touched symbols for a fresh split/bonus discontinuity.
+
+    The OHLC store is RAW/unadjusted, so a split halves the close overnight and poisons
+    every MA/RSI/ATR/backtest read on that series. We surface candidates here as a warning
+    only (detection, never mutation); detect_corporate_actions.py writes the audit file.
+    Scoped to the current month so the daily run only re-checks recent bars.
+    """
+    try:
+        import subprocess
+        since = date.today().replace(day=1).isoformat()
+        sym_arg = ",".join(symbols)
+        print("\n[corporate-actions] scanning updated symbols for splits/bonuses…")
+        subprocess.run(
+            [sys.executable,
+             str(REPO_ROOT / "scripts" / "detect_corporate_actions.py"),
+             "--symbols", sym_arg, "--since", since, "--quiet"],
+            check=False,
+        )
+    except Exception as e:
+        print(f"  [WARN] corporate-action scan skipped: {e}")
+
+
 def run_update(symbols: list[str]) -> None:
     today = date.today()
     month, year = today.month, today.year
@@ -363,6 +386,7 @@ def run_update(symbols: list[str]) -> None:
         time.sleep(sleep_time)
 
     _print_summary(summary, errors, compact=True)
+    check_corporate_actions(symbols)
 
 
 def _print_summary(summary: list[dict], errors: list[str], compact: bool = False) -> None:

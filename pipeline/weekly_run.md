@@ -9,7 +9,9 @@
 ## Step 1 — Performance review
 - Aggregate the week's `predictions_log.csv`: total graded, weekly hit-rate, and the trend vs. prior weeks (is the agent actually improving?).
 - Paper portfolio: weekly and cumulative return, vs. the KSE-100 over the same window (are you beating the index, paper?). Note max drawdown and current cash %.
-- List the best and worst paper calls of the week with the *reason* each worked/failed.
+- **Run counterfactual baselines** (`.venv\Scripts\python.exe scripts/counterfactuals.py`) and put the full table in the report. Hit-rate ≠ advisory value. The book must justify itself against the dumb defaults: ALL-CASH (did investing help?), KSE-100 (alpha?), EQUAL-WEIGHT (did sizing help or hurt?), HOLD-DAY-1 (did post-day-1 activity add anything?). If the book is losing to a baseline, that is the headline of the review, not a footnote.
+- **Cross-check the week's grades with the deterministic grader** (`scripts/grade_predictions.py --asof <sun>`); flag any hand grade that disagrees with the mechanical one. Guards the hit-rate against drift.
+- List the best and worst paper calls of the week with the *reason* each worked/failed — **including the best/worst non-actions** (held cash, passed on a chase) now that they're logged as `decision_quality` rows.
 
 ## Step 2 — Rule validation (anti-overfitting — the most important step)
 - **Out-of-sample test:** take each Provisional and Core rule and check its hit-rate over the most recent week of data it was *not* tuned on.
