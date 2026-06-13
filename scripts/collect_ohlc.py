@@ -340,6 +340,13 @@ def check_corporate_actions(symbols: list[str]) -> None:
              "--symbols", sym_arg, "--since", since, "--quiet"],
             check=False,
         )
+        # Re-apply back-adjustment so today's fresh bar carries adj_close too (idempotent;
+        # factor 1.0 when no new event). Keeps the whole store continuous for TA/backtest.
+        print("[corporate-actions] re-applying back-adjustment (adj_close)…")
+        subprocess.run(
+            [sys.executable, str(REPO_ROOT / "scripts" / "adjust_ohlc.py")],
+            check=False,
+        )
     except Exception as e:
         print(f"  [WARN] corporate-action scan skipped: {e}")
 

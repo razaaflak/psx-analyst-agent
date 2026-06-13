@@ -74,7 +74,10 @@ def all_symbols() -> list[str]:
 
 def compute_indicators(bars: list[dict]) -> dict:
     n = len(bars)
-    closes = [b["close"] for b in bars]
+    # Use the split/bonus-adjusted close when present (from scripts/adjust_ohlc.py) so
+    # MA/RSI/52w-high and forward returns are continuous across corporate actions; fall
+    # back to raw close for any un-adjusted store. Volume stays raw (liquidity is raw).
+    closes = [(b.get("adj_close") if b.get("adj_close") is not None else b["close"]) for b in bars]
     vols = [b.get("volume") or 0 for b in bars]
 
     def sma(period: int) -> list:

@@ -70,6 +70,13 @@ def load_ohlc(symbol: str) -> list[dict]:
                 [b for b in data if b.get("date") and b.get("close") is not None],
                 key=lambda b: b["date"],
             )
+            # This script is entirely return-based (ratios since inception), so prefer the
+            # split/bonus-adjusted close — a holding that split mid-window would otherwise
+            # show a spurious crash. Raw close untouched in the file. NOTE: 'now' MTM uses
+            # the current real price, which equals adj_close at the right edge (factor 1.0).
+            for b in bars:
+                if b.get("adj_close") is not None:
+                    b["close"] = b["adj_close"]
     _cache[sym] = bars
     return bars
 

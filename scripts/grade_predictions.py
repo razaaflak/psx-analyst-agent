@@ -87,15 +87,38 @@ def load_ohlc(symbol: str) -> list[dict]:
     return bars
 
 
+def has_split_after(symbol: str, after: str) -> bool:
+    """True if a confirmed corporate action falls on/after `after` for this symbol.
+    When true, return-based grades over that window must use adj_close; level-based
+    grades (literal price targets stated in raw terms at issue) keep raw close."""
+    try:
+        blob = json.loads((DATA / "corporate_actions.json").read_text(encoding="utf-8"))
+        return any(e["symbol"] == symbol.upper() and e["date"] > after and e.get("confirmed")
+                   for e in blob.get("events", []))
+    except Exception:
+        return False
+
+
 def bars_in_window(symbol: str, after: str, through: str) -> list[dict]:
     """Bars strictly AFTER issue_date, up to and including grade_on_date. No look-ahead."""
     return [b for b in load_ohlc(symbol) if after < b["date"] <= through]
 
 
-def close_on_or_before(symbol: str, d: str) -> float | None:
-    """Last close on or before date d (for the issue-day reference close)."""
+def ret_close(bar: dict, use_adj: bool) -> float:
+    """Close to use for RETURN math: adj_close when a split is in the prediction window,
+    else raw close. Level comparisons always use raw close (targets are stated in raw terms)."""
+    if use_adj and bar.get("adj_close") is not None:
+        return bar["adj_close"]
+    return bar["close"]
+
+
+def close_on_or_before(symbol: str, d: str, use_adj: bool = False) -> float | None:
+    """Last close on or before date d (for the issue-day reference close).
+    use_adj=True returns adj_close (for return math across a split window)."""
     prior = [b for b in load_ohlc(symbol) if b["date"] <= d]
-    return prior[-1]["close"] if prior else None
+    if not prior:
+        return None
+    return ret_close(prior[-1], use_adj)
 
 
 # --------------------------------------------------------------------------- #
@@ -127,12 +150,14 @@ def grade_outperformance(sym: str, idx: str, issue: str, grade_on: str) -> tuple
     ibars = bars_in_window(idx, issue, grade_on)
     if not sbars or not ibars:
         return None, "NEEDS-DATA (missing stock or index bars in window)"
-    s0 = close_on_or_before(sym, issue)
-    i0 = close_on_or_before(idx, issue)
+    # return math must be split-adjusted if a corporate action falls in the window
+    s_adj, i_adj = has_split_after(sym, issue), has_split_after(idx, issue)
+    s0 = close_on_or_before(sym, issue, use_adj=s_adj)
+    i0 = close_on_or_before(idx, issue, use_adj=i_adj)
     if not s0 or not i0:
         return None, "NEEDS-DATA (missing issue-day reference close)"
-    s_ret = sbars[-1]["close"] / s0 - 1
-    i_ret = ibars[-1]["close"] / i0 - 1
+    s_ret = ret_close(sbars[-1], s_adj) / s0 - 1
+    i_ret = ret_close(ibars[-1], i_adj) / i0 - 1
     gap = (s_ret - i_ret) * 100
     g = "HIT" if s_ret > i_ret else "MISS"
     return g, (f"{sym} cum {s_ret*100:+.2f}% vs index {i_ret*100:+.2f}% "
@@ -208,6 +233,17 @@ def propose_grade(row: dict) -> tuple[str | None, str]:
     issue = row["issue_date"]
     grade_on = row["grade_on_date"]
     ptype = row["type"].strip()
+
+    # If a split/bonus falls inside this prediction's window, any literal price LEVEL in
+    # the text (target/stop/entry) was stated in pre-split terms but the closes after the
+    # event are post-split — a level-vs-close comparison would be wrong. Return-based
+    # grades (outperformance below) are split-adjusted and safe; everything else bails to
+    # NEEDS-REVIEW so the agent rescales the level by hand.
+    split_in_window = has_split_after(sym, issue) and not (
+        "outperform" in low or "underperform" in low)
+    if split_in_window:
+        return None, ("NEEDS-REVIEW (corporate action inside window — literal price level is "
+                      "pre-split; rescale by the event ratio in data/corporate_actions.json)")
 
     # Outperformance / vs-index (covers many 'direction' rows too)
     if "outperform" in low or "underperform" in low or any(t.lower() in low for t in INDEX_TOKENS) and ("vs" in low or "than kse" in low or "higher % change" in low):

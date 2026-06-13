@@ -13,8 +13,9 @@
       "gap_pct": -47.21,
       "index_move_pct": 1.33,
       "likely": "2:1 split or 100% bonus",
-      "confirmed": false,
-      "note": "auto-detected; verify against PSX announcements before adjusting any analysis"
+      "confirmed": true,
+      "note": "confirmed via empirical ratio (close_before/close_after); back-adjustment applied",
+      "applied_ratio": 1.89437
     },
     {
       "symbol": "COLG",
@@ -26,8 +27,9 @@
       "gap_pct": -47.33,
       "index_move_pct": -0.06,
       "likely": "2:1 split or 100% bonus",
-      "confirmed": false,
-      "note": "auto-detected; verify against PSX announcements before adjusting any analysis"
+      "confirmed": true,
+      "note": "confirmed via empirical ratio (close_before/close_after); back-adjustment applied",
+      "applied_ratio": 1.898658
     },
     {
       "symbol": "PGLC",
@@ -39,8 +41,9 @@
       "gap_pct": -57.07,
       "index_move_pct": -0.06,
       "likely": "review (non-clean ratio \u2014 possible rights / partial / data error)",
-      "confirmed": false,
-      "note": "auto-detected; verify against PSX announcements before adjusting any analysis"
+      "confirmed": true,
+      "note": "confirmed via empirical ratio (close_before/close_after); back-adjustment applied",
+      "applied_ratio": 2.329268
     },
     {
       "symbol": "ILP",
@@ -52,8 +55,9 @@
       "gap_pct": -36.85,
       "index_move_pct": -0.35,
       "likely": "review (non-clean ratio \u2014 possible rights / partial / data error)",
-      "confirmed": false,
-      "note": "auto-detected; verify against PSX announcements before adjusting any analysis"
+      "confirmed": true,
+      "note": "confirmed via empirical ratio (close_before/close_after); back-adjustment applied",
+      "applied_ratio": 1.583598
     },
     {
       "symbol": "MTL",
@@ -65,8 +69,9 @@
       "gap_pct": -30.79,
       "index_move_pct": -0.17,
       "likely": "3:2 split or 50% bonus",
-      "confirmed": false,
-      "note": "auto-detected; verify against PSX announcements before adjusting any analysis"
+      "confirmed": true,
+      "note": "confirmed via empirical ratio (close_before/close_after); back-adjustment applied",
+      "applied_ratio": 1.444854
     },
     {
       "symbol": "MEHT",
@@ -78,8 +83,9 @@
       "gap_pct": -33.66,
       "index_move_pct": -0.39,
       "likely": "3:2 split or 50% bonus",
-      "confirmed": false,
-      "note": "auto-detected; verify against PSX announcements before adjusting any analysis"
+      "confirmed": true,
+      "note": "confirmed via empirical ratio (close_before/close_after); back-adjustment applied",
+      "applied_ratio": 1.507342
     },
     {
       "symbol": "FHAM",
@@ -91,8 +97,9 @@
       "gap_pct": 97.94,
       "index_move_pct": 0.99,
       "likely": "1:2 reverse split / consolidation",
-      "confirmed": false,
-      "note": "auto-detected; verify against PSX announcements before adjusting any analysis"
+      "confirmed": true,
+      "note": "confirmed via empirical ratio (close_before/close_after); back-adjustment applied",
+      "applied_ratio": 0.505215
     },
     {
       "symbol": "YOUW",
@@ -104,8 +111,9 @@
       "gap_pct": 31.85,
       "index_move_pct": -1.46,
       "likely": "review (non-clean ratio \u2014 possible rights / partial / data error)",
-      "confirmed": false,
-      "note": "auto-detected; verify against PSX announcements before adjusting any analysis"
+      "confirmed": true,
+      "note": "confirmed via empirical ratio (close_before/close_after); back-adjustment applied",
+      "applied_ratio": 0.758454
     },
     {
       "symbol": "MARI",
@@ -117,8 +125,9 @@
       "gap_pct": -88.24,
       "index_move_pct": 0.2,
       "likely": "review (non-clean ratio \u2014 possible rights / partial / data error)",
-      "confirmed": false,
-      "note": "auto-detected; verify against PSX announcements before adjusting any analysis"
+      "confirmed": true,
+      "note": "confirmed via empirical ratio (close_before/close_after); back-adjustment applied",
+      "applied_ratio": 8.504039
     },
     {
       "symbol": "AHCL",
@@ -130,8 +139,9 @@
       "gap_pct": -89.44,
       "index_move_pct": -0.54,
       "likely": "review (non-clean ratio \u2014 possible rights / partial / data error)",
-      "confirmed": false,
-      "note": "auto-detected; verify against PSX announcements before adjusting any analysis"
+      "confirmed": true,
+      "note": "confirmed via empirical ratio (close_before/close_after); back-adjustment applied",
+      "applied_ratio": 9.472366
     },
     {
       "symbol": "LUCK",
@@ -143,8 +153,9 @@
       "gap_pct": -79.51,
       "index_move_pct": -2.77,
       "likely": "review (non-clean ratio \u2014 possible rights / partial / data error)",
-      "confirmed": false,
-      "note": "auto-detected; verify against PSX announcements before adjusting any analysis"
+      "confirmed": true,
+      "note": "confirmed via empirical ratio (close_before/close_after); back-adjustment applied",
+      "applied_ratio": 4.880322
     },
     {
       "symbol": "SYS",
@@ -156,8 +167,9 @@
       "gap_pct": -81.0,
       "index_move_pct": 0.46,
       "likely": "review (non-clean ratio \u2014 possible rights / partial / data error)",
-      "confirmed": false,
-      "note": "auto-detected; verify against PSX announcements before adjusting any analysis"
+      "confirmed": true,
+      "note": "confirmed via empirical ratio (close_before/close_after); back-adjustment applied",
+      "applied_ratio": 5.262089
     },
     {
       "symbol": "UBL",
@@ -169,8 +181,9 @@
       "gap_pct": -50.05,
       "index_move_pct": -3.21,
       "likely": "2:1 split or 100% bonus",
-      "confirmed": false,
-      "note": "auto-detected; verify against PSX announcements before adjusting any analysis"
+      "confirmed": true,
+      "note": "confirmed via empirical ratio (close_before/close_after); back-adjustment applied",
+      "applied_ratio": 2.002177
     },
     {
       "symbol": "LCI",
@@ -182,8 +195,9 @@
       "gap_pct": -79.5,
       "index_move_pct": -0.27,
       "likely": "review (non-clean ratio \u2014 possible rights / partial / data error)",
-      "confirmed": false,
-      "note": "auto-detected; verify against PSX announcements before adjusting any analysis"
+      "confirmed": true,
+      "note": "confirmed via empirical ratio (close_before/close_after); back-adjustment applied",
+      "applied_ratio": 4.87788
     },
     {
       "symbol": "KOHC",
@@ -195,8 +209,9 @@
       "gap_pct": -80.33,
       "index_move_pct": -0.45,
       "likely": "review (non-clean ratio \u2014 possible rights / partial / data error)",
-      "confirmed": false,
-      "note": "auto-detected; verify against PSX announcements before adjusting any analysis"
+      "confirmed": true,
+      "note": "confirmed via empirical ratio (close_before/close_after); back-adjustment applied",
+      "applied_ratio": 5.084027
     },
     {
       "symbol": "KTML",
@@ -208,8 +223,9 @@
       "gap_pct": -80.64,
       "index_move_pct": 0.61,
       "likely": "review (non-clean ratio \u2014 possible rights / partial / data error)",
-      "confirmed": false,
-      "note": "auto-detected; verify against PSX announcements before adjusting any analysis"
+      "confirmed": true,
+      "note": "confirmed via empirical ratio (close_before/close_after); back-adjustment applied",
+      "applied_ratio": 5.166609
     },
     {
       "symbol": "BAFL",
@@ -221,8 +237,9 @@
       "gap_pct": -48.39,
       "index_move_pct": -1.0,
       "likely": "2:1 split or 100% bonus",
-      "confirmed": false,
-      "note": "auto-detected; verify against PSX announcements before adjusting any analysis"
+      "confirmed": true,
+      "note": "confirmed via empirical ratio (close_before/close_after); back-adjustment applied",
+      "applied_ratio": 1.937548
     }
   ]
 }
