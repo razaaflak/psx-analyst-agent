@@ -15936,5 +15936,18 @@
   "adj_high": 88.0,
   "adj_low": 84.02,
   "adj_close": 87.32
+ },
+ {
+  "date": "2026-06-15",
+  "open": 95.5,
+  "high": 95.96,
+  "low": 91.0,
+  "close": 94.43,
+  "volume": 7502709,
+  "adj_factor": 1.0,
+  "adj_open": 95.5,
+  "adj_high": 95.96,
+  "adj_low": 91.0,
+  "adj_close": 94.43
  }
 ]

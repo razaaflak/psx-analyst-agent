@@ -1,100 +1,60 @@
 {
-  "as_of_date": "2026-06-13",
+  "as_of_date": "2026-06-15",
   "sample_too_small": true,
   "predictions": {
-    "total": 14,
-    "graded": 2,
-    "open": 12,
-    "hits": 2,
+    "total": 18,
+    "graded": 3,
+    "open": 15,
+    "hits": 3,
     "partials": 0,
     "misses": 0,
     "hit_rate_pct": 100.0
   },
   "open_predictions_by_grade_date": [
-    {
-      "id": "P-012",
-      "ticker": "DGKC",
-      "grade_on_date": "2026-06-15"
-    },
-    {
-      "id": "P-001",
-      "ticker": "OGDC",
-      "grade_on_date": "2026-06-16"
-    },
-    {
-      "id": "P-002",
-      "ticker": "FFC",
-      "grade_on_date": "2026-06-16"
-    },
-    {
-      "id": "P-005",
-      "ticker": "FABL",
-      "grade_on_date": "2026-06-16"
-    },
-    {
-      "id": "P-010",
-      "ticker": "FABL",
-      "grade_on_date": "2026-06-16"
-    },
-    {
-      "id": "P-011",
-      "ticker": "BANKS",
-      "grade_on_date": "2026-06-16"
-    },
-    {
-      "id": "P-013",
-      "ticker": "MEBL",
-      "grade_on_date": "2026-06-16"
-    },
-    {
-      "id": "P-014",
-      "ticker": "EANDP",
-      "grade_on_date": "2026-06-16"
-    },
-    {
-      "id": "P-007",
-      "ticker": "FFC",
-      "grade_on_date": "2026-06-17"
-    },
-    {
-      "id": "P-009",
-      "ticker": "MEBL",
-      "grade_on_date": "2026-06-18"
-    },
-    {
-      "id": "P-008",
-      "ticker": "DGKC",
-      "grade_on_date": "2026-06-19"
-    },
-    {
-      "id": "P-004",
-      "ticker": "MEBL",
-      "grade_on_date": "2026-06-23"
-    }
+    { "id": "P-001", "ticker": "OGDC",     "grade_on_date": "2026-06-16" },
+    { "id": "P-002", "ticker": "FFC",      "grade_on_date": "2026-06-16" },
+    { "id": "P-005", "ticker": "FABL",     "grade_on_date": "2026-06-16" },
+    { "id": "P-010", "ticker": "FABL",     "grade_on_date": "2026-06-16" },
+    { "id": "P-011", "ticker": "BANKS",    "grade_on_date": "2026-06-16" },
+    { "id": "P-013", "ticker": "MEBL",     "grade_on_date": "2026-06-16" },
+    { "id": "P-014", "ticker": "EANDP",    "grade_on_date": "2026-06-16" },
+    { "id": "P-007", "ticker": "FFC",      "grade_on_date": "2026-06-17" },
+    { "id": "P-009", "ticker": "MEBL",     "grade_on_date": "2026-06-18" },
+    { "id": "P-016", "ticker": "CEMENT",   "grade_on_date": "2026-06-18" },
+    { "id": "P-018", "ticker": "EANDP",    "grade_on_date": "2026-06-18" },
+    { "id": "P-008", "ticker": "DGKC",     "grade_on_date": "2026-06-19" },
+    { "id": "P-015", "ticker": "DGKC",     "grade_on_date": "2026-06-19" },
+    { "id": "P-017", "ticker": "NO-TRADE", "grade_on_date": "2026-06-22" },
+    { "id": "P-004", "ticker": "MEBL",     "grade_on_date": "2026-06-23" }
   ],
   "per_rule_stats": {
-    "R-004": {
-      "graded": 1,
-      "hits": 1
-    },
-    "R-001": {
-      "graded": 1,
-      "hits": 1
-    },
-    "R-EXP-001": {
-      "graded": 1,
-      "hits": 1
-    }
+    "R-004": { "graded": 1, "hits": 1 },
+    "R-001": { "graded": 1, "hits": 1 },
+    "R-EXP-001": { "graded": 1, "hits": 1 },
+    "R-002": { "graded": 1, "hits": 1 }
   },
   "portfolio": {
     "cash": 328214,
     "invested": 672727.39,
-    "total_value": 1000941.39,
-    "cumulative_return_pct": 0
+    "holdings_mtm": 698739,
+    "total_value": 1026953,
+    "cumulative_return_pct": 2.70,
+    "max_drawdown_pct": -1.40
+  },
+  "counterfactuals_asof": {
+    "inception": "2026-06-09",
+    "book_pct": 2.70,
+    "all_cash_pct": 0.00,
+    "kse100_pct": 3.94,
+    "equal_weight_pct": 5.94,
+    "hold_day1_pct": 2.60,
+    "book_vs_kse100_pp": -1.24,
+    "book_vs_equal_weight_pp": -3.24,
+    "book_vs_hold_day1_pp": 0.09
   },
   "active_rules": {
     "core_seed": 4,
     "provisional": 0,
-    "experimental": 4
+    "experimental": 5
   }
 }

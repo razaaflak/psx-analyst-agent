@@ -2,7 +2,7 @@
   "_comment": "The agent's simulated portfolio. PAPER MONEY ONLY. Agent reads at start of each run and writes the updated state at the end.",
   "currency": "PKR",
   "starting_cash": 1000000,
-  "as_of_date": "2026-06-12",
+  "as_of_date": "2026-06-15",
   "cash": 328214,
   "holdings": [
     {
@@ -97,10 +97,10 @@
     "target": "number or null (for swing)"
   },
   "performance": {
-    "cumulative_return_pct": 0.49,
+    "cumulative_return_pct": 2.70,
     "notional_cgt_paid": 0.0,
     "max_drawdown_pct": -1.40,
-    "last_reconciled": "2026-06-13",
-    "note": "Weekly review 2026-06-13 (ISO W24, no new market data — Sat). Carries 06-12 close MTM: unrealized +3,982 on cost 672,728; mtm_value 676,710; cash 328,214 (32.7%); total equity 1,004,924 (cum +0.49%). Book LAGGED KSE-100 +1.22% over the week by ~0.72pp (cash drag + defensive value names lagging rally). No trades, no position changes this review. P-006 graded HIT. Budget overlay: cement (DGKC/CHCC) strengthening; E&P (OGDC/PPL) weakening (excluded from super-tax relief + falling oil) → Trim candidates next week pending MPC 06-15 + P-014 grade. R-004 LIVE for SBP MPC Mon 06-15."
+    "last_reconciled": "2026-06-15",
+    "note": "Daily run 2026-06-15 (SBP MPC day). SBP HELD rate at 11.5% (no hike) → +2.69% relief rally. MTM on 06-15 closes: cost 672,727; holdings mtm 698,739 (unrealized +26,012); cash 328,214 (32.0%); total equity 1,026,953 (cum +2.70%, up from +0.49% on 06-13). NO TRADES — broad market overbought after one-day relief spike (cement RSI 74-75, banks RSI 72-74); chasing into RSI>70 violates entry discipline. All 8 holdings HELD, theses intact, no stop hits (all green vs cost). P-012 graded HIT (DGKC held >200, closed 221.05). E&P Trim watch DEFERRED: oil crashed to ~$80 (-5.6%) but OGDC/PPL rose with the tape and show no technical sell trigger (OGDC RSI 51) — await P-014 grade (06-16) before acting. Logged as conscious non-actions. Tomorrow grades: P-001/002/005/010/011/013/014."
   }
 }

@@ -1,0 +1,70 @@
+{
+  "date": "2026-06-15",
+  "fetched_at": "2026-06-15T17:17:00+05:00",
+  "source": "dps.psx.com.pk Data Portal (Playwright MCP index board + screenshot) + POST /historical OHLC (plain requests); macro via WebSearch (brecorder/dawn/dailypakistan/tradingeconomics)",
+  "confidence": "high",
+  "rung": "rung 1 (plain requests POST /historical for OHLC) + Playwright MCP for index board/screenshot",
+  "index": {
+    "kse100": 177039.83,
+    "change_pts": 4639.92,
+    "change_pct": 2.69,
+    "volume": 457429697,
+    "advancers": null,
+    "decliners": null,
+    "note": "KSE100 close from PSX portal marquee + POST /historical (both 177039.8). KSE30 +2.84%, KMI30 +2.73%, ALLSHR +2.42%, BKTI(banks) +2.59%, OGTI(oil-gas) +1.97%. Broad relief rally; many small/mid-caps hit +10% upper circuit. Advancers/decliners not captured this run (portal breadth widget not parsed)."
+  },
+  "stocks": [
+    { "symbol": "OGDC",   "open": 325.00, "high": 325.65, "low": 319.60, "close": 324.63, "ldcp": 317.99, "volume": 5774424,  "change_pct": 2.09,  "source": "dps.psx.com.pk" },
+    { "symbol": "FFC",    "open": 565.00, "high": 567.00, "low": 556.40, "close": 563.61, "ldcp": 556.45, "volume": 2239550,  "change_pct": 1.29,  "source": "dps.psx.com.pk" },
+    { "symbol": "MEBL",   "open": 515.00, "high": 523.97, "low": 509.00, "close": 511.46, "ldcp": 510.21, "volume": 7259660,  "change_pct": 0.24,  "source": "dps.psx.com.pk" },
+    { "symbol": "PPL",    "open": 233.90, "high": 233.90, "low": 226.70, "close": 232.78, "ldcp": 225.84, "volume": 8153501,  "change_pct": 3.07,  "source": "dps.psx.com.pk" },
+    { "symbol": "FABL",   "open": 92.99,  "high": 94.80,  "low": 91.99,  "close": 94.59,  "ldcp": 91.07,  "volume": 2359111,  "change_pct": 3.87,  "source": "dps.psx.com.pk" },
+    { "symbol": "DGKC",   "open": 224.90, "high": 224.90, "low": 215.14, "close": 221.05, "ldcp": 206.32, "volume": 14463033, "change_pct": 7.14,  "source": "dps.psx.com.pk" },
+    { "symbol": "CHCC",   "open": 306.00, "high": 324.50, "low": 302.00, "close": 316.73, "ldcp": 296.17, "volume": 794343,   "change_pct": 6.94,  "source": "dps.psx.com.pk" },
+    { "symbol": "UBL",    "open": 413.99, "high": 430.00, "low": 413.51, "close": 428.07, "ldcp": 404.97, "volume": 4296022,  "change_pct": 5.70,  "source": "dps.psx.com.pk" },
+    { "symbol": "MARI",   "open": 675.00, "high": 675.00, "low": 664.00, "close": 666.87, "ldcp": 661.82, "volume": 801493,   "change_pct": 0.76,  "source": "dps.psx.com.pk" },
+    { "symbol": "LUCK",   "open": 470.00, "high": 472.40, "low": 460.90, "close": 469.36, "ldcp": 449.11, "volume": 6516394,  "change_pct": 4.51,  "source": "dps.psx.com.pk" },
+    { "symbol": "MTL",    "open": 580.00, "high": 581.50, "low": 568.11, "close": 573.93, "ldcp": 566.09, "volume": 451886,   "change_pct": 1.38,  "source": "dps.psx.com.pk" },
+    { "symbol": "ENGROH", "open": 274.00, "high": 274.00, "low": 266.87, "close": 273.76, "ldcp": 266.03, "volume": 3580890,  "change_pct": 2.91,  "source": "dps.psx.com.pk" },
+    { "symbol": "MCB",    "open": 406.99, "high": 406.99, "low": 399.85, "close": 402.41, "ldcp": 399.95, "volume": 333132,   "change_pct": 0.62,  "source": "dps.psx.com.pk" },
+    { "symbol": "PSO",    "open": 360.00, "high": 360.10, "low": 353.00, "close": 359.39, "ldcp": 351.01, "volume": 4898765,  "change_pct": 2.39,  "source": "dps.psx.com.pk" },
+    { "symbol": "APL",    "open": 540.00, "high": 542.55, "low": 528.00, "close": 532.77, "ldcp": 533.69, "volume": 188311,   "change_pct": -0.17, "source": "dps.psx.com.pk" }
+  ],
+  "commodities": {
+    "brent_usd_bbl": 80.14,
+    "brent_change_pct": -5.59,
+    "note": "Brent ~$80, 8-week low, -5.6% on day (US-Iran interim peace progress). Down from ~$88-89 on 06-13 and ~$94 on 06-11. Falling-oil regime deepening — E&P revenue-realization headwind."
+  },
+  "macro_news": [
+    {
+      "headline": "SBP holds policy rate at 11.5% in final FY26 MPC meeting; cautious stance citing inflation, fiscal and global risks",
+      "source": "dailypakistan / brecorder / dawn",
+      "date": "2026-06-15",
+      "lens": "E",
+      "note": "No hike (49/49 hold-vs-hike split going in). Relief rally +2.69%. R-004 binary event resolved. Rate-sensitive banks + leveraged cement rallied hardest. Elevated-rate regime (11.5%) persists -> R-001 NIM thesis intact."
+    },
+    {
+      "headline": "Brent crude crashes ~5.6% to ~$80/bbl, an 8-week low, on US-Iran interim peace progress",
+      "source": "tradingeconomics / oilprice",
+      "date": "2026-06-15",
+      "lens": "E",
+      "note": "Falling-oil regime. E&P revenue-realization headwind. OGTI oil-gas index +1.97% lagged the broad +2.69% tape. R-EXP-003 falling-oil-regime persists."
+    },
+    {
+      "headline": "Risk appetite revived by US-Iran de-escalation + reform-oriented FY27 budget measures",
+      "source": "brecorder / tribune",
+      "date": "2026-06-15",
+      "lens": "E",
+      "note": "Geopolitical de-escalation = lower oil but higher equity risk appetite. Cement budget winners (construction-WHT cut) led: DGKC +7.14%, CHCC +6.94%, LUCK +4.51%."
+    }
+  ],
+  "announcements": [],
+  "events_today": [
+    "SBP MPC: policy rate HELD at 11.5%",
+    "FY27 Finance Bill passage track (by 06-30)"
+  ],
+  "screenshot": "data/market_data/2026-06-15-close.png",
+  "warnings": [
+    "Advancers/decliners breadth not parsed this run (index board widget). Index level/% verified two ways (portal marquee + POST /historical)."
+  ]
+}

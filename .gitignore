@@ -20,3 +20,6 @@ __pycache__/
 
 # python local env
 .venv/
+
+# transient run logs (scratch)
+data/*.log

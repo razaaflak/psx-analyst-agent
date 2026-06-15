@@ -1,6 +1,6 @@
 {
   "symbol": "HALEON",
-  "fetched": "2026-06-13",
+  "fetched": "2026-06-15",
   "sources": [
     "https://psx.com.pk/psx/announcement/financial-announcements",
     "https://dps.psx.com.pk/company/payouts"
@@ -26,5 +26,42 @@
       "payout_note": "150%(F) (D)"
     }
   ],
-  "payouts": []
+  "payouts": [
+    {
+      "announced": "2026-03-03",
+      "period": "31/12/2025",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 150.0,
+      "interim_label": "F",
+      "ex_or_bc": "22/04/2026  - 28/04/2026"
+    },
+    {
+      "announced": "2025-10-27",
+      "period": "30/09/2025",
+      "period_type": "IIIQ",
+      "type": "dividend",
+      "pct": 50.0,
+      "interim_label": "ii",
+      "ex_or_bc": "06/11/2025  - 07/11/2025"
+    },
+    {
+      "announced": "2025-08-26",
+      "period": "30/06/2025",
+      "period_type": "HYR",
+      "type": "dividend",
+      "pct": 100.0,
+      "interim_label": "i",
+      "ex_or_bc": "04/09/2025  - 05/09/2025"
+    },
+    {
+      "announced": "2025-02-06",
+      "period": "31/12/2024",
+      "period_type": "YR",
+      "type": "dividend",
+      "pct": 150.0,
+      "interim_label": "F",
+      "ex_or_bc": "13/03/2025  - 20/03/2025"
+    }
+  ]
 }
