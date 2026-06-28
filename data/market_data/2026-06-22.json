@@ -1,0 +1,193 @@
+{
+  "date": "2026-06-22",
+  "source": "dps.psx.com.pk historical feed (plain requests) + OHLC store; macro via tradingeconomics/dawn",
+  "confidence": "high (official PSX EOD); macro medium",
+  "kse100": {
+    "close": 178471.87,
+    "chg": -450.89,
+    "chg_pct": -0.25,
+    "open": 180146.06,
+    "high": 180507.82,
+    "low": 178337.14,
+    "volume": 230108378
+  },
+  "ohlc": {
+    "FABL": {
+      "date": "2026-06-22",
+      "open": 97.08,
+      "high": 97.49,
+      "low": 96.51,
+      "close": 96.96,
+      "volume": 823162,
+      "chg_pct": -0.12
+    },
+    "FFC": {
+      "date": "2026-06-22",
+      "open": 562.01,
+      "high": 564.0,
+      "low": 556.65,
+      "close": 557.94,
+      "volume": 823983,
+      "chg_pct": -0.5
+    },
+    "LUCK": {
+      "date": "2026-06-22",
+      "open": 465.11,
+      "high": 467.9,
+      "low": 457.5,
+      "close": 459.06,
+      "volume": 1538353,
+      "chg_pct": -0.85
+    },
+    "MEBL": {
+      "date": "2026-06-22",
+      "open": 512.98,
+      "high": 520.0,
+      "low": 511.4,
+      "close": 512.17,
+      "volume": 1455490,
+      "chg_pct": -0.16
+    },
+    "OGDC": {
+      "date": "2026-06-22",
+      "open": 334.0,
+      "high": 334.75,
+      "low": 330.99,
+      "close": 334.25,
+      "volume": 11154880,
+      "chg_pct": 0.9
+    },
+    "KSE100": {
+      "date": "2026-06-22",
+      "open": 180146.06,
+      "high": 180507.82,
+      "low": 178337.14,
+      "close": 178471.87,
+      "volume": 230108378,
+      "chg_pct": -0.25
+    },
+    "MCB": {
+      "date": "2026-06-22",
+      "open": 404.0,
+      "high": 406.0,
+      "low": 398.0,
+      "close": 400.1,
+      "volume": 403253,
+      "chg_pct": -0.7
+    },
+    "UBL": {
+      "date": "2026-06-22",
+      "open": 444.0,
+      "high": 445.0,
+      "low": 435.5,
+      "close": 437.46,
+      "volume": 1316691,
+      "chg_pct": -0.16
+    },
+    "PPL": {
+      "date": "2026-06-22",
+      "open": 244.01,
+      "high": 244.98,
+      "low": 240.9,
+      "close": 242.63,
+      "volume": 7075385,
+      "chg_pct": 0.29
+    },
+    "MARI": {
+      "date": "2026-06-22",
+      "open": 661.0,
+      "high": 665.0,
+      "low": 655.9,
+      "close": 658.67,
+      "volume": 445865,
+      "chg_pct": 0.03
+    },
+    "ENGROH": {
+      "date": "2026-06-22",
+      "open": 285.0,
+      "high": 285.6,
+      "low": 281.0,
+      "close": 281.81,
+      "volume": 961499,
+      "chg_pct": 0.04
+    },
+    "MTL": {
+      "date": "2026-06-22",
+      "open": 310.0,
+      "high": 314.51,
+      "low": 308.0,
+      "close": 312.38,
+      "volume": 1349413,
+      "chg_pct": -48.56
+    },
+    "DGKC": {
+      "date": "2026-06-22",
+      "open": 217.0,
+      "high": 218.87,
+      "low": 214.8,
+      "close": 216.59,
+      "volume": 2121691,
+      "chg_pct": 0.6
+    },
+    "CHCC": {
+      "date": "2026-06-22",
+      "open": 326.02,
+      "high": 329.0,
+      "low": 311.5,
+      "close": 320.29,
+      "volume": 399827,
+      "chg_pct": -1.68
+    },
+    "PSO": {
+      "date": "2026-06-22",
+      "open": 359.94,
+      "high": 359.94,
+      "low": 352.01,
+      "close": 353.4,
+      "volume": 3445572,
+      "chg_pct": -1.05
+    },
+    "APL": {
+      "date": "2026-06-22",
+      "open": 541.0,
+      "high": 543.0,
+      "low": 535.0,
+      "close": 535.75,
+      "volume": 48258,
+      "chg_pct": -0.71
+    }
+  },
+  "announcements": {
+    "holdings_watchlist_matches": 0,
+    "note": "Scanned latest 50 PSX company announcements via Playwright MCP; ZERO matches for any holding/watchlist name. No results/dividends/board-meetings/material-info for FABL/FFC/LUCK/MEBL/OGDC or wider watchlist in recent window."
+  },
+  "ex_div": {
+    "note": "No holding flagged ex-div around 06-22 (no dividend announcements matched)."
+  },
+  "macro_news": [
+    {
+      "date": "2026-06-22",
+      "headline": "US-Iran talks concluded in Switzerland; de-escalation",
+      "impact": "risk-on for PSX, bearish oil",
+      "source": "dawn"
+    },
+    {
+      "date": "2026-06-22",
+      "headline": "PM announces fuel price cuts: petrol -Rs74/L, diesel -Rs67/L",
+      "impact": "NEGATIVE OMCs (PSO/APL ~Rs105bn inventory loss); disinflationary",
+      "source": "dawn"
+    },
+    {
+      "date": "2026-06-22",
+      "headline": "Brent crude $78.16 (-3.02% d/d, -19% m/m)",
+      "impact": "E&P headwind persists; OGDC rose +0.9% decoupling short-term",
+      "source": "tradingeconomics"
+    },
+    {
+      "date": "2026-06-22",
+      "headline": "Finance Bill 2026 still in NA committee (mobile tax, EV); passage ~06-30",
+      "impact": "binary macro event pending (R-004)",
+      "source": "dawn"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "date": "2026-06-18",
+  "scraped_at": "2026-06-18T17:07:00+05:00",
+  "source": "dps.psx.com.pk (KSE-100 index widget + POST /historical OHLC store) + scstrade (fundamentals) + oilprice/tradingeconomics (Brent) + dawn.com (macro)",
+  "data_rung": "Rung 1 (plain requests via collect_ohlc.py historical endpoint) for per-symbol OHLC; Playwright MCP for index summary + announcements; WebFetch for oil/macro",
+  "confidence": "high — all per-symbol bars from official PSX historical endpoint; index from dps live widget; GATE:PASS on adj_close continuity",
+  "index": {
+    "KSE100": { "close": 181398.22, "points_change": 887.19, "pct_change": 0.49 },
+    "KMI30":  { "close": 258982.78, "points_change": 1632.68, "pct_change": 0.63 },
+    "ALLSHR": { "close": 109207.08, "points_change": 651.21, "pct_change": 0.60 },
+    "note": "New all-time-high close; volatile profit-taking session after the +6% melt-up week. KSE-100 RSI 66.8."
+  },
+  "holdings_eod": {
+    "FABL": { "open": 97.00, "high": 98.00, "low": 96.90, "close": 97.40, "volume": 1068964, "pct": 0.82 },
+    "FFC":  { "open": 564.95, "high": 574.79, "low": 564.20, "close": 567.93, "volume": 1866573, "pct": 0.70 },
+    "LUCK": { "open": 472.00, "high": 477.00, "low": 469.99, "close": 471.57, "volume": 2098556, "pct": 0.20 },
+    "MEBL": { "open": 512.00, "high": 518.47, "low": 512.00, "close": 514.79, "volume": 963452, "pct": 0.57 },
+    "OGDC": { "open": 335.00, "high": 337.96, "low": 333.60, "close": 337.20, "volume": 7936728, "pct": 0.95 },
+    "UBL":  { "open": 446.90, "high": 448.00, "low": 444.00, "close": 445.04, "volume": 5270983, "pct": -0.04 }
+  },
+  "watchlist_eod": {
+    "MCB":   { "close": 407.11, "volume": 263994, "pct": -0.36 },
+    "PPL":   { "close": 249.06, "volume": 9554594, "pct": 1.42 },
+    "MARI":  { "close": 665.03, "volume": 925301, "pct": -0.74 },
+    "ENGROH":{ "close": 287.30, "volume": 18746647, "pct": 0.98 },
+    "MTL":   { "close": 617.83, "volume": 656326, "pct": -1.61 },
+    "DGKC":  { "close": 219.10, "volume": 7324254, "pct": -0.30 },
+    "CHCC":  { "close": 333.83, "volume": 855243, "pct": 2.11 }
+  },
+  "technicals": {
+    "_note": "RSI-14 / MAs computed on adj_close from data/ohlc store",
+    "FABL": { "rsi": 69.5, "ma20": 90.78, "ma50": 90.23, "ma200": 89.21, "wk52": [63,104] },
+    "FFC":  { "rsi": 54.3, "ma20": 553.11, "ma50": 535.17, "ma200": 533.71, "wk52": [378,673] },
+    "LUCK": { "rsi": 60.5, "ma20": 441.18, "ma50": 431.81, "ma200": 446.06, "wk52": [341,513] },
+    "MEBL": { "rsi": 63.5, "ma20": 495.71, "ma50": 491.67, "ma200": 459.25, "wk52": [320,520] },
+    "OGDC": { "rsi": 57.2, "ma20": 323.82, "ma50": 318.36, "ma200": 288.35, "wk52": [217,337] },
+    "UBL":  { "rsi": 69.3, "ma20": 411.00, "ma50": 397.69, "ma200": 404.67, "wk52": [271,503] },
+    "CHCC": { "rsi": 77.1, "ma20": 290.95, "ma50": 284.77, "ma200": 311.85, "wk52": [232,372] },
+    "MTL":  { "rsi": 70.4, "ma20": 568.12, "ma50": 546.94, "ma200": 531.26, "wk52": [489,628] }
+  },
+  "announcements_material": [
+    { "symbol": "ENGROH", "time": "3:21 PM", "title": "Material Information", "opened": true, "content": "Engro Vopak Terminal Ltd (JV of subsidiary Engro Corp) obtained all approvals for renewal of Implementation Agreement with Port Qasim Authority — ECC approval 16-Jun, Federal Cabinet 17-Jun. Positive but ENGROH-specific; watch-name only, not held.", "materiality": "non-material to current book" },
+    { "symbol": "ENGROH", "time": "8:15 AM", "title": "Reporting of shares purchased (buy-back)", "opened": true, "content": "Routine buy-back progress report (scanned image). Buy-back active; watch-name only.", "materiality": "non-material to current book" },
+    { "symbol": "MTL", "time": "11:06 AM", "title": "Disclosure of Interest by Director/CEO/Executive (insider-interest form, GIF)", "opened": false, "content": "Insider-interest disclosure form (View-only GIF, no PDF). MTL watch-name only (P-026 not-buy). Per 06-18 lesson, label != content; flagged but MTL not held so non-blocking.", "materiality": "non-material to current book" }
+  ],
+  "holdings_announcements": "NONE today for FABL/FFC/LUCK/MEBL/OGDC/UBL.",
+  "ex_dividend_check": "No holding flagged ex-div on/near 2026-06-18.",
+  "macro_news": [
+    { "headline": "KSE-100 +0.49% to new high 181,398; volatile profit-taking after +6% week", "source": "dawn.com", "lens": "E" },
+    { "headline": "Brent crude fell below $80 to ~$78.25 (-1.6%) on US-Iran peace deal / Strait of Hormuz reopening", "source": "tradingeconomics/oilprice", "lens": "E", "impact": "E&P headwind (OGDC/PPL/MARI); FinMin sees budget upside from deal" },
+    { "headline": "SBP paused rate at 11.5% (06-15); business circles disappointed", "source": "dawn.com", "lens": "E" },
+    { "headline": "Federal Budget FY27 Rs18.8tn unveiled, 4% GDP target; super-tax relief NOT granted to banks/oil/fert", "source": "dawn.com", "lens": "F/E" },
+    { "headline": "Current account surplus $459mn in May; ADB $700m insurance-sector loan approved", "source": "dawn.com", "lens": "E", "impact": "macro/rupee constructive" }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "date": "2026-06-16",
+  "fetched_at": "2026-06-16T17:30:00+05:00",
+  "source": "dps.psx.com.pk (company-page DOM extract via Playwright MCP) + index header marquee",
+  "confidence": "high",
+  "index": {
+    "kse100": 180392.97,
+    "change_pts": 3353.15,
+    "change_pct": 1.89,
+    "volume": null,
+    "advancers": null,
+    "decliners": null,
+    "note": "Index header marquee. Sector indices: BKTI (banks) +3.58%, OGTI (oil&gas) +1.25% (E&P lagged tape), KMI30 +1.35%, ALLSHR +1.62%, KSE30 +1.95%. Advancers/decliners not exposed on landing page."
+  },
+  "stocks": [
+    { "symbol": "OGDC", "open": 326.50, "high": 329.90, "low": 324.00, "close": 327.64, "volume": 5305472, "change_pct": 0.93, "wk52": [202.00, 337.10], "source": "dps.psx.com.pk/company/OGDC" },
+    { "symbol": "PPL", "open": 233.80, "high": 240.45, "low": 231.13, "close": 238.89, "volume": null, "change_pct": 2.63, "wk52": [151.30, 284.60], "source": "dps.psx.com.pk/company/PPL" },
+    { "symbol": "MARI", "open": 669.98, "high": 674.00, "low": 666.02, "close": 669.00, "volume": 1120896, "change_pct": 0.32, "wk52": [544.56, 795.00], "source": "dps.psx.com.pk/company/MARI" },
+    { "symbol": "MEBL", "open": 515.16, "high": 521.98, "low": 512.00, "close": 520.35, "volume": 1980632, "change_pct": 1.74, "wk52": [300.05, 525.00], "source": "dps.psx.com.pk/company/MEBL" },
+    { "symbol": "MCB", "open": 403.95, "high": 412.00, "low": 403.02, "close": 410.48, "volume": 745156, "change_pct": 2.01, "wk52": [273.00, 452.00], "source": "dps.psx.com.pk/company/MCB" },
+    { "symbol": "UBL", "open": 435.10, "high": 455.90, "low": 434.01, "close": 454.43, "volume": 5684612, "change_pct": 6.16, "wk52": [257.06, 517.00], "source": "dps.psx.com.pk/company/UBL" },
+    { "symbol": "FABL", "open": 95.10, "high": 97.78, "low": 95.10, "close": 97.64, "volume": 2185736, "change_pct": 3.22, "wk52": [58.69, 105.49], "source": "dps.psx.com.pk/company/FABL" },
+    { "symbol": "FFC", "open": 565.10, "high": 569.90, "low": 565.10, "close": 566.89, "volume": 2589640, "change_pct": 0.58, "wk52": [369.71, 685.00], "source": "dps.psx.com.pk/company/FFC" },
+    { "symbol": "DGKC", "open": 222.66, "high": 222.66, "low": 216.51, "close": 217.19, "volume": 7680389, "change_pct": -1.75, "wk52": [140.25, 275.75], "source": "dps.psx.com.pk/company/DGKC" },
+    { "symbol": "CHCC", "open": 320.00, "high": 340.00, "low": 315.00, "close": 325.25, "volume": 2877271, "change_pct": 2.69, "wk52": [225.00, 390.00], "source": "dps.psx.com.pk/company/CHCC" },
+    { "symbol": "LUCK", "open": 472.50, "high": 475.90, "low": 463.63, "close": 469.82, "volume": 4277608, "change_pct": 0.10, "wk52": [315.00, 529.50], "source": "dps.psx.com.pk/company/LUCK" },
+    { "symbol": "ENGROH", "open": 274.99, "high": 284.40, "low": 271.25, "close": 283.57, "volume": 7052685, "change_pct": 3.58, "wk52": [160.75, 302.50], "source": "dps.psx.com.pk/company/ENGROH" },
+    { "symbol": "MTL", "open": 578.48, "high": 596.24, "low": 574.02, "close": 593.46, "volume": 847711, "change_pct": 3.40, "wk52": [465.00, 599.50], "source": "dps.psx.com.pk/company/MTL", "note": "face value Rs5 post 2:1 split (R-EXP-002)" },
+    { "symbol": "PSO", "open": 362.00, "high": 368.15, "low": 361.10, "close": 365.95, "volume": 5450434, "change_pct": 1.83, "wk52": [320.11, 506.75], "source": "dps.psx.com.pk/company/PSO" },
+    { "symbol": "APL", "open": 534.99, "high": 544.78, "low": 533.60, "close": 541.75, "volume": 223507, "change_pct": 1.69, "wk52": [435.11, 646.00], "source": "dps.psx.com.pk/company/APL" }
+  ],
+  "fundamentals": [],
+  "announcements": [
+    { "symbol": "FFC", "type": "governance", "text": "Disclosure of Interest by a Director/CEO/Executive (10:56 AM) — routine, non-material", "source": "dps.psx.com.pk" },
+    { "symbol": "UBL", "type": "governance", "text": "Disclosure of Interest by a Director/CEO/Executive (10:30 AM) — routine, non-material", "source": "dps.psx.com.pk" },
+    { "symbol": "CHCC", "type": "board_meeting", "text": "Board Meeting Other Than Financial Result (dated 06-15) — non-financial", "source": "dps.psx.com.pk" }
+  ],
+  "commodities": {
+    "brent": 83.42, "wti": null, "arab_light": null, "gold": null, "silver": null,
+    "coal": null, "usd_pkr": 278.30, "fipi_net_usd_mn": null,
+    "leverage": { "futures_bn": null, "mts_bn": null, "mfs_bn": null },
+    "as_of": "2026-06-16", "source": "brecorder RSS (Brent rebounded to $83.42 from $83.25 8-wk low; PKR 278.30 firming on softer oil)"
+  },
+  "macro_news": [
+    { "date": "2026-06-16", "source": "dawn", "headline": "Aurangzeb sees budget upside from US-Iran deal", "bucket": "geopolitics", "ticker_or_sector": "macro", "read": "+", "note": "FinMin cautiously optimistic on FY27; energy infra damage needs time to normalize" },
+    { "date": "2026-06-16", "source": "brecorder", "headline": "US-Iran deal: interim accord extends ceasefire 60 days, reopens Strait of Hormuz", "bucket": "geopolitics", "ticker_or_sector": "oil/E&P", "read": "risk", "note": "Structurally bearish oil (Hormuz reopening); final nuclear/proxy issues unresolved — ceasefire could still break. Headwind for E&P realizations." },
+    { "date": "2026-06-15", "source": "brecorder", "headline": "Oil prices slip to lowest since March; Brent ~$83.25", "bucket": "oil", "ticker_or_sector": "OGDC/PPL/MARI", "read": "-", "note": "Falling-oil regime persists → relative E&P headwind (R-EXP-003 inverse). Rebounded slightly to $83.42 on 06-16." },
+    { "date": "2026-06-16", "source": "brecorder", "headline": "Business circles disappointed over SBP rate pause", "bucket": "rate", "ticker_or_sector": "banks/cyclicals", "read": "risk", "note": "SBP held 11.5% (confirmed); FPCCI wants single-digit. Elevated-rate regime persists → R-001 banks NIM thesis intact; cyclicals headwind remains." },
+    { "date": "2026-06-15", "source": "dawn", "headline": "Central bank keeps policy rate unchanged at 11.5pc; FX reserves $17.2bn", "bucket": "rate", "ticker_or_sector": "banks", "read": "+", "note": "MPC held citing double-digit inflation; external account moderate. R-001 regime intact." },
+    { "date": "2026-06-15", "source": "dawn", "headline": "2026-27 Budget: super tax reduction benefits 216+ listed cos; pharma/real-estate relief", "bucket": "budget", "ticker_or_sector": "broad", "read": "+", "note": "Super-tax relief EXCLUDES banks/oil-gas/fertilizer (FY27 memory) → no relief OGDC/PPL/FFC/ENGROH. Cement = construction-WHT winner (DGKC/CHCC)." },
+    { "date": "2026-06-15", "source": "dawn", "headline": "Equities rally 2.69% to 177,039 (PRIOR-SESSION RECAP, 06-15)", "bucket": "ticker", "ticker_or_sector": "KSE100", "read": "+", "note": "DATE HYGIENE: this is the 06-15 close recap, NOT today. Today (06-16) closed 180,392.97 +1.89%. Tagged to correct prior date — no look-ahead." },
+    { "date": "2026-06-16", "source": "brecorder", "headline": "PKR firms to ~278.30 on softer oil; dollar near 10-day lows", "bucket": "pkr", "ticker_or_sector": "importers/exporters", "read": "+", "note": "Softer oil + firmer PKR = easing import bill; mildly + for OMCs/importers, neutral-to-slightly- for exporters." }
+  ],
+  "screenshot": "data/market_data/2026-06-16_close.png",
+  "warnings": [
+    "PPL volume not captured in DOM parse (decimal-less field); non-critical, OHLC store has authoritative volume.",
+    "Index advancers/decliners + total volume not exposed on landing marquee this run.",
+    "Dawn RSS item 'Equities rally 2.69% to 177,039' is the 06-15 recap, correctly tagged to 06-15 (no look-ahead)."
+  ]
+}

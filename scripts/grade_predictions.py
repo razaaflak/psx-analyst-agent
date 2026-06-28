@@ -53,6 +53,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 DATA = REPO_ROOT / "data"
 OHLC_DIR = DATA / "ohlc"
 PRED_CSV = DATA / "predictions_log.csv"
+UNIVERSE_CSV = DATA / "universe_signals.csv"
 
 # Index symbols the parser recognises for "outperforms the index" phrasing.
 INDEX_TOKENS = ("KSE-100", "KSE100", "INDEX")
@@ -300,6 +301,179 @@ def propose_grade(row: dict) -> tuple[str | None, str]:
 
 
 # --------------------------------------------------------------------------- #
+# Universe scorecard grading (TODO #1 — grade data/universe_signals.csv)
+#
+# Each row is a BUY/HOLD/SELL signal issued at `date` with reference close `close`
+# and a `grade_on_date`. We score it from the raw OHLC store reading only bars
+# STRICTLY AFTER the signal date, up to grade_on_date (no look-ahead). Mapping is
+# SKILL.md H5:
+#   BUY  -> HIT if close is higher than the signal-date close on >=1 session
+#   SELL -> HIT if close is lower  than the signal-date close on >=1 session
+#   HOLD -> HIT if close stays within a +/- band across the whole window
+# The band is ATR-scaled when an ATR is available (+/-1x ATR14), else +/-3% flat.
+#
+# Writes status (open -> graded) and a grade string into `result`. The issued
+# `why` (factor explanation) and every other issued field are immutable.
+# --------------------------------------------------------------------------- #
+
+UNIVERSE_HOLD_BAND_PCT = 0.03  # flat +/-3% fallback when ATR is unavailable
+
+
+def _bar_field(b: dict, *names: str):
+    for n in names:
+        if b.get(n) is not None:
+            return b[n]
+    return None
+
+
+def atr14_at(symbol: str, asof: str) -> float | None:
+    """ATR(14) computed on bars up to and including `asof` (no look-ahead).
+    Uses adjusted OHLC so it is on the same basis as the stored signal close."""
+    bars = [b for b in load_ohlc(symbol) if b["date"] <= asof]
+    if len(bars) < 15:
+        return None
+    trs: list[float] = []
+    for i in range(1, len(bars)):
+        hi = _bar_field(bars[i], "adj_high", "high")
+        lo = _bar_field(bars[i], "adj_low", "low")
+        pc = _bar_field(bars[i - 1], "adj_close", "close")
+        if hi is None or lo is None or pc is None:
+            continue
+        trs.append(max(hi - lo, abs(hi - pc), abs(lo - pc)))
+    if len(trs) < 14:
+        return None
+    return sum(trs[-14:]) / 14
+
+
+def grade_universe_row(row: dict) -> tuple[str | None, str]:
+    """Return (HIT|MISS, evidence) or (None, reason) for a universe signal row."""
+    sym = row["symbol"].upper()
+    signal = row["signal"].strip().upper()
+    issue = row["date"]
+    grade_on = row["grade_on_date"]
+    try:
+        ref = float(row["close"])
+    except (ValueError, KeyError):
+        return None, "NEEDS-DATA (no reference close on signal row)"
+
+    bars = bars_in_window(sym, issue, grade_on)
+    if not bars:
+        return None, "NEEDS-DATA (no bars in window)"
+
+    # use adjusted close so the comparison is on the same basis as the stored ref
+    closes = [(b["date"], _bar_field(b, "adj_close", "close")) for b in bars]
+    closes = [(d, c) for d, c in closes if c is not None]
+    if not closes:
+        return None, "NEEDS-DATA (no usable closes in window)"
+
+    if signal == "BUY":
+        hits = [c for c in closes if c[1] > ref]
+        if hits:
+            return "HIT", f"BUY: closed > ref {ref} on {hits[0][0]} ({hits[0][1]})"
+        hi = max(closes, key=lambda c: c[1])
+        return "MISS", f"BUY: never closed > ref {ref}; high {hi[1]} on {hi[0]}"
+
+    if signal == "SELL":
+        hits = [c for c in closes if c[1] < ref]
+        if hits:
+            return "HIT", f"SELL: closed < ref {ref} on {hits[0][0]} ({hits[0][1]})"
+        lo = min(closes, key=lambda c: c[1])
+        return "MISS", f"SELL: never closed < ref {ref}; low {lo[1]} on {lo[0]}"
+
+    if signal == "HOLD":
+        atr = atr14_at(sym, issue)
+        if atr is not None and atr > 0:
+            band, basis = atr, f"+/-1xATR ({atr:.2f})"
+        else:
+            band, basis = ref * UNIVERSE_HOLD_BAND_PCT, f"+/-{UNIVERSE_HOLD_BAND_PCT*100:.0f}%"
+        lo_b, hi_b = ref - band, ref + band
+        out = [c for c in closes if c[1] < lo_b or c[1] > hi_b]
+        if out:
+            return "MISS", f"HOLD: left [{lo_b:.2f},{hi_b:.2f}] ({basis}) on {out[0][0]} ({out[0][1]})"
+        return "HIT", f"HOLD: stayed within [{lo_b:.2f},{hi_b:.2f}] ({basis}) all {len(closes)} sessions"
+
+    return None, f"NEEDS-REVIEW (unknown signal '{signal}')"
+
+
+def read_universe_rows() -> tuple[list[str], list[list[str]]]:
+    with open(UNIVERSE_CSV, "r", encoding="utf-8-sig", newline="") as f:
+        rows = [r for r in csv.reader(f) if r]
+    return rows[0], rows[1:]
+
+
+def grade_universe(asof: str, write: bool) -> None:
+    if not UNIVERSE_CSV.exists():
+        print(f"No {UNIVERSE_CSV.name} found.")
+        return
+    header, data = read_universe_rows()
+    col = {name: i for i, name in enumerate(header)}
+    needed = ("symbol", "signal", "date", "close", "grade_on_date", "status", "result")
+    missing = [c for c in needed if c not in col]
+    if missing:
+        print(f"universe CSV missing columns: {missing}")
+        return
+
+    n_total = n_matured = n_graded = n_needs = 0
+    hits = misses = 0
+    by_signal: dict[str, list[int]] = {}  # signal -> [hit, total]
+    proposals: list[str] = []
+
+    for r in data:
+        n_total += 1
+        if len(r) < len(header):
+            r += [""] * (len(header) - len(r))
+        if r[col["status"]].strip() == "graded":
+            continue
+        if r[col["grade_on_date"]] > asof:
+            continue  # not matured — no look-ahead
+        n_matured += 1
+        rowd = {h: r[col[h]] for h in col}
+        g, ev = grade_universe_row(rowd)
+        if g is None:
+            n_needs += 1
+            proposals.append(f"  {r[col['date']]} {r[col['symbol']]:8} {r[col['signal']]:4} -> --   {ev}")
+            continue
+        n_graded += 1
+        if g == "HIT":
+            hits += 1
+        else:
+            misses += 1
+        sig = r[col["signal"]].strip().upper()
+        by_signal.setdefault(sig, [0, 0])
+        by_signal[sig][1] += 1
+        if g == "HIT":
+            by_signal[sig][0] += 1
+        proposals.append(f"  {r[col['date']]} {r[col['symbol']]:8} {sig:4} -> {g:4} {ev}")
+        if write:
+            r[col["status"]] = "graded"
+            r[col["result"]] = f"{g}: {ev}"
+
+    print("\n" + "=" * 100)
+    print(f"UNIVERSE GRADING — {UNIVERSE_CSV.name} as of {asof}  (no look-ahead: grade_on_date <= asof)")
+    print("=" * 100)
+    for line in proposals:
+        print(line)
+    print("-" * 100)
+    print(f"{n_total} rows | {n_matured} matured-open | graded {n_graded} "
+          f"(HIT {hits} / MISS {misses}) | needs-data/review {n_needs}")
+    if n_graded:
+        print(f"universe hit-rate: {hits}/{n_graded} = {hits/n_graded*100:.1f}%")
+        for sig, (h, t) in sorted(by_signal.items()):
+            print(f"  {sig:5}: {h}/{t} = {h/t*100:.1f}%")
+    else:
+        print("universe hit-rate: 0 graded (no matured rows yet) — UNGRADED, do not claim a rate.")
+
+    if write and n_graded:
+        with open(UNIVERSE_CSV, "w", encoding="utf-8", newline="") as f:
+            w = csv.writer(f)
+            w.writerow(header)
+            w.writerows(data)
+        print(f"\nWROTE {n_graded} grade(s) back to {UNIVERSE_CSV.name} (issued fields immutable).")
+    elif n_graded:
+        print("\n(dry run — pass --write to persist grades into the CSV.)")
+
+
+# --------------------------------------------------------------------------- #
 # CSV read + run
 # --------------------------------------------------------------------------- #
 
@@ -320,7 +494,15 @@ def main() -> None:
                     help="Grade rows whose grade_on_date <= this (default: today)")
     ap.add_argument("--id", type=str, default=None, help="Grade only this prediction_id")
     ap.add_argument("--all", action="store_true", help="Include not-yet-matured rows (preview)")
+    ap.add_argument("--universe", action="store_true",
+                    help="Grade data/universe_signals.csv (BUY/HOLD/SELL scorecard signals)")
+    ap.add_argument("--write", action="store_true",
+                    help="With --universe: persist grades back into the universe CSV")
     args = ap.parse_args()
+
+    if args.universe:
+        grade_universe(args.asof, write=args.write)
+        return
 
     rows = read_predictions()
     targets = []

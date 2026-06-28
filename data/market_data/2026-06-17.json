@@ -1,0 +1,76 @@
+{
+  "date": "2026-06-17",
+  "fetched_at": "2026-06-17T17:47:00+05:00",
+  "source": "dps.psx.com.pk (market-watch TSV feed + company pages)",
+  "confidence": "high",
+  "index": {
+    "kse100": 180511.02,
+    "change_pts": 118.05,
+    "change_pct": 0.07,
+    "volume": null,
+    "advancers": null,
+    "decliners": null,
+    "sector_indices": {
+      "BKTI": { "value": 49456.60, "change_pct": -0.92 },
+      "OGTI": { "value": 36926.58, "change_pct": 1.66 },
+      "KMI30": { "value": 257350.10, "change_pct": 0.18 },
+      "ALLSHR": { "value": 108555.87, "change_pct": 0.36 }
+    }
+  },
+  "stocks": [
+    { "symbol": "OGDC",  "open": 328.90, "high": 335.00, "low": 325.80, "close": 334.04, "volume": 9568482,  "change_pct": 1.95,  "ldcp": 327.64, "source": "dps.psx.com.pk" },
+    { "symbol": "PPL",   "open": 241.00, "high": 247.10, "low": 239.50, "close": 245.58, "volume": 12349535, "change_pct": 2.80,  "ldcp": 238.89, "source": "dps.psx.com.pk" },
+    { "symbol": "MARI",  "open": 671.00, "high": 673.00, "low": 668.00, "close": 669.97, "volume": 767066,   "change_pct": 0.15,  "ldcp": 669.00, "source": "dps.psx.com.pk" },
+    { "symbol": "MEBL",  "open": 522.50, "high": 522.50, "low": 509.00, "close": 511.87, "volume": 7613907,  "change_pct": -1.63, "ldcp": 520.35, "source": "dps.psx.com.pk" },
+    { "symbol": "UBL",   "open": 456.80, "high": 458.50, "low": 442.60, "close": 445.20, "volume": 4879298,  "change_pct": -2.03, "ldcp": 454.43, "source": "dps.psx.com.pk" },
+    { "symbol": "MCB",   "open": 410.50, "high": 412.80, "low": 407.00, "close": 408.60, "volume": 330198,   "change_pct": -0.46, "ldcp": 410.48, "source": "dps.psx.com.pk" },
+    { "symbol": "FABL",  "open": 98.29,  "high": 98.29,  "low": 96.10,  "close": 96.61,  "volume": 2059864,  "change_pct": -1.05, "ldcp": 97.64,  "source": "dps.psx.com.pk" },
+    { "symbol": "FFC",   "open": 568.89, "high": 568.99, "low": 562.00, "close": 563.96, "volume": 1785672,  "change_pct": -0.52, "ldcp": 566.89, "source": "dps.psx.com.pk" },
+    { "symbol": "DGKC",  "open": 219.00, "high": 221.40, "low": 216.01, "close": 219.77, "volume": 6670714,  "change_pct": 1.19,  "ldcp": 217.19, "source": "dps.psx.com.pk" },
+    { "symbol": "CHCC",  "open": 329.90, "high": 329.90, "low": 319.10, "close": 326.93, "volume": 567977,   "change_pct": 0.52,  "ldcp": 325.25, "source": "dps.psx.com.pk" },
+    { "symbol": "LUCK",  "open": 470.00, "high": 475.00, "low": 464.16, "close": 470.61, "volume": 3055536,  "change_pct": 0.17,  "ldcp": 469.82, "source": "dps.psx.com.pk" },
+    { "symbol": "ENGROH","open": 285.00, "high": 286.00, "low": 277.85, "close": 284.51, "volume": 21982639, "change_pct": 0.33,  "ldcp": 283.57, "source": "dps.psx.com.pk" },
+    { "symbol": "MTL",   "open": 599.80, "high": 636.99, "low": 595.00, "close": 627.91, "volume": 1484426,  "change_pct": 5.81,  "ldcp": 593.46, "source": "dps.psx.com.pk" },
+    { "symbol": "PSO",   "open": 368.50, "high": 371.00, "low": 364.00, "close": 365.14, "volume": 4041700,  "change_pct": -0.22, "ldcp": 365.95, "source": "dps.psx.com.pk" },
+    { "symbol": "APL",   "open": 542.00, "high": 548.00, "low": 536.00, "close": 543.60, "volume": 78256,    "change_pct": 0.34,  "ldcp": 541.75, "source": "dps.psx.com.pk" }
+  ],
+  "fundamentals": [
+    { "symbol": "FFC",  "pe": 10.35, "pb": null, "div_yield": null, "source": "dps.psx.com.pk/company/FFC", "note": "P/E TTM 10.35 per portal" },
+    { "symbol": "UBL",  "pe": 7.89,  "pb": null, "div_yield": null, "source": "dps.psx.com.pk/company/UBL", "note": "P/E TTM 7.89 per portal" }
+  ],
+  "announcements": [
+    { "symbol": "UBL", "type": "insider_disclosure", "text": "Insider disclosure u/c 5.6.1(d): Mehdi Hassan Siddiqui (Executive) SELL 3,406 shares @ Rs455.00, ready market via CDC, dated 2026-06-16; cumulative holding 0.00%.", "material": false, "read": "mild_negative", "source": "dps.psx.com.pk/announcements/companies", "attachment": "https://dps.psx.com.pk/download/image/278704-1.gif", "attachment_type": "gif", "note": "ATTACHMENT READ (GIF, backfilled 2026-06-18): executive SELL of 3,406 sh (~Rs1.55mn) — immaterial size, 0.00% cumulative. Mild-negative insider signal but not a thesis flag. HOLD unchanged. Title alone was insufficient — content only visible in attachment." },
+    { "symbol": "PSO", "type": "corporate_briefing_results", "text": "Corporate Briefing Session (held 06-18) — 9MFY26 (Jul'25–Mar'26) results deck. Net sales 2,241,056mn (-4% YoY); Gross profit 133,620mn (+82%); Operating profit 97,182mn (+97%); Equity 283,609mn (+13%); Borrowings 288,028mn (-19%); GP margin 5.96% vs 3.14%; Net margin 1.70% vs 0.65%; group consolidated 16,648mn; 71 new outlets; managed Hormuz/KPC force-majeure supply disruption.", "material": true, "read": "positive", "source": "dps.psx.com.pk/announcements/companies", "attachment": "https://dps.psx.com.pk/download/document/278695.pdf", "attachment_type": "pdf", "note": "ATTACHMENT READ (26pg PDF, backfilled 2026-06-18): materially POSITIVE — margin recovery (GP +82%, OP +97%) on -4% sales, deleveraging -19%. Title said 'briefing notice' (looked non-material); the deck is a full 9MFY26 results presentation. PSO not held (monitor, borderline Shariah) → no action, but signal logged." }
+  ],
+  "commodities": {
+    "brent": 79.50,
+    "wti": null,
+    "arab_light": null,
+    "gold": null,
+    "silver": null,
+    "coal": null,
+    "usd_pkr": null,
+    "fipi_net_usd_mn": null,
+    "leverage": { "futures_bn": null, "mts_bn": null, "mfs_bn": null },
+    "as_of": "2026-06-17",
+    "source": "brecorder RSS (Brent below $80 per Dawn headline; est ~$79-80)",
+    "note": "Dawn: 'Oil falls below $80 as traders hope end of war, reopening of Hormuz' — consistent with Brent ~$79-80"
+  },
+  "macro_news": [
+    { "date": "2026-06-17", "source": "dawn.com", "headline": "Oil falls below $80 as traders hope end of war, reopening of Hormuz", "bucket": "oil|geopolitics", "ticker_or_sector": "OGDC/PPL/MARI", "read": "-", "note": "Brent now <$80; deepening bearish oil regime. Headwind for E&P. R-EXP-003 inverse thesis strengthening." },
+    { "date": "2026-06-17", "source": "dawn.com", "headline": "Business circles disappointed over SBP rate pause", "bucket": "rate|SBP", "ticker_or_sector": "BANKS", "read": "+", "note": "FPCCI wanted cuts; SBP held 11.5%. R-001 thesis intact — elevated rates support bank NIM." },
+    { "date": "2026-06-17", "source": "dawn.com", "headline": "Bulls toss KSE-100 index above 180,000 milestone", "bucket": "PSX", "ticker_or_sector": "KSE100", "read": "+", "note": "Headline refers to recent rally; today's index only +0.07% — momentum fading, digestion phase." },
+    { "date": "2026-06-17", "source": "dawn.com", "headline": "Spending cuts to hit growth, warns Fitch in review of FY27 budget", "bucket": "budget|rating", "ticker_or_sector": "broad", "read": "risk", "note": "Fitch cautions on fiscal consolidation trade-offs — moderate negative for growth-sensitive sectors." },
+    { "date": "2026-06-17", "source": "brecorder.com", "headline": "Iranian oil tankers pass US blockade after US-Iran deal", "bucket": "geopolitics|oil", "ticker_or_sector": "OGDC/PPL/MARI", "read": "-", "note": "Hormuz opening progressing; structurally bearish oil supply. E&P headwind continues." },
+    { "date": "2026-06-17", "source": "brecorder.com", "headline": "Iran memorandum of understanding is not final, says Trump", "bucket": "geopolitics|oil", "ticker_or_sector": "OGDC/PPL/MARI", "read": "risk", "note": "Trump caveat on Iran MOU — deal still conditional. Oil risk remains two-sided." },
+    { "date": "2026-06-17", "source": "brecorder.com", "headline": "Rupee registers gain against US dollar", "bucket": "PKR", "ticker_or_sector": "broad", "read": "+", "note": "PKR strengthening = improved macro sentiment; mild positive for importers, neutral for E&P." },
+    { "date": "2026-06-17", "source": "dawn.com", "headline": "Auto sector row rocks Senate body during Finance Bill 2026 review", "bucket": "budget|sector", "ticker_or_sector": "MTL", "read": "risk", "note": "Finance Bill auto provisions contentious; watch MTL re: tractor-sector tax treatment." }
+  ],
+  "screenshot": "data/market_data/2026-06-17_close.png",
+  "warnings": [
+    "KSE-100 breadth (advancers/decliners/total volume) not captured — market-watch TSV does not include index-level breadth stats. Sector indices used as proxy.",
+    "Brent price estimated from Dawn headline ('below $80') — exact level ~$79-80; not a precise figure.",
+    "RESOLVED 2026-06-18: UBL and PSO announcement text backfilled — both non-material (UBL routine 5.6.1d disclosure; PSO corporate briefing 06-18). Original failure was a wrong selector/assumed column layout; real table is #announcementsTable with cols DATE/TIME/SYMBOL/NAME/TITLE/View. Spec + procedure corrected.",
+    "Fundamentals: only FFC and UBL P/E captured from company pages visited today. Others carried from prior runs."
+  ]
+}

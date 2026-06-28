@@ -1,6 +1,6 @@
 {
   "_comment": "Suspected corporate actions (splits/bonuses/rights) auto-detected in the RAW unadjusted OHLC store. Detection-only: this file is a WARNING / audit trail, not an adjustment. Verify each against PSX announcements and set confirmed=true once checked. Downstream TA/backtest treats raw bars; use this list to know which series have an unadjusted discontinuity.",
-  "generated": "2026-06-15 17:22:01",
+  "generated": "2026-06-24 18:19:03",
   "threshold": 0.3,
   "events": [
     {
@@ -240,6 +240,20 @@
       "confirmed": true,
       "note": "confirmed via empirical ratio (close_before/close_after); back-adjustment applied",
       "applied_ratio": 1.937548
+    },
+    {
+      "symbol": "MTL",
+      "date": "2026-06-22",
+      "prev_date": "2026-06-19",
+      "prev_close": 607.26,
+      "close": 312.38,
+      "ratio": 0.5144,
+      "gap_pct": -48.56,
+      "index_move_pct": -0.25,
+      "likely": "2:1 split or 100% bonus",
+      "confirmed": true,
+      "note": "confirmed via empirical ratio (close_before/close_after); back-adjustment applied",
+      "applied_ratio": 1.943978
     }
   ]
 }

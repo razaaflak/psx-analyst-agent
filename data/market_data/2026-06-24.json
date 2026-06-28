@@ -1,0 +1,53 @@
+{
+  "date": "2026-06-24",
+  "captured_at": "2026-06-24T18:12:00+05:00",
+  "source": "dps.psx.com.pk (Playwright MCP market-watch + company pages); oil via WebSearch (Fortune/TradingEconomics)",
+  "confidence": "high — official PSX EOD (market state CLOSED); oil ~$76 from secondary sources",
+  "kse100": {
+    "close": 179571.26,
+    "change": 1878.34,
+    "change_pct": 1.06,
+    "note": "Strong rebound day after 3-session pullback. Recovered most of the dip from 182,186 ATH. Above MA20 (174,310) / MA50 (170,586) / MA200 (168,033). RSI14 ~69.",
+    "ma20": 174310.44, "ma50": 170586.05, "ma200": 168033.06, "rsi14": 69.0
+  },
+  "market_breadth": {
+    "trades": 447835,
+    "volume": 851298910,
+    "value_pkr": 40380750943.86,
+    "note": "Volume 851M vs ~292M on 06-23 — heavy participation on the bounce (conviction rebound, not a dead-cat drift). Sector indices all green: BKTI +1.37%, OGTI +0.94%, KMI30 +0.76%."
+  },
+  "indices": {
+    "ALLSHR": {"close": 108600.93, "chg_pct": 1.00},
+    "KSE30": {"close": 53548.41, "chg_pct": 0.99},
+    "KMI30": {"close": 256725.69, "chg_pct": 0.76},
+    "BKTI": {"close": 48625.03, "chg_pct": 1.37},
+    "OGTI": {"close": 37179.52, "chg_pct": 0.94}
+  },
+  "holdings": {
+    "FABL": {"ldcp": 97.06, "open": 96.80, "high": 97.25, "low": 96.75, "close": 96.91, "chg_pct": -0.15, "volume": 516408, "rsi14": 75.7, "ma20": 92.62, "ma50": 90.76},
+    "FFC":  {"ldcp": 555.64, "open": 555.64, "high": 562.00, "low": 554.00, "close": 558.68, "chg_pct": 0.55, "volume": 1279546, "rsi14": 49.3, "ma20": 558.66, "ma50": 537.68},
+    "LUCK": {"ldcp": 457.47, "open": 458.02, "high": 469.00, "low": 458.02, "close": 467.75, "chg_pct": 2.25, "volume": 1991650, "rsi14": 70.1, "ma20": 448.71, "ma50": 435.40},
+    "MEBL": {"ldcp": 511.24, "open": 512.00, "high": 516.78, "low": 509.16, "close": 514.26, "chg_pct": 0.59, "volume": 1044374, "rsi14": 67.7, "ma20": 501.92, "ma50": 492.43},
+    "OGDC": {"ldcp": 338.17, "open": 338.25, "high": 340.75, "low": 337.00, "close": 339.96, "chg_pct": 0.53, "volume": 3779720, "rsi14": 66.4, "ma20": 326.11, "ma50": 321.72}
+  },
+  "watch_quotes": {
+    "INDU": {"ldcp": 2041.02, "open": 2042.00, "high": 2144.00, "low": 2035.01, "close": 2070.34, "chg_pct": 1.44, "volume": 16131, "rsi14": 58.7, "ma20": 2039.08, "ma50": 2026.81, "ma200": 2045.24},
+    "MARI": {"close": 662.80, "chg_pct": 0.93, "rsi14": 56.6},
+    "PPL":  {"close": 247.98, "chg_pct": 1.50, "rsi14": 65.0},
+    "DGKC": {"close": 221.94, "chg_pct": 1.52, "rsi14": 72.8},
+    "CHCC": {"close": 339.33, "chg_pct": 4.88, "rsi14": 78.0},
+    "MCB":  {"close": 403.75, "chg_pct": 1.23, "rsi14": 40.2},
+    "UBL":  {"close": 442.92, "chg_pct": 3.17, "rsi14": 66.7}
+  },
+  "announcements": {
+    "holdings_filings_today": "NONE — no company-specific filing for FABL/FFC/LUCK/MEBL/OGDC (nor INDU) in the dps announcements feed (50 rows, current to 5:25 PM). All entries were PSX-level scheduling/regulatory notices (July trading schedule, futures schedules, Unity Foods disciplinary, Apollo Textile suspension). All holdings + INDU = diligence OK (no unread material filing).",
+    "INDU_latest_filing": "May 19, 2026 — 3rd interim cash dividend FY26 (no new filing today; prior diligence current)."
+  },
+  "macro": {
+    "brent_usd": 76.0,
+    "brent_note": "Brent ~$75-77 on 06-24 (range 75.24-76.84), DOWN from ~$78. Driver: US-Iran peace progress + US granting Iran a 60-day license to sell oil internationally -> faster global supply expectations -> bearish oil. APPROACHING the $75 OGDC defensive-trim trigger.",
+    "finance_bill": "PASSED NA 2026-06-23 (resolved). No super-tax relief for banks/oil/fert; cement WHT cut = law. No near-term binary macro event (next = SBP MPC, weeks away).",
+    "ex_div_today": "None flagged for holdings."
+  },
+  "not_advice": "Internal research artifact. Not financial advice."
+}

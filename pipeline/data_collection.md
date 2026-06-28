@@ -19,6 +19,22 @@ This replaces all manual copy-paste. The agent drives a real browser through the
 
 **Note on fundamentals:** the PSX portal is mostly price/volume. For P/E, P/B, ROE, and dividend history (the F lens), use a company page that carries them (e.g. `scstrade.com` company snapshot or `sarmaaya.pk`) — scrape the same way. Always record which source supplied each fundamental.
 
+### Source roles — do NOT cross-check the wrong source (verified 2026-06-18)
+Each source carries a **different data type**. Routing a lookup to the wrong one wastes a fetch and proves nothing.
+
+| Source | Carries | Does NOT carry | Use for |
+|---|---|---|---|
+| **dps.psx.com.pk/announcements/companies** | LIVE disclosures: insider trades (5.6.x), corporate-briefing notices, board-meeting/regulatory filings + their PDF/GIF attachments | — | **Only** source for live disclosures. No fallback exists — if it's down, the disclosure is simply unavailable that day (log it). |
+| **scstrade.com** `SS_CompanySnapShotAnn.aspx?symbol=` | Results/dividend **CALENDAR**: board-meeting date, EPS, EPS-cum, **DIVIDEND %**, BONUS, RIGHT, **XDATE (ex-div)** | insider trades, briefing notices, any live disclosure | Cross-verify **earnings & payout** (EPS/dividend) and **capture XDATE** for the F-lens. NEVER expect it to confirm a disclosure — structurally can't. (Confirmed 2026-06-18: PSO insider/briefing absent; UBL insider sell absent.) Data-only — never take its trading calls ([[reference_scstrade_fundamentals]]). |
+| **scstrade.com** `SS_CompanySnapShot.aspx?symbol=` | Ratios snapshot: P/E, P/B, ROE, ROA, BVPS, yield, 52wk | live disclosures | F-lens ratios fallback. |
+
+**XDATE / ex-dividend discipline (F-lens):** the scstrade calendar lists each holding's **ex-div date**. On the ex-div day a stock drops mechanically by ~the dividend amount — this is NOT a thesis break and must NOT be graded as a loss. Each run, check whether any holding has an XDATE on/near today; if so, expect the drop and annotate the prediction/grade accordingly (no look-ahead — only use a *published* XDATE).
+
+**scstrade Company Snapshot — fundamentals fallback (verified 2026-06-17, DATA-ONLY).** When a ratio/metric isn't in our existing sources (PSX portal, `data/fundamentals/{SYM}.json`, sarmaaya), pull it from:
+`https://scstrade.com/stockscreening/SS_CompanySnapShot.aspx?symbol={SYMBOL}`
+Reads clean via plain `WebFetch` (no browser). Carries: P/E (+expected), P/B (+expected), latest & annual EPS, expected earnings growth, BVPS, ROE, ROA, last annual dividend, dividend yield, payout ratio, 52-week range, day range, volume, plus bank-specific ratios (equity/advances, ADR, cash/deposits). Tag `source: "scstrade.com snapshot"` on every value taken.
+**Hard rule: extract DATA ONLY. Never ingest, repeat, or act on any buy/sell/hold call, target price, or analyst opinion from scstrade. All trading judgment is the agent's own (F/T/E method).** Treat its "expected" figures as the site's estimates — label them estimates, don't treat as reported actuals.
+
 ---
 
 ## Playwright MCP tools you will use
@@ -59,6 +75,33 @@ For each symbol, `browser_navigate` → `/company/{SYMBOL}`, `browser_wait_for`,
 
 ### 3. Announcements & news
 `browser_navigate` → `/announcements/companies`, extract the day's announcements (results, dividends, board meetings, regulatory) and tag any that match a watchlist symbol. These feed the **F** and **E** lenses.
+
+**Exact DOM (verified 2026-06-18 — do NOT guess the layout):** one table `#announcementsTable` (`table.tbl`), `tbody tr` rows (~50/page). Columns in order: **`td[0]`=DATE, `td[1]`=TIME, `td[2]`=SYMBOL, `td[3]`=NAME, `td[4]`=TITLE, `td[5]`=View link**. The TITLE in `td[4]` IS the announcement content — there is no separate detail fetch needed for the headline. Canonical extractor:
+```js
+() => Array.from(document.querySelectorAll('#announcementsTable tbody tr')).map(r => {
+  const td = r.querySelectorAll('td');
+  return { date: td[0]?.innerText.trim(), time: td[1]?.innerText.trim(),
+           symbol: td[2]?.innerText.trim(), name: td[3]?.innerText.trim(),
+           title: td[4]?.innerText.trim(), url: r.querySelector('a')?.href || null };
+});
+```
+Then filter `symbol ∈ watchlist`. Record the **full `title` text**.
+
+**ALWAYS OPEN THE ATTACHMENT for every watchlist match — the title is a label, not the content (learned 2026-06-18).** Two real examples that title-only mis-graded: a UBL "5.6.1.d disclosure" was actually an *executive SELL of 3,406 sh @455*; a PSO "corporate briefing notice" was actually a *full 9MFY26 results deck (GP +82%, OP +97%)*. Never set `material`/`read` from the title alone.
+
+**Attachment URLs (verified 2026-06-18):** each row's View-cell has a `data-images="{postid}-1.gif"` link and may also have a direct PDF link `/download/document/{postid}.pdf`.
+- **PDF:** `https://dps.psx.com.pk/download/document/{postid}.pdf` → save locally + extract text. WebFetch often fails on scanned/image PDFs; use the venv: `pip install pymupdf` once, then `fitz.open(path)` → `page.get_text()` per page. (psx decks are text-layer PDFs and extract cleanly.)
+- **GIF (scanned form, no PDF):** the URL is `https://dps.psx.com.pk/download/image/{postid}-1.gif` — note `/download/image/` NOT `/download/document/`. `browser_navigate` to it, `browser_take_screenshot` (fullPage), then `Read` the PNG to OCR the form (insider trades, share counts, rates live here).
+
+Only AFTER reading the attachment, set `material` (true if dividend/EPS/bonus/rights/result/board-meeting/merger/ex-div/insider-trade-of-size) and `read` (positive/negative/neutral/risk). Record `attachment` URL + `attachment_type` in the snapshot. A routine 5.6.x insider disclosure is `material:false` only after confirming the share count is immaterial — a large insider sell IS material.
+
+**Failure ladder — never write "category pending / not retrieved" and move on:**
+1. If `#announcementsTable` selector returns 0 rows → re-check with `browser_snapshot`; the id may have changed. Fall back to `document.querySelector('table.tbl')` then generic `document.querySelectorAll('table')` (pick the one whose header row contains "SYMBOL").
+2. If the dps page is down/blocked → **fallback source** `https://www.psx.com.pk/psx/announcement/financial-announcements` (Tier-2 HTML table, §3b) for the financial subset (dividends/EPS/ex-div), and `WebFetch` the company's own announcement listing if needed.
+3. If a watchlist symbol's TITLE is genuinely truncated → open its `url` (`/company/{SYMBOL}`) and read the announcements panel there.
+4. Only if **all** of the above fail for a symbol, log a warning AND state the F/E impact is `unknown` (never silently assume neutral).
+
+**Discipline:** a filing whose text could not be read is NOT the same as "no news" — it is an open risk flag and must surface in the run's warnings + watch items, not be dropped.
 
 ### 3b. Macro, policy & corporate-action news — ADDED Run #3, expanded Run #3b (2026-06-11)
 The PSX portal market-watch carries only price/volume. The signal that moves the **F** and **E** lenses lives elsewhere: macro/govt news, SBP policy, and the **financial-announcements** (dividends / EPS / ex-div / book-closure) table. Pull these in **two tiers** — RSS where it exists (cheap, dated, via `WebFetch`), HTML where it doesn't (via Playwright, same as price scraping).

@@ -196,3 +196,85 @@ The E lens now ingests a daily **macro_news** + **commodities** feed (RSS: Busin
 4. **Date hygiene / no look-ahead.** Tag every item with its true pub-date. A brief that quotes *yesterday's* index/commodity close is a recap of the prior session — never grade a prediction against news dated after the fact.
 5. **Measure-or-retire (mandatory).** Tag which predictions used the news layer. After ~20–30 graded, query hit-rate **with-news vs without-news** (calibration, like Q5). **If news-tagged predictions do not beat baseline, retire the layer** — honestly, no sunk-cost bias. The news layer must prove it improves outcomes or it goes.
 6. **Commodity transmission** (drives E directly): Brent/WTI ↑ → E&P (OGDC/PPL/MARI) +; USD/PKR depreciation → importers −, exporters +; FIPI net selling → broad flow −; rising leverage (futures/MTS/MFS) → froth/risk gauge.
+
+---
+
+## Part H — The universe prediction engine (the product — pivoted 2026-06-24)
+
+**Purpose.** The engine emits a BUY / HOLD / SELL signal for **every** KSE-100 symbol each run, graded over months, to build a measured, self-improving forecast across the whole universe. This is the project's destination (INSTRUCTIONS.md). **It is a training engine, NOT production advice** — output is a graded prediction, never auto-executed and never a trade recommendation. Keep everything transparent; no black box.
+
+**The engine is an ENSEMBLE of two predictors** (Ahmad's direction 2026-06-24), both graded, blended by *measured* hit-rate:
+1. **Rule scorecard** (H1–H4 below) — deterministic, explainable; `scripts/universe_signals.py`. LIVE.
+2. **ML model** (H6) — trained classifier on engineered features; `scripts/universe_model.py`. TO BUILD.
+3. **Ensemble blend** (H7) — combines the two by their out-of-sample hit-rate. TO BUILD.
+
+**Diligence note (#9 retained).** An engine signal is NOT advice and needs no hand-research — it runs on stored numbers. It becomes an actionable, conviction-rated call only if Ahmad escalates a specific name, and only after the full Prime-Directive-#9 diligence — never while `diligence=STALE`. The engine's auto-computed fundamentals (esp. yield) are **screen-grade and have been wrong** (e.g. INDU yield 2.93% vs real ~9.5% — a %-of-face-value bug); never trust them for an actionable call without opening the filings.
+
+### H1. The scorecard (deterministic, from stored data only)
+
+Compute each factor from `data/ohlc/{SYM}.json` (adj fields) + `data/fundamentals/{SYM}.json`. No network, no hand-research. These mirror the Part-A lenses but are mechanized so they run on all 100:
+
+| Factor | Source | Score contribution |
+|---|---|---|
+| **Trend** | close vs MA50 & MA200; MA50 vs MA200 | above both + golden → +2; above MA200 only → +1; below both / death cross → −2 |
+| **RSI-14 zone** | OHLC | 40–60 healthy → +1; <30 oversold (mean-revert up) → +1; >70 overbought → −1; >80 → −2 |
+| **52w position** | OHLC | mid-range 25–60% (room) → +1; >90% (extended) → −1 |
+| **20d momentum** | OHLC | >0 turning up → +1; sharply negative → −1 |
+| **EPS trend** | fundamentals | rising multi-period → +2; flat → 0; **falling → −2** (value-trap guard, the JDWS lesson) |
+| **Yield** | fundamentals (face-value correct) | covered yield ≥6% → +1; >15% unverified → flag, +0 (R-003) |
+| **Rule tilts** | rules_library | apply any Core/Provisional rule whose condition fires (e.g. R-EXP-005 RSI<30+bear regime); Experimental rules = 0 weight |
+
+**Signal map** (sum the factors → `score`): `score ≥ +3` → **BUY**, `−2 < score < +3` → **HOLD**, `score ≤ −2` → **SELL**. **Conviction is screen-grade 1–3 only** (capped — this is Layer 1): `|score|≥5` → 3, `3–4` → 2, else 1. The actionable conviction 4–7 is reserved for Layer-2 calls that passed #9.
+
+### H2. Support / resistance (for the dashboard)
+
+Per symbol, compute and emit: nearest **support** = max(recent swing low over ~60 bars, MA50, MA200 if below price); nearest **resistance** = min(recent swing high over ~60 bars, 52w high). These are the lines the candlestick dashboard draws. Keep them simple and reproducible; refine the method as the engine matures.
+
+### H3. The diligence flag (automating #9, not dropping it)
+
+The script sets `diligence=STALE` for any symbol that had a **new, unread announcement** in today's Step-1 announcements scrape (results / material info / board meeting). A STALE symbol's stored fundamentals may be out of date and its filing's *content* unread — so it **cannot graduate to a Layer-2 call** until the filing is actually opened and read (the JDWS protection: a label is not its content). All other symbols are `diligence=OK` (stored trends current). This is how the #9 gate scales to 100 names: a flag the script sets, checked at graduation, instead of pretending to hand-read every PDF daily.
+
+### H4. Honesty contract (same spirit as the backtest engine)
+
+- **No look-ahead.** Signal at run date reads only bars up to that date; graded only on bars after.
+- **Graded, not trusted.** Every signal row is scored by `grade_predictions.py` so the engine's real per-symbol/per-signal hit-rate accrues over months. Until n is large and calibration holds, the engine is *training*, not advising.
+- **Transparent.** Store the per-factor breakdown + a one-line `why` on every row. No unexplained signals.
+- **Tunable, not fixed.** The weights/thresholds above are a starting scorecard; the months of grading refine them. Promotions of any factor to higher weight follow the Part-D graduation thresholds (no overfitting on one regime).
+
+### H5. Grading the universe signals (no look-ahead)
+
+Every signal row in `data/universe_signals.csv` (and the model/ensemble logs) carries a `grade_on_date`. The deterministic grader (`scripts/grade_predictions.py`) scores it from the raw OHLC store, reading only bars **strictly after** the signal date — same no-look-ahead engine as the legacy predictions. The mapping from signal → gradeable outcome:
+
+| Signal | HIT condition (by grade_on_date) | MISS |
+|---|---|---|
+| **BUY** | close is **higher** than the signal-date close on ≥1 session in the window (reuse `grade_higher_than_ref`) | never higher |
+| **SELL** | close is **lower** than the signal-date close on ≥1 session | never lower |
+| **HOLD** | close stays within a **±band** (e.g. ±3% or ±1×ATR) across the window | breaks the band materially |
+
+Refine the horizon + band empirically (a 5-session window is the default; ATR-scaled bands are better than flat %). The grader writes `status,result,why` back into the signal CSV (issued fields immutable). **BUILD STATUS: the grader does NOT yet read `universe_signals.csv` — this is the #1 build TODO. Until wired, the universe accrues UNGRADED; say so honestly and do not claim a universe hit-rate.**
+
+Track and report hit-rate **per predictor** (rule / model / ensemble), **per rule** (every symbol where the rule fired), and **per regime** (KSE100 vs its MA50/MA200 at signal time — the melt-up vs correction distinction). Regime-stratified hit-rate is the honesty check: an engine that only works in one regime has not earned trust.
+
+### H6. The ML model (to build)
+
+- **Target:** sign (or 3-class BUY/HOLD/SELL) of the forward return over the grading horizon, defined identically to H5 so rule and model are graded on the same outcome.
+- **Features:** engineered from the SAME stored data the scorecard uses, so the comparison is fair — trend (MA distances, slopes), RSI, 52w position, momentum (multi-horizon), EPS-trend encoding, yield (face-value-correct), volatility (ATR), the KSE100 regime backdrop, sector one-hots. Add features deliberately; each must be computable with no look-ahead.
+- **Training:** chronological split on the 5yr × 101-symbol history (e.g. 70% train / 30% holdout, time-ordered — never random). Start simple + robust (logistic regression / gradient-boosted trees) before anything fancy. Expose feature importances and a per-prediction explanation (Prime Directive #6).
+- **Validation:** judge ONLY on forward-graded, out-of-sample, regime-stratified hit-rate + **calibration** (do the predicted probabilities match realized frequencies?). Training accuracy is meaningless here. Discount any single backtest number for multiple-comparisons selection bias (R-EXP-005 lesson).
+- **Output:** per-symbol BUY/HOLD/SELL + probability → `data/universe_model_signals.csv`, graded by the same grader.
+
+### H7. The ensemble blend (to build)
+
+- Both predictors emit a per-symbol signal each run. The ensemble combines them into the final engine signal.
+- **Blend weight starts rule-only** (the model has zero forward track record at birth), then shifts toward whichever predictor has the better measured **out-of-sample, multi-regime** hit-rate + calibration. A simple, honest start: weight ∝ each predictor's rolling holdout hit-rate above a coin-flip baseline; only let the model take weight once it has a real forward sample.
+- **The ensemble is itself graded** (`data/universe_ensemble.csv`) so we can see whether blending actually beats the better single predictor — if it doesn't, don't blend. Log the current weight + the reason each run.
+- Disagreement between rule and model on a symbol is information: log it; over time it shows where each predictor's edge lives.
+
+### H8. Training discipline (the anti-overfitting contract for the engine)
+
+The universe gives ~100 graded signals/run — a real sample, but also a strong temptation to mine noise. Hold the line:
+- **Promotions on universe-wide, multi-regime samples only.** A rule/feature earns higher weight only via the Part-D thresholds, measured across symbols AND across at least one full up/down/sideways cycle — not on the melt-up it was born in.
+- **Causal story required** for every rule (Prime Directive #5c). The ML model is allowed to be statistical, but its top features should still make economic sense; if the model leans on a nonsensical feature, treat it as overfit.
+- **Calibration is a first-class metric**, reported every run. A 70% hit-rate that is mis-calibrated (over-confident) is worse than a calibrated 60%.
+- **Report honestly when there is no edge.** If rule, model, and ensemble all sit at coin-flip out-of-sample, that is the finding — say it, and keep iterating, rather than cherry-picking a flattering slice.
+- **Keep the active rule library ≤ ~30** and the feature set lean. Fewer, general, causal, well-tested beats many specific coincidences.

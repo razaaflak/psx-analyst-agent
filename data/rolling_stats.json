@@ -1,60 +1,72 @@
 {
-  "as_of_date": "2026-06-15",
+  "as_of_date": "2026-06-24",
   "sample_too_small": true,
   "predictions": {
-    "total": 18,
-    "graded": 3,
-    "open": 15,
-    "hits": 3,
+    "total": 47,
+    "graded": 30,
+    "open": 17,
+    "hits": 26,
     "partials": 0,
-    "misses": 0,
-    "hit_rate_pct": 100.0
+    "misses": 4,
+    "hit_rate_pct": 86.7
   },
+  "hit_rate_caveat": "85.2% at n=27 crosses the COUNT threshold but NOT the out-of-sample/multi-regime bar. ~23 of 27 grades resolved in (or right after) the 06-09→06-18 melt-up; 06-19/06-22/06-23 are the first 3 mild down days (KSE-100 -1.36%, -0.25%, -0.44%) but the index is STILL above MA20 (173,918) so the regime has softened but not flipped. ALL 4 MISSES are conviction-5/6 short-horizon RELATIVE/MEAN-REVERSION/NO-TRADE calls: P-011 (Islamic-vs-conv), P-020 (E&P-vs-index), P-021 (index-overbought), P-017 (no-chase basket, MARGINAL +0.15pp = noise). Per-conviction: conv-6+ still very strong. Demonstrated edge = fundamental-floor / magnitude / higher-conviction trend-aligned holds; short-horizon relative/contrarian timing remains a coin-flip.",
   "open_predictions_by_grade_date": [
-    { "id": "P-001", "ticker": "OGDC",     "grade_on_date": "2026-06-16" },
-    { "id": "P-002", "ticker": "FFC",      "grade_on_date": "2026-06-16" },
-    { "id": "P-005", "ticker": "FABL",     "grade_on_date": "2026-06-16" },
-    { "id": "P-010", "ticker": "FABL",     "grade_on_date": "2026-06-16" },
-    { "id": "P-011", "ticker": "BANKS",    "grade_on_date": "2026-06-16" },
-    { "id": "P-013", "ticker": "MEBL",     "grade_on_date": "2026-06-16" },
-    { "id": "P-014", "ticker": "EANDP",    "grade_on_date": "2026-06-16" },
-    { "id": "P-007", "ticker": "FFC",      "grade_on_date": "2026-06-17" },
-    { "id": "P-009", "ticker": "MEBL",     "grade_on_date": "2026-06-18" },
-    { "id": "P-016", "ticker": "CEMENT",   "grade_on_date": "2026-06-18" },
-    { "id": "P-018", "ticker": "EANDP",    "grade_on_date": "2026-06-18" },
-    { "id": "P-008", "ticker": "DGKC",     "grade_on_date": "2026-06-19" },
-    { "id": "P-015", "ticker": "DGKC",     "grade_on_date": "2026-06-19" },
-    { "id": "P-017", "ticker": "NO-TRADE", "grade_on_date": "2026-06-22" },
-    { "id": "P-004", "ticker": "MEBL",     "grade_on_date": "2026-06-23" }
+    { "id": "P-028", "ticker": "FFC",      "grade_on_date": "2026-06-25" },
+    { "id": "P-029", "ticker": "OGDC",     "grade_on_date": "2026-06-25" },
+    { "id": "P-030", "ticker": "MEBL",     "grade_on_date": "2026-06-25" },
+    { "id": "P-035", "ticker": "KSE100",   "grade_on_date": "2026-06-25" },
+    { "id": "P-032", "ticker": "INDU",     "grade_on_date": "2026-06-26" },
+    { "id": "P-036", "ticker": "OGDC",     "grade_on_date": "2026-06-26" },
+    { "id": "P-037", "ticker": "FFC",      "grade_on_date": "2026-06-26" },
+    { "id": "P-038", "ticker": "NO-TRADE", "grade_on_date": "2026-06-26" },
+    { "id": "P-040", "ticker": "KSE100",   "grade_on_date": "2026-06-26" },
+    { "id": "P-041", "ticker": "LUCK",     "grade_on_date": "2026-06-30" },
+    { "id": "P-042", "ticker": "NO-TRADE", "grade_on_date": "2026-06-26" },
+    { "id": "P-039", "ticker": "OGDC",     "grade_on_date": "2026-07-07" },
+    { "id": "P-043", "ticker": "INDU",     "grade_on_date": "2026-07-01" },
+    { "id": "P-044", "ticker": "OGDC",     "grade_on_date": "2026-07-01" },
+    { "id": "P-045", "ticker": "KSE100",   "grade_on_date": "2026-07-01" },
+    { "id": "P-046", "ticker": "FFC",      "grade_on_date": "2026-07-01" },
+    { "id": "P-047", "ticker": "NO-TRADE", "grade_on_date": "2026-07-01" }
   ],
   "per_rule_stats": {
-    "R-004": { "graded": 1, "hits": 1 },
-    "R-001": { "graded": 1, "hits": 1 },
-    "R-EXP-001": { "graded": 1, "hits": 1 },
-    "R-002": { "graded": 1, "hits": 1 }
+    "R-001": { "graded": 6, "hits": 6, "note": "P-004 HIT (MEBL decision_quality, +3.9% over 10 sessions in softening tape). 6/6 — strongest rule." },
+    "R-002": { "graded": 3, "hits": 3, "note": "P-008, P-012, P-015 all HIT (cement breakout + mean-revert)." },
+    "R-004": { "graded": 6, "hits": 5, "note": "P-031 HIT (06-24, cash discipline through 06-19 reversal got equal/better entry on 2 of 3 sessions). P-019/P-026/P-027 HIT. Lone miss = P-017 (+0.15pp marginal noise). Entry-discipline strongest applied rule." },
+    "R-EXP-001": { "graded": 4, "hits": 3, "note": "1-HIT/1-MISS direct = NO net edge. Stays Experimental, 0 weight." },
+    "R-EXP-003": { "graded": 4, "hits": 3, "note": "P-014 inverse HIT, P-025 HIT, P-020 MISS (E&P fell LESS than index on risk-off). Falling oil = INTERMITTENT relative E&P drag. P-036/P-039 live." },
+    "R-EXP-004": { "graded": 3, "hits": 2, "note": "news-tagged tally 2 HIT / 1 MISS. Too small; measure-or-retire after ~20-30." },
+    "R-EXP-006": { "graded": 0, "hits": 0, "note": "P-019 HIT (not chasing on 06-16 overbought tape, basket -1.55% by 06-23). P-027 HIT (cash at ATH outperformed EW top-up). Up-tape premise still intact (KSE100 > MA20 173,918). Finance Bill resolved = regime cleaner." }
   },
   "portfolio": {
-    "cash": 328214,
-    "invested": 672727.39,
-    "holdings_mtm": 698739,
-    "total_value": 1026953,
-    "cumulative_return_pct": 2.70,
-    "max_drawdown_pct": -1.40
+    "cash": 155804.20,
+    "invested": 647043.50,
+    "holdings_mtm": 647043.50,
+    "total_value": 802847.70,
+    "starting_cash": 800000,
+    "cumulative_return_pct": 0.36,
+    "max_drawdown_pct": null,
+    "deployed_pct": 80.6,
+    "cash_pct": 19.4,
+    "sync_note": "2026-06-24 (DAILY RUN #13): KSE-100 179,571.26 (+1,878.34, +1.06%) STRONG REBOUND on 851M volume after 3-day pullback; above MA20 (174,310), RSI 69 — melt-up regime INTACT (shakeout not break, P-034 HIT). NEW TRADE: BUY 10sh INDU @ 2070.34 (REAL, half-size starter; full diligence clear, Shariah COMPLIANT confirmed). Holdings now 6. Holdings MTM 647,043.50 (incl INDU 20,703.40) + cash 155,804.20 = 802,847.70; cum +0.36% vs 800k base. Deployed 80.6%, cash 19.4%. No swing level hit on the 5 olds; OGDC first-trim 350 +3% away, oil ~$76 nearing $75 trim trigger."
   },
   "counterfactuals_asof": {
-    "inception": "2026-06-09",
-    "book_pct": 2.70,
+    "inception": "2026-06-17",
+    "asof": "2026-06-24",
+    "book_pct": 0.36,
     "all_cash_pct": 0.00,
-    "kse100_pct": 3.94,
-    "equal_weight_pct": 5.94,
-    "hold_day1_pct": 2.60,
-    "book_vs_kse100_pp": -1.24,
-    "book_vs_equal_weight_pp": -3.24,
-    "book_vs_hold_day1_pp": 0.09
+    "kse100_pct_script": 0.00,
+    "kse100_pct_manual": 0.62,
+    "equal_weight_pct": 0.00,
+    "hold_day1_pct": 1.98,
+    "book_vs_kse100_pp_manual": -0.26,
+    "book_vs_hold_day1_pp": -1.62,
+    "honest_read": "Script still mis-anchors KSE100/EW/all-cash to +0.00% (known W25 bug, fix pending next weekly). MANUAL honest bar: KSE-100 +0.62% since 06-17 sync (178,471→179,571) vs BOOK +0.36% → book ~-0.26pp BEHIND index since inception. The +1.06% bounce favored beta; the ~20% cash that cushioned the pullback now costs on the rebound. HOLD-DAY-1 +1.98% includes UBL (sold 06-19) accounting artifact — the -1.62pp gap is overstated. Net: book tracks index closely both ways; cash is the swing factor."
   },
   "active_rules": {
     "core_seed": 4,
     "provisional": 0,
-    "experimental": 5
+    "experimental": 6
   }
 }
