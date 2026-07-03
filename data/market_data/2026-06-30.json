@@ -1,0 +1,25 @@
+{
+  "date": "2026-06-30",
+  "source": "dps.psx.com.pk (Playwright MCP)",
+  "confidence": "high — official PSX data portal EOD",
+  "index": {
+    "name": "KSE100",
+    "close": 180301.70,
+    "change_points": 1886.91,
+    "change_pct": 1.06,
+    "prev_close": 178414.79,
+    "note": "Strong green rebound after 06-29's -0.64% red day; back above 180k. Brent context still soft."
+  },
+  "kse100pr": {"close": 54981.35, "change_pct": 1.06},
+  "announcements": [
+    {"symbol": "FABL", "title": "Application for further Issue of shares by way of Other than Right Offer u/s 83(1)(b) Companies Act 2017", "doc_id": "279282-1", "pdf_url": "https://dps.psx.com.pk/download/attachment/279282-1.pdf"},
+    {"symbol": "KEL", "title": "Board Meeting Other Than Financial Results", "doc_id": "279333-1", "pdf_url": "https://dps.psx.com.pk/download/attachment/279333-1.gif"},
+    {"symbol": "KOHC", "title": "Disclosure of Interest by a Director/CEO/Executive u/c 5.6.1(d)", "doc_id": "279329", "pdf_url": "https://dps.psx.com.pk/download/document/279329.pdf"},
+    {"symbol": "PSEL", "title": "Board Meeting in Progress", "doc_id": "279327", "pdf_url": "https://dps.psx.com.pk/download/document/279327.pdf"},
+    {"symbol": "NML", "title": "MATERIAL INFORMATION / DISCLOSURE OF INTEREST", "doc_id": "279322", "pdf_url": "https://dps.psx.com.pk/download/document/279322.pdf"},
+    {"symbol": "NPL", "title": "MATERIAL INFORMATION / DISCLOSURE OF INTEREST", "doc_id": "279318", "pdf_url": "https://dps.psx.com.pk/download/document/279318.pdf"},
+    {"symbol": "DGKC", "title": "MATERIAL INFORMATION - DISCLOSURE OF INTEREST", "doc_id": "279317", "pdf_url": "https://dps.psx.com.pk/download/document/279317.pdf"},
+    {"symbol": "PABC", "title": "Credit Rating of Pakistan Aluminium Beverage Cans Limited", "doc_id": "279310", "pdf_url": "https://dps.psx.com.pk/download/document/279310.pdf"},
+    {"symbol": "HINOON", "title": "Material Information - Shariah Screening Compliance Confirmation REVOKED", "doc_id": "279283", "pdf_url": "https://dps.psx.com.pk/download/document/279283.pdf"}
+  ]
+}

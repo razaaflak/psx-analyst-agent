@@ -1,6 +1,8 @@
 # Downloaded PDFs and raw binary data — not for version control
 data/announcements/
 data/market_data/*.png
+# Cached filing PDFs (binary). The diligence VERDICTS live in data/diligence_ledger.json (committed).
+data/filings_cache/
 
 # Playwright artifacts
 .playwright-mcp/

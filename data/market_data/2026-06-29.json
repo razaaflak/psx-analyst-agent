@@ -1,0 +1,43 @@
+{
+  "date": "2026-06-29",
+  "captured_at": "2026-06-29T18:18:00+05:00",
+  "source": "dps.psx.com.pk (Playwright MCP market-watch + announcements); oil via oilprice.com",
+  "confidence": "high - official PSX EOD (market state CLOSED); oil ~$72.5 Brent from oilprice.com (10-min delay)",
+  "mode": "universe_engine",
+  "kse100": {
+    "close": 178414.79,
+    "change": -1156.47,
+    "change_pct": -0.64,
+    "note": "First meaningful red day after the melt-up - down 0.64% from 06-24. Still ABOVE MA20 (174,533) / MA50 (170,943) / MA200 (168,153). RSI14 67.6 (cooling from elevated). Regime INTACT (close > MA20): not yet an out-of-regime correction, but the first pullback the engine has graded into. Watch the flip line KSE100 < MA20 = 174,533.",
+    "ma20": 174533.04,
+    "ma50": 170942.52,
+    "ma200": 168152.94,
+    "rsi14": 67.6
+  },
+  "market_breadth": {
+    "volume": 869380984,
+    "value_pkr": 43946084866.10,
+    "note": "Volume 869M on a down day - active distribution, not a quiet drift. All sector indices RED; OGTI -1.14% worst (oil & gas tracks falling Brent, R-EXP-003 falling-oil/E&P-drag feature confirmed)."
+  },
+  "indices": {
+    "ALLSHR": { "close": 107979.81, "chg_pct": -0.57 },
+    "KSE30":  { "close": 53112.84,  "chg_pct": -0.81 },
+    "KMI30":  { "close": 254200.24, "chg_pct": -0.98 },
+    "BKTI":   { "close": 48335.58,  "chg_pct": -0.60 },
+    "OGTI":   { "close": 36755.69,  "chg_pct": -1.14 }
+  },
+  "announcements": [
+    { "symbol": "MARI",   "title": "Corporate Briefing Session (CBS)", "doc_id": "279232", "pdf_url": "https://dps.psx.com.pk/download/document/279232.pdf", "in_universe": true },
+    { "symbol": "ABL",    "title": "Entity Rating of Allied Bank Limited - 2026", "doc_id": "279234", "pdf_url": "https://dps.psx.com.pk/download/document/279234.pdf", "in_universe": true },
+    { "symbol": "UPFL",   "title": "Board Meeting and Closed Period Q2-2026", "doc_id": "279227", "pdf_url": "https://dps.psx.com.pk/download/document/279227.pdf", "in_universe": true },
+    { "symbol": "ILP",    "title": "Board Meeting In Progress", "doc_id": "279235", "pdf_url": "https://dps.psx.com.pk/download/document/279235.pdf", "in_universe": true },
+    { "symbol": "AGP",    "title": "Abstract of Resolution Passed in 7th EOGM", "doc_id": "279229", "pdf_url": "https://dps.psx.com.pk/download/document/279229.pdf", "in_universe": false }
+  ],
+  "macro": {
+    "brent": 72.49,
+    "brent_chg_pct": 0.69,
+    "wti": 70.01,
+    "note": "Brent $72.49 - kept sinking from ~$76 (run_state) to $72.5 since the US-Iran peace + Iran sell license. Structurally bearish oil = relative E&P drag (OGDC/PPL/MARI), mild macro tailwind (cement/banks/fert). OGTI -1.14% today consistent."
+  },
+  "not_advice": "Training engine snapshot. Output is a graded prediction, never a trade recommendation."
+}

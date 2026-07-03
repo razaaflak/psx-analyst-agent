@@ -10,74 +10,61 @@ Replaces agent-private memory so ANY agent (Claude, Codex, …) resumes from the
 
 ## ⚠⚠ PROJECT PIVOTED 2026-06-24 — read this FIRST
 
-**This is now a UNIVERSE-WIDE PREDICTION ENGINE, not a portfolio advisor.** Ahmad's direction: "forget about portfolio… train this pipeline on the full list of symbols… a defined prediction engine, intelligent rule-based, tested trained." The portfolio loop is REMOVED.
+**This is now a UNIVERSE-WIDE PREDICTION ENGINE, not a portfolio advisor.** The portfolio loop is REMOVED.
 
-- **Goal:** an ensemble engine that emits a daily BUY/HOLD/SELL for ALL ~100 KSE-100 symbols, graded over months, feeding a future candlestick dashboard. Training project, NOT advice.
+- **Goal:** an ensemble engine emitting a daily BUY/HOLD/SELL for ALL ~100 KSE-100 symbols, graded over months, feeding a future candlestick dashboard. Training project, NOT advice.
 - **Engine = ENSEMBLE:** rule scorecard (`universe_signals.py`, LIVE) + ML model (`universe_model.py`, TO BUILD), blended by measured out-of-sample hit-rate.
-- **Portfolio DROPPED.** Ahmad trades his EClear book himself, outside this pipeline. Legacy files FROZEN (do NOT write): `portfolio.json`, `trade_ledger.csv`, `predictions_log.csv`, `broker_intake.jsonl`. Keep them as audit history.
-- Memory: [[project_universe_engine_pivot]] (supersedes [[project_universe_engine_direction]]).
+- **Portfolio DROPPED.** Ahmad trades his EClear book himself. Legacy files FROZEN (do NOT write): `portfolio.json`, `trade_ledger.csv`, `predictions_log.csv` (we DO still grade out its open rows), `broker_intake.jsonl`.
+- Memory: [[project_universe_engine_pivot]].
 
-## 🟢 WEEKEND 2026-06-28 (W26) — what changed this run
-Ran the weekend review in ENGINE mode (the portfolio-era `weekly_run.md` steps are N/A). Two of the
-six build TODOs are now closed:
+## 🟢 DAILY 2026-07-03 (Fri, run started after PKT midnight, grading last close 2026-07-02) — what changed this run
+Full 6-step loop. **No matured predictions this run (both next grade dates still ahead) — pure ingest + signal + filings run, no grading/learning event.**
 
-- **TODO #1 — universe grader: BUILT + VERIFIED ✅.** Extended `scripts/grade_predictions.py` with
-  `grade_universe()` / `grade_universe_row()` / `atr14_at()` + CLI flags `--universe` and `--write`.
-  Per SKILL.md H5, no look-ahead, adjusted-close basis: BUY = any in-window close > signal-date close;
-  SELL = any close < it; HOLD = every close within ±1×ATR14 (±3% fallback). Writes `status`→`graded`
-  and the grade into the **`result`** column only — issued `why` and all issued fields immutable;
-  defaults to dry run, `--write` persists. Verified: `--asof 2026-06-28` → 0 matured (correct);
-  `--asof 2026-07-01` preview → grades only the 06-23 batch (has post-signal bars), returns NEEDS-DATA
-  for 06-24 (no bars after yet). CSV confirmed untouched by the dry runs. Wired into `daily_run.md` Step 2.
-- **TODO #2 — "yield bug": CLOSED, was a MISDIAGNOSIS ✅.** The `2.93` that triggered it was the
-  **`mom20`** column being read as `yield_pct`. Yields are already face-value-correct
-  (INDU 11.98%, FFC 8.14%, OGDC 5.59%, FATIMA 6.28%, UBL 8.47%). No code change; the daily_run yield
-  warning was corrected. Memory [[project_universe_engine_pivot]] should be updated to reflect both.
+- **Step 1 ingest:** OHLC `--update` → all 101 symbols end **2026-07-02** (+1 bar, GATE:PASS, 18 confirmed corp-action events, 0 new). Fundamentals refreshed (KEL/PSEL name-map gap persists, non-blocking). News 0 new (52 total). **KSE100 184,520.96 +0.26% — fresh ALL-TIME HIGH**, 4th straight up day. Brent ~$71.56 (flat/soft; Iran-US indirect mediation only, no direct talks).
+- **Step 1 filings:** 12 universe filings scraped; ALL read and cleared to OK: BOP (PACRA entity-rating upgrade), NPL+DGKC+RMPL (outbound RMPL stake acquisition — same Nishat-group/Ingredion event as prior runs; NPL bought 14.36%, DGKC bought 31.07%, both Rs9800/share 2026-06-23; RMPL's own Reg 5.6.4 filing gave the underlying insider-transaction detail), POWER (routine CFO appointment), MUREB (routine EOGM notice), MEBL/AKBL/BOP-2nd (routine exec share transactions, all <0.02% of holding), PTC×2 (CEO changed twice same day — interim 14-day appointment, procedural not financial), FABL (routine board-meeting template, already known-clean). **Only AGP remains STALE** (Scheme of Arrangement, pending Sindh HC — unchanged carryover).
+- **Technique gap found:** RMPL/BOP filings were GIF images served under a `.pdf`-suffixed attachment URL (real GIF magic bytes, no `%PDF-` header) — `Read` fails until the cached file is renamed `.gif`. Same pattern as the 2026-06-30 KEL case. Worth automating into `process_filings.py`'s cache-write step (detect magic bytes → write correct extension) — not urgent, workaround is quick.
+- **Step 2 grade:** **nothing matured today** — universe 06-29 batch matures 2026-07-06 (3 days out), legacy P-039 matures 2026-07-07. Universe cumulative unchanged: 138/200 = 69.0% (2 batches). Legacy unchanged: 46 graded/39 HIT/84.8%, 1 open (P-039).
+- **Step 3 learn:** no rule/model changes — zero new grading input this run (PD#5: never adjust on no evidence).
+- **Step 4 signal:** new batch emitted, 100 rows, **grade_on_date 2026-07-10** (clock rolled past PKT midnight mid-run → rows stamped 2026-07-03, confirmed not a bug). `dashboard_feed.json` rewritten: **BUY 31 / HOLD 66 / SELL 3 / STALE 1 (AGP)**. Notable: MEBL RSI 80.9 (52w 99.5%, still HOLD not BUY), AICL/DCR/ILP/HINOON RSI 79-85 (blow-off-reversal candidates as the melt-up extends to a 4th session); SELL trio unchanged pattern (EFERT/IBFL/PAEL, all EPS-falling+trend-breaking).
+- **Step 6:** psx.db GATE:PASS (47 preds reconcile, 46 graded/39 hits/84.78%); rolling_stats + run_state rewritten.
+
+## ⏭ NEXT-RUN MUST-DO
+1. **2026-07-06: grade the 06-29 batch** (100 rows) — `collect_ohlc.py --update --universe` FIRST, then `grade_predictions.py --universe --asof 2026-07-06` (preview) → `--write`. **This is the 3rd universe batch — watch whether HOLD-breaks-UP repeats a 3rd time, and whether the regime has finally cracked (index at ATH, now 4 straight up sessions, very extended).**
+2. **2026-07-07:** legacy P-039 (OGDC) matures — the last open legacy row. After this grades, ALL legacy predictions are closed out permanently (frozen file, no new legacy predictions will ever be issued).
+3. **2026-07-08:** the 07-01 universe batch (100 rows) matures.
+4. **2026-07-10:** the 07-03 universe batch (100 rows, this run's output) matures.
+5. **Fix the grade_predictions.py decision_quality evidence-string bug** found on P-043 (garbage placeholder "vs paper entry 100.0" instead of real close/entry comparison) — low priority since legacy predictions are winding down (only P-039 left), but worth a quick patch so the bug doesn't silently mis-grade P-039.
 
 ## 🔨 BUILD TODOs — remaining (priority order)
-3. **Rebuild rule evidence from the UNIVERSE** — `rules/rules_library.md` still cites ~30 legacy
-   PORTFOLIO predictions. NOW UNBLOCKED (grader exists). Once a real graded universe sample accrues
-   (≥06-30), recompute each rule's hit-rate across ALL symbols where it fired (psx.db query).
-4. **Build `scripts/universe_model.py`** (ML classifier, SKILL.md H6) — features from stored
-   ohlc+fundamentals, target = forward-return sign over the H5 horizon, chronological 70/30 split,
-   logistic/GBT first, feature importances → `data/universe_model_signals.csv`, graded by the same grader.
-5. **Build the ensemble blend** (SKILL.md H7) → `data/universe_ensemble.csv`; rule-weighted until the
-   model has a forward sample; ensemble itself graded.
-6. **Extend `scripts/build_db.py`** to ingest the signal logs (universe/model/ensemble + grade columns);
-   keep the GATE:PASS row-count check.
+3. **Rebuild rule evidence from the UNIVERSE** — `rules/rules_library.md` still cites ~40 legacy PORTFOLIO grades. Still NOT enough universe batches (2, both same regime) — wait for several batches across ≥2 regimes, then recompute each rule's hit-rate across all symbols where it fired (psx.db query).
+4. **Build `scripts/universe_model.py`** (ML classifier, SKILL.md H6) — features from stored ohlc+fundamentals, target = forward-return sign over H5, chronological 70/30 split, logistic/GBT, feature importances → `data/universe_model_signals.csv`, graded by same grader.
+5. **Build the ensemble blend** (SKILL.md H7) → `data/universe_ensemble.csv`; rule-weighted until model has forward sample; ensemble graded.
+6. **Extend `scripts/build_db.py`** to ingest the signal logs (universe/model/ensemble + grade columns); keep GATE:PASS row-count check. (Currently reconciles only legacy preds + trades.)
+7. **fix `grade_predictions.py` decision_quality evidence-string bug** (see NEXT-RUN MUST-DO #5).
+8. **NEW: harden `process_filings.py` cache-write to detect image magic bytes and write the correct extension** (`.gif`/`.png` instead of trusting the URL's `.pdf` suffix) — hit twice now (KEL 06-30, RMPL/BOP 07-02), workaround (manual rename) is quick but should be automatic.
 
-## ⏭ NEXT-RUN MUST-DO (the grader is ready; feed it)
-1. **`collect_ohlc.py --update --universe`** — OHLC store ends **2026-06-24**; the 06-30/07-01 grades
-   need the post-signal bars. Without fresh bars the grader correctly returns NEEDS-DATA and grades nothing.
-2. On/after **2026-06-30**: `grade_predictions.py --universe --asof <today>` (preview), then `--write`
-   → the FIRST real graded universe sample (06-23 batch). Repeat 2026-07-01 for the 06-24 batch.
-3. ⚠ Do NOT read the W26 preview's "80%" as a result — it was a 1-session window, never written.
-
-## Engine state (as of 2026-06-28, weekend W26)
-- **Rule scorecard LIVE.** 200 signal rows (06-23, 06-24 × 100), **all `status=open`**.
-- **Universe hit-rate: 0 graded (UNGRADED — honest).** Grader now WIRED but no rows matured with bars
-  yet. First real grades land once OHLC is updated past the grade dates.
-- **ML model / ensemble:** not built (TODO #4/#5).
-- **Data stores:** OHLC ends **2026-06-24** (101 symbols, adj, GATE:PASS); fundamentals 97/100;
-  news_archive ~52 items. OHLC must be `--update`d next run.
-- **KSE-100 backdrop (regime):** still the single **melt-up** regime since ~06-09 — above MA20/50/200,
-  RSI elevated. ⚠ The engine has NOT seen a sustained correction; regime-stratified grading (H5) is
-  essential before trusting anything. Watch the flip line: KSE100 close < MA20 = first out-of-regime test.
+## Engine state (as of 2026-07-02)
+- **Rule scorecard LIVE.** 500 signal rows total (06-23, 06-24, 06-29, 07-01, 07-03 ×100 each).
+- **Universe hit-rate: 69.0% (200 graded, 2 batches).** BUY 79.4% / HOLD 64.1% / SELL 50% (n=4). Still single melt-up regime — honest but not yet trustworthy. 06-29 batch matures 07-06; 07-01 batch matures 07-08; 07-03 batch matures 07-10.
+- **Legacy hand-preds (FROZEN):** 46 graded / 39 HIT / 84.8%. 1 open (P-039, grades 07-07 — the last legacy row ever).
+- **ML model / ensemble:** not built (TODO #4/#5). Blend = 100% rule.
+- **Data stores:** OHLC ends **2026-07-02** (101 symbols, adj, GATE:PASS); fundamentals 97/100; news 52.
+- **Regime:** melt-up EXTENDED — KSE100 fresh ATH 184,520.96 (+0.26%), 4th straight up day, above all MAs. ⚠ Engine NEVER graded through a correction. Flip line: KSE100 close < MA20 = first out-of-regime test.
 
 ## Live watch (engine-relevant)
-- **Oil:** Brent ~$76, sinking toward $75 (US-Iran peace + Iran sell license). Falling-oil = relative
-  E&P drag hypothesis (R-EXP-003) — a regime feature worth encoding for the model.
-- **STALE discipline:** Step-1 must set `diligence=STALE` on any symbol with a new filing so the engine
-  never treats stale fundamentals as current (JDWS protection).
+- **HOLD-breaks-UP asymmetry** — CONFIRMED twice (BUY ~79-81% vs HOLD ~64-65%, ~16pp gap, both batches). Still observation-only per PD#5; the 3rd batch (06-29, matures 07-06, 3 days out) is the next real test — if it survives a flat/red regime, tighten BUY threshold with evidence.
+- **Oil:** Brent ~$71.56, flat/soft (Iran-US indirect mediation only, no direct talks). R-EXP-003 falling-oil/E&P-drag last reconfirmed on P-044 (06-24 batch).
+- **STALE (1): AGP** (Scheme of Arrangement, pending Sindh HC sanction; clears via `process_filings.py --review AGP` once sanctioned + restated fundamentals).
+- **process_filings caveat (still true):** snapshot `pdf_url` MUST be absolute — relative paths break the downloader. Most PSX PDFs are image-only (no text layer) → title-keyword classify defaults STALE; agent must OPEN material/unknown PDFs and `--review` to clear. This run: 12/12 filings opened and cleared cleanly; 2 needed a manual `.gif` rename (see BUILD TODO #8).
+- **Overbought in scorecard:** MEBL RSI 80.9 (52w 99.5%, still HOLD not BUY per screen-grade), AICL/DCR/ILP/HINOON RSI 79-85 — blow-off-reversal candidates as the melt-up extends to a 4th session. SELL trio stable: EFERT/IBFL/PAEL (all EPS-falling + trend-breaking).
+- **Legacy winding down:** only P-039 (OGDC, grades 07-07) remains open. Once graded, `predictions_log.csv` is permanently closed — no new legacy rows will ever be issued (portfolio loop is dropped).
 
 ## Legacy (FROZEN — context only, do NOT update in engine mode)
-- Last portfolio book (2026-06-24, before freeze): 6 holdings FABL/FFC/LUCK/MEBL/OGDC/INDU + cash 155,804;
-  equity 802,848; legacy track record 30 graded/26 HIT/4 MISS = 86.7% (PORTFOLIO predictions — NOT a
-  universe metric). Ahmad runs this book himself.
+- Last portfolio book (2026-06-24, before freeze): 6 holdings FABL/FFC/LUCK/MEBL/OGDC/INDU + cash 155,804; equity 802,848. Ahmad runs this book himself.
 
 ## Notes for the next agent
 - Start by reading: `CLAUDE.md`, `INSTRUCTIONS.md`, `SKILL.md` (Part H), `pipeline/daily_run.md`, this file, `rules/rules_library.md`.
-- The grader is the unblocker and it's DONE — next run's job is to FEED it (update OHLC, then grade with `--write` once matured).
+- **Update OHLC FIRST, always**, so the grader has post-signal bars.
 - Windows console: `PYTHONIOENCODING=utf-8` on every script.
 - Rewrite this file at Step 6 of every run (latest-state only).
 

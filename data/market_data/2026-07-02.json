@@ -1,0 +1,101 @@
+{
+  "date": "2026-07-02",
+  "kse100": {
+    "close": 184520.96,
+    "change_pts": 470.86,
+    "change_pct": 0.26,
+    "note": "4th straight up session, fresh all-time high"
+  },
+  "brent_usd": {
+    "close": 71.56,
+    "change_pct": -0.01,
+    "day_range": [69.58, 72.08],
+    "note": "flat/soft, Iran-US indirect mediation continues, no direct talks"
+  },
+  "announcements": [
+    {
+      "symbol": "BOP",
+      "title": "PACRA Upgrades The Bank of Punjab Entity Ratings",
+      "doc_id": "279462",
+      "pdf_url": "https://dps.psx.com.pk/download/document/279462.pdf",
+      "in_universe": true
+    },
+    {
+      "symbol": "NPL",
+      "title": "Disclosure pursuant to section 110 (1) of the Securities Act, 2015",
+      "doc_id": "279451",
+      "pdf_url": "https://dps.psx.com.pk/download/document/279451.pdf",
+      "in_universe": true
+    },
+    {
+      "symbol": "DGKC",
+      "title": "Disclosure pursuant to section 110 (1) of the Securities Act, 2015",
+      "doc_id": "279450",
+      "pdf_url": "https://dps.psx.com.pk/download/document/279450.pdf",
+      "in_universe": true
+    },
+    {
+      "symbol": "POWER",
+      "title": "Appointment of Chief Financial Officer",
+      "doc_id": "279447",
+      "pdf_url": "https://dps.psx.com.pk/download/document/279447.pdf",
+      "in_universe": true
+    },
+    {
+      "symbol": "MUREB",
+      "title": "NOTICE OF EXTRAORDINARY GENERAL MEETING PUBLISHED IN THE NEWSPAPERS",
+      "doc_id": "279439",
+      "pdf_url": "https://dps.psx.com.pk/download/document/279439.pdf",
+      "in_universe": true
+    },
+    {
+      "symbol": "MEBL",
+      "title": "Disclosure of Interest by a Director CEO, or Executive of a listed company and their Spouses and the Substantial Shareholders u/c 5.6.1.(d) of PSX Regulations",
+      "doc_id": "279430",
+      "pdf_url": "https://dps.psx.com.pk/download/document/279430.pdf",
+      "in_universe": true
+    },
+    {
+      "symbol": "FABL",
+      "title": "Board Meeting Other Than Financial Results of Faysal Bank Limited",
+      "doc_id": "279425",
+      "pdf_url": "https://dps.psx.com.pk/download/document/279425.pdf",
+      "in_universe": true
+    },
+    {
+      "symbol": "RMPL",
+      "title": "Disclosure of Interest by a Director CEO, or Executive of a listed company and their Spouses and the Substantial Shareholders u/c 5.6.1.(d) of PSX Regulations",
+      "doc_id": "279424-1",
+      "pdf_url": "https://dps.psx.com.pk/download/attachment/279424-1.gif",
+      "in_universe": true
+    },
+    {
+      "symbol": "AKBL",
+      "title": "Disclosure of Interest by a Director CEO, or Executive of a listed company and their Spouses and the Substantial Shareholders u/c 5.6.1.(d) of PSX Regulations",
+      "doc_id": "279423",
+      "pdf_url": "https://dps.psx.com.pk/download/document/279423.pdf",
+      "in_universe": true
+    },
+    {
+      "symbol": "PTC",
+      "title": "Change of Chief Executive",
+      "doc_id": "279422",
+      "pdf_url": "https://dps.psx.com.pk/download/document/279422.pdf",
+      "in_universe": true
+    },
+    {
+      "symbol": "PTC",
+      "title": "Change of Chief Executive",
+      "doc_id": "279421",
+      "pdf_url": "https://dps.psx.com.pk/download/document/279421.pdf",
+      "in_universe": true
+    },
+    {
+      "symbol": "BOP",
+      "title": "Disclosure of Interest by a Director CEO, or Executive of a listed company and their Spouses and the Substantial Shareholders u/c 5.6.1.(d) of PSX Regulations",
+      "doc_id": "279413-1",
+      "pdf_url": "https://dps.psx.com.pk/download/attachment/279413-1.gif",
+      "in_universe": true
+    }
+  ]
+}

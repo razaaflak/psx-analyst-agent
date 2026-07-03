@@ -344,23 +344,49 @@ def main():
     symbols = [s["ticker"] for s in uni["symbols"]]
     name_map = {s["ticker"]: s["name"] for s in uni["symbols"]}
 
-    # Load today's announcements to set diligence=STALE flags
-    # We read from data/market_data/<date>.json if it exists
-    announced_syms = set()
+    # Determine which symbols are STALE (diligence flag).
+    #
+    # STALE is NOT just "filed something today" (that self-cleared the next day even
+    # if the filing was never read — the JDWS failure mode). The persistent diligence
+    # ledger (data/diligence_ledger.json, written by scripts/process_filings.py) is
+    # AUTHORITATIVE:
+    #   - a symbol is STALE while it has an UNRESOLVED filing (materiality MATERIAL or
+    #     UNKNOWN and not yet reviewed) — this PERSISTS across runs until accounted for;
+    #   - a filing reviewed/auto-cleared as NON_MATERIAL does NOT make the symbol STALE,
+    #     even on its filing day.
+    # Today's raw snapshot announcements are a FALLBACK: they flag a symbol only if the
+    # ledger has no record of that filing yet (i.e. process_filings.py hasn't run) — so
+    # a brand-new, unprocessed filing still defaults to STALE (safe).
+    announced_syms = set()      # → STALE
+    resolved_syms  = set()      # filings the ledger has cleared (non-material/reviewed)
+
+    # (a) authoritative ledger
+    ledger_file = os.path.join(ROOT, "data", "diligence_ledger.json")
+    if os.path.exists(ledger_file):
+        led = load_json(ledger_file)
+        for f in led.get("filings", []):
+            sym_l = (f.get("symbol") or "").upper()
+            if not sym_l:
+                continue
+            unresolved = (not f.get("reviewed")) and f.get("materiality") in ("MATERIAL", "UNKNOWN")
+            if unresolved:
+                announced_syms.add(sym_l)
+            else:
+                resolved_syms.add(sym_l)
+
+    # (b) today's raw announcements — flag only if not already resolved by the ledger
     mkt_file = os.path.join(ROOT, "data", "market_data", f"{run_date.isoformat()}.json")
     if os.path.exists(mkt_file):
         mkt = load_json(mkt_file)
         anns = mkt.get("announcements", [])
-        # `announcements` may be a list of per-company rows [{symbol,...}] OR a
-        # descriptive object (e.g. {"holdings_filings_today": "...none..."}) on days
-        # with no company-specific filings. Only the list form carries STALE flags.
+        # list form carries per-company rows; a descriptive object = no filings.
         if isinstance(anns, list):
             for ann in anns:
                 if not isinstance(ann, dict):
                     continue
-                s = ann.get("symbol") or ann.get("ticker")
-                if s:
-                    announced_syms.add(s.upper())
+                s = (ann.get("symbol") or ann.get("ticker") or "").upper()
+                if s and s not in resolved_syms:
+                    announced_syms.add(s)
 
     results = []
     skipped = []

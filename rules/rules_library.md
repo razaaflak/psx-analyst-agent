@@ -10,6 +10,7 @@ This file is the **learned overlay** on top of the base method in `SKILL.md`. Th
 ---
 
 ## Tier legend & status board
+- **2026-07-01 (Daily): UNIVERSE 2nd graded batch (06-24→07-01, 100 rows).** 70/100 = 70.0% (BUY 26/32=81.2%, HOLD 43/66=65.2%, SELL 1/2). Cumulative universe: 138/200 = 69.0%. **NO rule changes (PD#5)** — still ONE continuous melt-up regime (KSE100 179.6k→184.0k, fresh ATH both batches), not multi-regime. BUY-beats-HOLD gap holds again (81.2% vs 65.2%, ~16pp both batches) — 2nd confirmation of the HOLD-breaks-UP asymmetry flagged 06-30; still an OBSERVATION not a rule edit until a flat/red regime tests it. Legacy: P-047 (cash-discipline NO-TRADE) MISSed for the first time — basket ripped +2.85% past the +2.5% threshold in the same ATH leg; flags that cash-discipline calls are not unconditionally right once a melt-up accelerates. P-043 (INDU starter BUY) also MISSed — closed -1.25% vs entry, lagged index by 3.74pp; grader's decision_quality evidence-string formatter is BUGGY (auto-proposed HIT off a garbage placeholder "vs paper entry 100.0") — manually overridden, needs a code fix (build TODO).
 - Last full review: **2026-06-21 (Weekly W25 review — no promote/demote/retire; 22 graded 19 HIT / 3 MISS, sample still single-regime; counterfactual mis-anchoring flagged as the week's key fix)**
 - Prior full review: **2026-06-19 (Daily run #10 — reversal day, 5 HIT / 1 MISS, +1 model/noise miss)**
 - Active rules: 4 Core (seed) + R-PROC-001 (process), 0 Provisional, 6 Experimental

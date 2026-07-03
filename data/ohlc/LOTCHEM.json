@@ -16040,5 +16040,57 @@
   "adj_high": 28.53,
   "adj_low": 28.01,
   "adj_close": 28.07
+ },
+ {
+  "date": "2026-06-29",
+  "open": 28.07,
+  "high": 28.24,
+  "low": 27.5,
+  "close": 27.54,
+  "volume": 6222193,
+  "adj_factor": 1.0,
+  "adj_open": 28.07,
+  "adj_high": 28.24,
+  "adj_low": 27.5,
+  "adj_close": 27.54
+ },
+ {
+  "date": "2026-06-30",
+  "open": 27.65,
+  "high": 28.35,
+  "low": 27.63,
+  "close": 28.07,
+  "volume": 3292980,
+  "adj_factor": 1.0,
+  "adj_open": 27.65,
+  "adj_high": 28.35,
+  "adj_low": 27.63,
+  "adj_close": 28.07
+ },
+ {
+  "date": "2026-07-01",
+  "open": 28.2,
+  "high": 28.75,
+  "low": 28.08,
+  "close": 28.19,
+  "volume": 13241887,
+  "adj_factor": 1.0,
+  "adj_open": 28.2,
+  "adj_high": 28.75,
+  "adj_low": 28.08,
+  "adj_close": 28.19
+ },
+ {
+  "date": "2026-07-02",
+  "open": 28.4,
+  "high": 29.05,
+  "low": 28.0,
+  "close": 28.47,
+  "volume": 12334165,
+  "adj_factor": 1.0,
+  "adj_open": 28.4,
+  "adj_high": 29.05,
+  "adj_low": 28.0,
+  "adj_close": 28.47
  }
 ]

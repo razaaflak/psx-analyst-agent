@@ -1,6 +1,6 @@
 {
   "symbol": "GHGL",
-  "fetched": "2026-06-24",
+  "fetched": "2026-07-03",
   "sources": [
     "https://psx.com.pk/psx/announcement/financial-announcements",
     "https://dps.psx.com.pk/company/payouts"
@@ -27,6 +27,15 @@
     }
   ],
   "payouts": [
+    {
+      "announced": "2026-07-01",
+      "period": "-",
+      "period_type": "",
+      "type": "dividend",
+      "pct": 10.0,
+      "interim_label": "i",
+      "ex_or_bc": "04/07/2026  - 07/07/2026"
+    },
     {
       "announced": "2026-02-25",
       "period": "31/12/2025",
