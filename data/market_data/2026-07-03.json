@@ -1,0 +1,79 @@
+{
+  "date": "2026-07-03",
+  "kse100": {
+    "close": 185372.21,
+    "change_pts": 851.24,
+    "change_pct": 0.46,
+    "note": "5th straight up session, fresh all-time high"
+  },
+  "brent_usd": {
+    "close": 72.3,
+    "change_pct": 0.6,
+    "note": "modest gain, US-Iran peace efforts cautiously holding, Gulf export supply caps upside ahead of US Independence Day weekend"
+  },
+  "announcements": [
+    {
+      "symbol": "EFERT",
+      "title": "Material Information",
+      "doc_id": "279511",
+      "pdf_url": "https://dps.psx.com.pk/download/document/279511.pdf",
+      "in_universe": true
+    },
+    {
+      "symbol": "SHFA",
+      "title": "Disclosure of Interest by a Director CEO, or Executive of a listed company and their Spouses and the Substantial Shareholders u/c 5.6.1.(d) of PSX Regulations",
+      "doc_id": "279509",
+      "pdf_url": "https://dps.psx.com.pk/download/document/279509.pdf",
+      "in_universe": true
+    },
+    {
+      "symbol": "TPLRF1",
+      "title": "Disclosure of Interest by a Director CEO, or Executive of a listed company and their Spouses and the Substantial Shareholders u/c 5.6.1.(d) of PSX Regulations",
+      "doc_id": "279505",
+      "pdf_url": "https://dps.psx.com.pk/download/document/279505.pdf",
+      "in_universe": true
+    },
+    {
+      "symbol": "TRG",
+      "title": "Disclosure of Interest by a Director CEO, or Executive of a listed company and their Spouses and the Substantial Shareholders u/c 5.6.1.(d) of PSX Regulations",
+      "doc_id": "279492-1",
+      "pdf_url": "https://dps.psx.com.pk/download/attachment/279492-1.gif",
+      "in_universe": true
+    },
+    {
+      "symbol": "PPL",
+      "title": "Disclosure of Interest by a Director CEO, or Executive of a listed company and their Spouses and the Substantial Shareholders u/c 5.6.1.(d) of PSX Regulations",
+      "doc_id": "279490",
+      "pdf_url": "https://dps.psx.com.pk/download/document/279490.pdf",
+      "in_universe": true
+    },
+    {
+      "symbol": "ATLH",
+      "title": "Notice of Corporate Briefing Session",
+      "doc_id": "279489",
+      "pdf_url": "https://dps.psx.com.pk/download/document/279489.pdf",
+      "in_universe": true
+    },
+    {
+      "symbol": "HMB",
+      "title": "PACRA UPGRADES HABIB METROPOLITAN BANK LIMITED ENTITY RATINGS",
+      "doc_id": "279484",
+      "pdf_url": "https://dps.psx.com.pk/download/document/279484.pdf",
+      "in_universe": true
+    },
+    {
+      "symbol": "THALL",
+      "title": "Approval of Annual Budget FY 2026-27",
+      "doc_id": "279466",
+      "pdf_url": "https://dps.psx.com.pk/download/document/279466.pdf",
+      "in_universe": true
+    },
+    {
+      "symbol": "TRG",
+      "title": "Order of the United States District Court in New York",
+      "doc_id": "279465",
+      "pdf_url": "https://dps.psx.com.pk/download/document/279465.pdf",
+      "in_universe": true
+    }
+  ]
+}

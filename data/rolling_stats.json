@@ -1,11 +1,11 @@
 {
-  "as_of_date": "2026-07-02",
+  "as_of_date": "2026-07-03",
   "mode": "universe_engine",
   "sample_too_small": true,
   "engine": {
     "rule_scorecard": {
       "status": "LIVE",
-      "signal_rows_total": 400,
+      "signal_rows_total": 600,
       "graded": 200,
       "hit_rate_pct": 69.0,
       "by_batch": {
@@ -17,22 +17,23 @@
         "HOLD": {"hits": 82, "n": 128, "pct": 64.1},
         "SELL": {"hits": 2,  "n": 4,   "pct": 50.0}
       },
-      "note": "2 universe batches graded (06-23: 68%, 06-24: 70%; both no-look-ahead). Cumulative 138/200 = 69.0%. CAVEATS: still ONE continuous melt-up regime (KSE100 made fresh highs across the whole window) — NOT multi-regime, NOT calibrated. HOLD-breaks-UP asymmetry confirmed a 2nd time (BUY ~79% vs HOLD ~64%, ~16pp gap both batches) — observation only, no rule edit yet (PD#5). Next batches: 06-29 matures 07-06, 07-01 matures 07-08."
+      "note": "2 universe batches graded (06-23: 68%, 06-24: 70%; both no-look-ahead). Cumulative 138/200 = 69.0%. CAVEATS: still ONE continuous melt-up regime (KSE100 made fresh highs across the whole window) — NOT multi-regime, NOT calibrated. HOLD-breaks-UP asymmetry confirmed a 2nd time (BUY ~79% vs HOLD ~64%, ~16pp gap both batches) — observation only, no rule edit yet (PD#5). Next batches: 06-29 matures 07-06, 07-01 matures 07-08, 07-02 matures 07-09, 07-03 matures 07-10. DATA NOTE: a batch originally mislabeled 2026-07-03 (midnight-rollover during a run started late 07-02, actually computed from 07-02's close) was corrected this run — relabeled to 2026-07-02 with grade_on_date shifted 07-10→07-09; the true 07-03 batch was then freshly emitted from 07-03's real close data."
     },
     "ml_model": { "status": "NOT_BUILT", "note": "TODO #4 — scripts/universe_model.py" },
     "ensemble": { "status": "NOT_BUILT", "note": "TODO #5 — data/universe_ensemble.csv" },
     "latest_signal_run": {
       "date": "2026-07-03",
-      "BUY": 31, "HOLD": 66, "SELL": 3, "STALE": 1,
+      "BUY": 33, "HOLD": 65, "SELL": 2, "STALE": 0,
       "grade_on_date": "2026-07-10",
-      "sells": ["EFERT", "IBFL", "PAEL"],
-      "stale": ["AGP"],
-      "stale_note": "STALE ledger-driven (data/diligence_ledger.json). 12 universe filings 2026-07-02, all read/reviewed and cleared to OK (BOP PACRA upgrade, NPL/DGKC/RMPL outbound RMPL-Ingredion stake acquisition detail, POWER CFO appointment, MUREB EOGM notice, MEBL/AKBL/BOP routine exec share txns, PTC interim CEO change x2, FABL routine board-meeting template). Only AGP remains STALE (Scheme of Arrangement, pending Sindh HC, unchanged carryover)."
+      "sells": ["EFERT", "PAEL"],
+      "stale": [],
+      "stale_note": "All filings resolved. 9 universe filings 2026-07-03 opened and cleared: EFERT (MATERIAL — Base plant unscheduled ~4-day maintenance outage, real but temporary, noted not gated), SHFA/PPL (routine small insider buy/sell, <0.5% holdings), TRG x2 (SDNY declined injunctive relief re Chishti litigation, core 12-May ruling unaffected/under appeal — non-adverse; + JS Bank substantial-shareholder sale of 16.1M shares/16.47% cumulative, routine 5.6.4 disclosure but notable ownership move), ATLH (corporate briefing notice), HMB (PACRA rating upgrade), THALL (routine FY27 budget approval). AGP (7th EOGM 06-29 abstract) read: shareholders APPROVED the Scheme of Arrangement, still subject to Sindh HC sanction — same carryover restructuring, content now accounted for, cleared per ledger rules (no restated fundamentals yet, watch for HC sanction news)."
     }
   },
   "universe_open_by_grade_date": {
     "2026-07-06": 100,
     "2026-07-08": 100,
+    "2026-07-09": 100,
     "2026-07-10": 100
   },
   "legacy_predictions": {
@@ -50,12 +51,12 @@
     ]
   },
   "regime": {
-    "kse100_close": 184520.96,
-    "chg_pct": 0.26,
+    "kse100_close": 185372.21,
+    "chg_pct": 0.46,
     "ma20": null, "ma50": null, "ma200": null, "rsi14": null,
-    "label": "melt-up EXTENDED — fresh all-time high (184,520.96, +0.26%), 4th straight up day, still broad-based",
+    "label": "melt-up EXTENDED — fresh all-time high (185,372.21, +0.46%), 5th straight up day, still broad-based",
     "flip_line": "KSE100 close < MA20 = first out-of-regime test",
-    "note": "Brent ~$71.56 (flat/soft; Iran-US indirect mediation only, no direct talks). Engine has NEVER been graded through a sustained correction. Regime-stratified grading essential before trusting the 69%. Next real test: 06-29 batch matures 2026-07-06."
+    "note": "Brent ~$72.3 (+0.6%, US-Iran peace efforts cautiously holding, Gulf export supply caps upside ahead of US Independence Day weekend). Engine has NEVER been graded through a sustained correction. Regime-stratified grading essential before trusting the 69%. Next real test: 06-29 batch matures 2026-07-06 (3 days out)."
   },
   "ensemble_blend_weight": { "rule": 1.0, "model": 0.0, "note": "model not built; 100% rule until a forward model sample exists" },
   "active_rules": { "note": "Rule evidence STILL cites legacy portfolio grades (TODO #3). Two graded universe batches (200 rows) still insufficient to rebuild (single regime). Rebuild once >=several batches mature across regimes." }

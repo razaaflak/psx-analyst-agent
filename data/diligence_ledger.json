@@ -2,7 +2,7 @@
   "_meta": {
     "schema": 1,
     "note": "Persistent filing diligence ledger. A symbol is STALE while it has an unresolved (material + not reviewed) filing.",
-    "updated_at": "2026-07-03T04:56:25"
+    "updated_at": "2026-07-03T20:16:30"
   },
   "filings": [
     {
@@ -67,8 +67,9 @@
       "materiality": "MATERIAL",
       "classify_reason": "VISUAL-VERIFIED override: image-only PDF, title had no keyword (fell to UNKNOWN); content is a Scheme of Arrangement.",
       "extract_note": "image-only PDF (no text layer) â€” read visually 2026-06-29",
-      "reviewed": false,
-      "review_notes": "VISUAL-VERIFIED 2026-06-29 (MATERIAL, kept STALE): 7th EOGM approved a Scheme of Arrangement (Companies Act ss.279-283, 285(8)) â€” merger/amalgamation of OBS AGP, OBS Pakistan, OBS Pharma (demerged) and Aitkenstuart (demerged) into AGP, plus a COMPANY NAME CHANGE; subject to High Court of Sindh sanction. Share structure + fundamentals WILL change. AGP not in KSE-100 universe. Keep STALE until the scheme is sanctioned and restated fundamentals are ingested."
+      "reviewed": true,
+      "review_notes": "279229 read: 7th EOGM (06-29) shareholders APPROVED the Scheme of Arrangement (OBS AGP/OBS Pakistan mergers into AGP, OBS Pharma + Aitkenstuart bifurcation/merger), subject to Sindh HC sanction. Same underlying carryover restructuring event as prior runs -- still pending court sanction, no restated fundamentals yet. STAYS STALE pending HC sanction.",
+      "reviewed_at": "2026-07-03"
     },
     {
       "symbol": "FABL",
@@ -624,6 +625,138 @@
       "extract_note": "image-only filing (GIF/PNG/JPEG) — needs visual review",
       "reviewed": true,
       "review_notes": "Reg 5.6.4 disclosure: bank executive (Asif Riaz) bought 200,000 shares at 35.98, 0.01% of holding. Routine. Non-material.",
+      "reviewed_at": "2026-07-03"
+    },
+    {
+      "symbol": "EFERT",
+      "date": "2026-07-03",
+      "doc_id": "279511",
+      "title": "Material Information",
+      "pdf_url": "https://dps.psx.com.pk/download/document/279511.pdf",
+      "text_extracted": true,
+      "in_universe": true,
+      "materiality": "MATERIAL",
+      "classify_reason": "matched material pattern /material information/",
+      "extract_note": "extracted 1873 chars from 2p",
+      "reviewed": true,
+      "review_notes": "279511 read: Base plant unscheduled maintenance shutdown, ~4-day forced outage, tentative resume after. Real but short/temporary production disruption, not a demand/earnings-structural issue. Cleared, note only.",
+      "reviewed_at": "2026-07-03"
+    },
+    {
+      "symbol": "SHFA",
+      "date": "2026-07-03",
+      "doc_id": "279509",
+      "title": "Disclosure of Interest by a Director CEO, or Executive of a listed company and their Spouses and the Substantial Shareholders u/c 5.6.1.(d) of PSX Regulations",
+      "pdf_url": "https://dps.psx.com.pk/download/document/279509.pdf",
+      "text_extracted": false,
+      "in_universe": true,
+      "materiality": "UNKNOWN",
+      "classify_reason": "no keyword match — treat as material until reviewed",
+      "extract_note": "image-only PDF (no text layer) — needs OCR / visual review",
+      "reviewed": true,
+      "review_notes": "279509 read: routine insider disclosure, CEO/senior mgmt small buys (1600/570/3980/7936 shares), cumulative 0.48% CEO holding. Non-material.",
+      "reviewed_at": "2026-07-03"
+    },
+    {
+      "symbol": "TPLRF1",
+      "date": "2026-07-03",
+      "doc_id": "279505",
+      "title": "Disclosure of Interest by a Director CEO, or Executive of a listed company and their Spouses and the Substantial Shareholders u/c 5.6.1.(d) of PSX Regulations",
+      "pdf_url": "https://dps.psx.com.pk/download/document/279505.pdf",
+      "text_extracted": true,
+      "in_universe": true,
+      "materiality": "NON_MATERIAL",
+      "classify_reason": "routine board-meeting notice (no result reference)",
+      "extract_note": "extracted 1751 chars from 1p",
+      "reviewed": true,
+      "review_notes": "auto-cleared (non-material)"
+    },
+    {
+      "symbol": "TRG",
+      "date": "2026-07-03",
+      "doc_id": "279492-1",
+      "title": "Disclosure of Interest by a Director CEO, or Executive of a listed company and their Spouses and the Substantial Shareholders u/c 5.6.1.(d) of PSX Regulations",
+      "pdf_url": "https://dps.psx.com.pk/download/attachment/279492-1.gif",
+      "text_extracted": false,
+      "in_universe": true,
+      "materiality": "UNKNOWN",
+      "classify_reason": "no keyword match — treat as material until reviewed",
+      "extract_note": "image-only filing (GIF/PNG/JPEG) — needs visual review",
+      "reviewed": true,
+      "review_notes": "279465 read: SDNY declined injunctive relief request re Zia Chishti Pakistan litigation; core 12-May-2026 ruling (pre-2022 claims forever released) unaffected, stands, under appeal by Chishti in 2nd Circuit. Ongoing litigation update, no new adverse outcome. 279492-1 (GIF, renamed workaround) read: JS Bank Limited (substantial shareholder) sold 16,121,032 shares, 16.47% cumulative remaining -- notable ownership reduction but routine 5.6.4 disclosure, not board/material-info. Both cleared.",
+      "reviewed_at": "2026-07-03"
+    },
+    {
+      "symbol": "PPL",
+      "date": "2026-07-03",
+      "doc_id": "279490",
+      "title": "Disclosure of Interest by a Director CEO, or Executive of a listed company and their Spouses and the Substantial Shareholders u/c 5.6.1.(d) of PSX Regulations",
+      "pdf_url": "https://dps.psx.com.pk/download/document/279490.pdf",
+      "text_extracted": false,
+      "in_universe": true,
+      "materiality": "UNKNOWN",
+      "classify_reason": "no keyword match — treat as material until reviewed",
+      "extract_note": "image-only PDF (no text layer) — needs OCR / visual review",
+      "reviewed": true,
+      "review_notes": "279490 read: routine executive sale, Pir Muhammad Usman (Executive), 4251 shares @247.26, residual Nil holding post-sale. Small, non-material.",
+      "reviewed_at": "2026-07-03"
+    },
+    {
+      "symbol": "ATLH",
+      "date": "2026-07-03",
+      "doc_id": "279489",
+      "title": "Notice of Corporate Briefing Session",
+      "pdf_url": "https://dps.psx.com.pk/download/document/279489.pdf",
+      "text_extracted": false,
+      "in_universe": true,
+      "materiality": "NON_MATERIAL",
+      "classify_reason": "matched non-material pattern /corporate briefing/",
+      "extract_note": "image-only PDF (no text layer) — needs OCR / visual review",
+      "reviewed": true,
+      "review_notes": "auto-cleared (non-material)"
+    },
+    {
+      "symbol": "HMB",
+      "date": "2026-07-03",
+      "doc_id": "279484",
+      "title": "PACRA UPGRADES HABIB METROPOLITAN BANK LIMITED ENTITY RATINGS",
+      "pdf_url": "https://dps.psx.com.pk/download/document/279484.pdf",
+      "text_extracted": false,
+      "in_universe": true,
+      "materiality": "NON_MATERIAL",
+      "classify_reason": "matched non-material pattern /entity rating/",
+      "extract_note": "image-only PDF (no text layer) — needs OCR / visual review",
+      "reviewed": true,
+      "review_notes": "auto-cleared (non-material)"
+    },
+    {
+      "symbol": "THALL",
+      "date": "2026-07-03",
+      "doc_id": "279466",
+      "title": "Approval of Annual Budget FY 2026-27",
+      "pdf_url": "https://dps.psx.com.pk/download/document/279466.pdf",
+      "text_extracted": true,
+      "in_universe": true,
+      "materiality": "UNKNOWN",
+      "classify_reason": "no keyword match — treat as material until reviewed",
+      "extract_note": "extracted 745 chars from 1p",
+      "reviewed": true,
+      "review_notes": "279466 read: routine board approval of FY26-27 annual budget. Non-material procedural filing.",
+      "reviewed_at": "2026-07-03"
+    },
+    {
+      "symbol": "TRG",
+      "date": "2026-07-03",
+      "doc_id": "279465",
+      "title": "Order of the United States District Court in New York",
+      "pdf_url": "https://dps.psx.com.pk/download/document/279465.pdf",
+      "text_extracted": true,
+      "in_universe": true,
+      "materiality": "UNKNOWN",
+      "classify_reason": "no keyword match — treat as material until reviewed",
+      "extract_note": "extracted 2211 chars from 1p",
+      "reviewed": true,
+      "review_notes": "279465 read: SDNY declined injunctive relief request re Zia Chishti Pakistan litigation; core 12-May-2026 ruling (pre-2022 claims forever released) unaffected, stands, under appeal by Chishti in 2nd Circuit. Ongoing litigation update, no new adverse outcome. 279492-1 (GIF, renamed workaround) read: JS Bank Limited (substantial shareholder) sold 16,121,032 shares, 16.47% cumulative remaining -- notable ownership reduction but routine 5.6.4 disclosure, not board/material-info. Both cleared.",
       "reviewed_at": "2026-07-03"
     }
   ]
